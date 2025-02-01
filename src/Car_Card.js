@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Card_het() {
+export default function Card_Card() {
   return (
     <div>
          <div class="container">

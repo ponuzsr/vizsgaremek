@@ -5,38 +5,37 @@
     "version": "1.0"
   },
   "paths": {
-    "/WeatherForecast": {
+    "/api/Felhasznalok": {
       "get": {
         "tags": [
-          "WeatherForecast"
+          "Felhasznalok"
         ],
-        "operationId": "GetWeatherForecast",
+        "parameters": [
+          {
+            "name": "Nev",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
-                  }
+                  "$ref": "#/components/schemas/Felhasznalok"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
-                  }
+                  "$ref": "#/components/schemas/Felhasznalok"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
-                  }
+                  "$ref": "#/components/schemas/Felhasznalok"
                 }
               }
             }
@@ -47,23 +46,26 @@
   },
   "components": {
     "schemas": {
-      "WeatherForecast": {
+      "Felhasznalok": {
         "type": "object",
         "properties": {
-          "date": {
+          "id": {
             "type": "string",
-            "format": "date"
+            "format": "uuid"
           },
-          "temperatureC": {
-            "type": "integer",
-            "format": "int32"
+          "nev": {
+            "type": "string",
+            "nullable": true
           },
-          "temperatureF": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
+          "jelszo": {
+            "type": "string",
+            "nullable": true
           },
-          "summary": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "prof": {
             "type": "string",
             "nullable": true
           }

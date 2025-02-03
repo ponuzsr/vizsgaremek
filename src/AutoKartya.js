@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Card_Card() {
+export default function AutoKartya() {
   return (
     <div>
          <div class="container">

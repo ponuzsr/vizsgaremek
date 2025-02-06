@@ -7,7 +7,7 @@ function Dropdown ({ isOpen, setIsOpen }) {
   return (
     <div className="dropdown-container">
       <button className="dropdown-btn navBtn" onClick={() => setIsOpen(!isOpen)}>
-        Autók {isOpen ? "▲" : "▼"}
+      ✇ Autók {isOpen ? "▲" : "▼"}
       </button>
       {isOpen && (
         <div className="dropdown">

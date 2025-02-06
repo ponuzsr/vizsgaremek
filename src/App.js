@@ -38,10 +38,11 @@ const App = () => {
 
   return (
     <div className="app">
-      <div className="header">{activePage}</div>
+      <div className="header_our">{activePage}</div>
       <div className="main-container">
         <Navbar />
         <div className="content">
+        
           <Routes>
             <Route path="/" element={<Fooldal />} />
             <Route path="/ertesitesek" element={<Ertesitesek />} />

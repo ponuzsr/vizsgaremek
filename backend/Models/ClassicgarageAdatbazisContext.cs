@@ -29,17 +29,17 @@ public partial class ClassicgarageAdatbazisContext : DbContext
     {
         modelBuilder.Entity<Autok>(entity =>
         {
-            entity
-                .HasNoKey()
-                .ToTable("autok");
+            entity.HasKey(e => e.Id).HasName("PRIMARY");
+
+            entity.ToTable("autok");
 
             entity.HasIndex(e => new { e.ComenteiId, e.MuszakiId }, "Comentei_ID");
 
             entity.HasIndex(e => e.MuszakiId, "Muszaki_ID");
 
+            entity.Property(e => e.Id).HasColumnName("ID");
             entity.Property(e => e.ComenteiId).HasColumnName("Comentei_ID");
             entity.Property(e => e.GyartasEv).HasColumnName("Gyartas_Ev");
-            entity.Property(e => e.Id).HasColumnName("ID");
             entity.Property(e => e.Kep).HasMaxLength(255);
             entity.Property(e => e.Marka).HasMaxLength(30);
             entity.Property(e => e.MuszakiId).HasColumnName("Muszaki_ID");

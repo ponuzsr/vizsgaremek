@@ -1,21 +1,21 @@
 [
   {
-    "ContainingType": "backend.Controllers.FelhasznalokController",
-    "Method": "GetFelhasznalok",
-    "RelativePath": "api/Felhasznalok",
-    "HttpMethod": "GET",
+    "ContainingType": "backend.Controllers.AutokController",
+    "Method": "Post",
+    "RelativePath": "api/Autok",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "Nev",
-        "Type": "System.String",
-        "IsRequired": false
+        "Name": "createAutokDto",
+        "Type": "backend.Models.CreateAutokDto",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "backend.Models.Felhasznalok",
+        "Type": "backend.Models.Autok",
         "MediaTypes": [
           "text/plain",
           "application/json",

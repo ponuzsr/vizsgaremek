@@ -8,6 +8,17 @@ namespace backend.Controllers
     [ApiController]
     public class AutokController : ControllerBase
     {
+        private readonly ClassicgarageAdatbazisContext _context;
+        public AutokController(ClassicgarageAdatbazisContext _context)
+        {
+            this._context = _context;
+        }
+        [HttpGet]
+        public ActionResult<Autok>Get()
+        {
+            var autok=_context.Autoks.ToList();
+            return Ok(autok);
+        }
         [HttpPost]
 
         public ActionResult<Autok> Post (CreateAutokDto createAutokDto)

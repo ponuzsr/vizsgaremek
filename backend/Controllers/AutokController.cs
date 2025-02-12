@@ -30,6 +30,7 @@ namespace backend.Controllers
                 Id = Guid.NewGuid(),
                 Marka = createAutokDto.Marka,
                 GyartasEv = createAutokDto.GyartasEv,
+                IdEv = createAutokDto.IdEv,
                 Tortenet = createAutokDto.Tortenet,
                 Kep = createAutokDto.Kep,
                 ComenteiId = Guid.NewGuid(),

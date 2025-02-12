@@ -1,18 +1,12 @@
 [
   {
     "ContainingType": "backend.Controllers.AutokController",
-    "Method": "Post",
+    "Method": "Get",
     "RelativePath": "api/Autok",
-    "HttpMethod": "POST",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [
-      {
-        "Name": "createAutokDto",
-        "Type": "backend.Models.CreateAutokDto",
-        "IsRequired": true
-      }
-    ],
+    "Parameters": [],
     "ReturnTypes": [
       {
         "Type": "backend.Models.Autok",
@@ -24,5 +18,21 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "backend.Controllers.AutokController",
+    "Method": "Post",
+    "RelativePath": "api/Autok",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createAutokDto",
+        "Type": "backend.Models.Dto\u002BCreateAutokDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

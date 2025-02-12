@@ -1,4 +1,7 @@
 ﻿namespace backend.Models
 {
-    public record CreateAutokDto(string Marka, int GyartasEv, string Tortenet, string Kep);
+    public class Dto
+    {
+        public record CreateAutokDto(int IdEv, string Marka, int GyartasEv, string Tortenet, string Kep);
+    }
 }

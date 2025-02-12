@@ -19,11 +19,9 @@ public partial class ClassicgarageAdatbazisContext : DbContext
 
     public virtual DbSet<Comment> Comments { get; set; }
 
-    public virtual DbSet<MuszakiAdatok> MuszakiAdatoks { get; set; }
-
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseMySQL("server=localhost;database=classicgarage_adatbazis;user=root;password=password;sslmode=none;");
+        => optionsBuilder.UseMySQL("server=localhost;database=classicgarage_adatbazis;user=root;password=;sslmode=none;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -38,12 +36,28 @@ public partial class ClassicgarageAdatbazisContext : DbContext
             entity.HasIndex(e => e.MuszakiId, "Muszaki_ID");
 
             entity.Property(e => e.Id).HasColumnName("ID");
-            entity.Property(e => e.ComenteiId).HasColumnName("Comentei_ID");
-            entity.Property(e => e.GyartasEv).HasColumnName("Gyartas_Ev");
-            entity.Property(e => e.Kep).HasMaxLength(255);
-            entity.Property(e => e.Marka).HasMaxLength(30);
-            entity.Property(e => e.MuszakiId).HasColumnName("Muszaki_ID");
-            entity.Property(e => e.Tortenet).HasMaxLength(300);
+            entity.Property(e => e.ComenteiId)
+                .HasDefaultValueSql("'NULL'")
+                .HasColumnName("Comentei_ID");
+            entity.Property(e => e.GyartasEv)
+                .HasDefaultValueSql("'NULL'")
+                .HasColumnType("int(11)")
+                .HasColumnName("Gyartas_Ev");
+            entity.Property(e => e.IdEv)
+                .HasColumnType("int(11)")
+                .HasColumnName("ID_ev");
+            entity.Property(e => e.Kep)
+                .HasMaxLength(255)
+                .HasDefaultValueSql("'NULL'");
+            entity.Property(e => e.Marka)
+                .HasMaxLength(30)
+                .HasDefaultValueSql("'NULL'");
+            entity.Property(e => e.MuszakiId)
+                .HasDefaultValueSql("'NULL'")
+                .HasColumnName("Muszaki_ID");
+            entity.Property(e => e.Tortenet)
+                .HasMaxLength(300)
+                .HasDefaultValueSql("'NULL'");
         });
 
         modelBuilder.Entity<Comment>(entity =>
@@ -61,20 +75,6 @@ public partial class ClassicgarageAdatbazisContext : DbContext
                 .HasColumnName("Comment");
             entity.Property(e => e.CommenteloId).HasColumnName("Commentelo_ID");
             entity.Property(e => e.Id).HasColumnName("ID");
-        });
-
-        modelBuilder.Entity<MuszakiAdatok>(entity =>
-        {
-            entity
-                .HasNoKey()
-                .ToTable("muszaki_adatok");
-
-            entity.HasIndex(e => e.Id, "ID");
-
-            entity.Property(e => e.Fogyasztás).HasColumnName("fogyasztás");
-            entity.Property(e => e.Id).HasColumnName("ID");
-            entity.Property(e => e.RitkaE).HasColumnName("Ritka_e");
-            entity.Property(e => e.Teljesítmény).HasColumnName("teljesítmény");
         });
 
         OnModelCreatingPartial(modelBuilder);

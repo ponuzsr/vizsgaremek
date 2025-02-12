@@ -1,6 +1,8 @@
 ﻿using backend.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using static backend.Models.Dto;
 
 namespace backend.Controllers
 {
@@ -14,14 +16,14 @@ namespace backend.Controllers
             this._context = _context;
         }
         [HttpGet]
-        public ActionResult<Autok>Get()
+        public async Task<ActionResult<Autok>> Get()
         {
-            var autok=_context.Autoks.ToList();
+            var autok = await _context.Autoks.ToListAsync();
             return Ok(autok);
         }
         [HttpPost]
 
-        public ActionResult<Autok> Post (CreateAutokDto createAutokDto)
+        public async Task<ActionResult> Post(CreateAutokDto createAutokDto)
         {
             var auto = new Autok
             {
@@ -34,16 +36,15 @@ namespace backend.Controllers
                 MuszakiId = Guid.NewGuid()
             };
 
-            if(auto != null )
+            if (auto != null)
             {
-                using (var context = new ClassicgarageAdatbazisContext())
-                {
-                    context.Autoks.Add(auto);
-                    context.SaveChanges();
-                    return StatusCode(201, auto);
-                }
+
+                await _context.Autoks.AddAsync(auto);
+                _context.SaveChanges();
+                return StatusCode(201, auto);
+
             }
-            return BadRequest(new { message = "Hiba az objektum képzése során." });
+            return BadRequest(new { result = auto, message = "Hiba az objektum képzése során." });
         }
     }
 }

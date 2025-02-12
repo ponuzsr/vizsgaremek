@@ -5,19 +5,10 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/Felhasznalok": {
+    "/api/Autok": {
       "get": {
         "tags": [
-          "Felhasznalok"
-        ],
-        "parameters": [
-          {
-            "name": "Nev",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          }
+          "Autok"
         ],
         "responses": {
           "200": {
@@ -25,20 +16,49 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Felhasznalok"
+                  "$ref": "#/components/schemas/Autok"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Felhasznalok"
+                  "$ref": "#/components/schemas/Autok"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Felhasznalok"
+                  "$ref": "#/components/schemas/Autok"
                 }
               }
             }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Autok"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAutokDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAutokDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAutokDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
           }
         }
       }
@@ -46,26 +66,67 @@
   },
   "components": {
     "schemas": {
-      "Felhasznalok": {
+      "Autok": {
         "type": "object",
         "properties": {
           "id": {
             "type": "string",
             "format": "uuid"
           },
-          "nev": {
+          "idEv": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "marka": {
             "type": "string",
             "nullable": true
           },
-          "jelszo": {
+          "gyartasEv": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "tortenet": {
             "type": "string",
             "nullable": true
           },
-          "email": {
+          "kep": {
             "type": "string",
             "nullable": true
           },
-          "prof": {
+          "comenteiId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "muszakiId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateAutokDto": {
+        "type": "object",
+        "properties": {
+          "idEv": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "marka": {
+            "type": "string",
+            "nullable": true
+          },
+          "gyartasEv": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tortenet": {
+            "type": "string",
+            "nullable": true
+          },
+          "kep": {
             "type": "string",
             "nullable": true
           }

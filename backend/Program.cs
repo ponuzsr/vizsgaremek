@@ -1,4 +1,10 @@
+//using backend.Models;
+
+using backend.Models;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<ClassicgarageAdatbazisContext>();
 
 // Add services to the container.
 

@@ -7,15 +7,17 @@ public partial class Autok
 {
     public Guid Id { get; set; }
 
-    public string Marka { get; set; } = null!;
+    public int IdEv { get; set; }
 
-    public int GyartasEv { get; set; }
+    public string? Marka { get; set; }
 
-    public string Tortenet { get; set; } = null!;
+    public int? GyartasEv { get; set; }
 
-    public string Kep { get; set; } = null!;
+    public string? Tortenet { get; set; }
 
-    public Guid ComenteiId { get; set; }
+    public string? Kep { get; set; }
 
-    public Guid MuszakiId { get; set; }
+    public Guid? ComenteiId { get; set; }
+
+    public Guid? MuszakiId { get; set; }
 }

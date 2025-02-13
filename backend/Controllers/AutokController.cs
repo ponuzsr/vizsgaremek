@@ -47,5 +47,19 @@ namespace backend.Controllers
             }
             return BadRequest(new { result = auto, message = "Hiba az objektum képzése során." });
         }
+
+        [HttpDelete]
+        public async Task<ActionResult> Delete(Guid Id)
+        {
+            var Auto = await _context.Autoks.SingleOrDefaultAsync(a =>a.Id == Id);
+
+            if(Auto != null)
+            {
+                _context.Autoks.Remove(Auto);
+                await _context.SaveChangesAsync();
+                return Ok("Sikeres törlés");
+            }
+            return BadRequest(new { message = "Sikertelen törlés" });
+        }
     }
 }

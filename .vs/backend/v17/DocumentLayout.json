@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\Tanulo\\Desktop\\vizsgaremek\\vizsgaremek\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{0FE5770D-427D-4BE5-89ED-CA78BBAB870E}|backend\\backend.csproj|c:\\users\\tanulo\\desktop\\vizsgaremek\\vizsgaremek\\backend\\models\\autok.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0FE5770D-427D-4BE5-89ED-CA78BBAB870E}|backend\\backend.csproj|solutionrelative:backend\\models\\autok.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0FE5770D-427D-4BE5-89ED-CA78BBAB870E}|backend\\backend.csproj|c:\\users\\tanulo\\desktop\\vizsgaremek\\vizsgaremek\\backend\\controllers\\autokcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0FE5770D-427D-4BE5-89ED-CA78BBAB870E}|backend\\backend.csproj|solutionrelative:backend\\controllers\\autokcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -11,8 +15,8 @@
       "RelativeMoniker": "D:0:0:{0FE5770D-427D-4BE5-89ED-CA78BBAB870E}|backend\\backend.csproj|solutionrelative:backend\\models\\classicgarageadatbaziscontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0FE5770D-427D-4BE5-89ED-CA78BBAB870E}|backend\\backend.csproj|c:\\users\\tanulo\\desktop\\vizsgaremek\\vizsgaremek\\backend\\models\\autok.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0FE5770D-427D-4BE5-89ED-CA78BBAB870E}|backend\\backend.csproj|solutionrelative:backend\\models\\autok.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0FE5770D-427D-4BE5-89ED-CA78BBAB870E}|backend\\backend.csproj|c:\\users\\tanulo\\desktop\\vizsgaremek\\vizsgaremek\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0FE5770D-427D-4BE5-89ED-CA78BBAB870E}|backend\\backend.csproj|solutionrelative:backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0FE5770D-427D-4BE5-89ED-CA78BBAB870E}|backend\\backend.csproj|c:\\users\\tanulo\\desktop\\vizsgaremek\\vizsgaremek\\backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -21,10 +25,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{0FE5770D-427D-4BE5-89ED-CA78BBAB870E}|backend\\backend.csproj|c:\\users\\tanulo\\desktop\\vizsgaremek\\vizsgaremek\\backend\\models\\dto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0FE5770D-427D-4BE5-89ED-CA78BBAB870E}|backend\\backend.csproj|solutionrelative:backend\\models\\dto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0FE5770D-427D-4BE5-89ED-CA78BBAB870E}|backend\\backend.csproj|c:\\users\\tanulo\\desktop\\vizsgaremek\\vizsgaremek\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0FE5770D-427D-4BE5-89ED-CA78BBAB870E}|backend\\backend.csproj|solutionrelative:backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,50 +34,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Autok.cs",
               "DocumentMoniker": "C:\\Users\\Tanulo\\Desktop\\vizsgaremek\\vizsgaremek\\backend\\Models\\Autok.cs",
               "RelativeDocumentMoniker": "backend\\Models\\Autok.cs",
               "ToolTip": "C:\\Users\\Tanulo\\Desktop\\vizsgaremek\\vizsgaremek\\backend\\Models\\Autok.cs",
               "RelativeToolTip": "backend\\Models\\Autok.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAsAAAAmAAAAAAAAAA==",
+              "ViewState": "AQIAAAkAAAAAAAAAAAA1wAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-12T06:49:10.301Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ClassicgarageAdatbazisContext.cs",
               "DocumentMoniker": "C:\\Users\\Tanulo\\Desktop\\vizsgaremek\\vizsgaremek\\backend\\Models\\ClassicgarageAdatbazisContext.cs",
               "RelativeDocumentMoniker": "backend\\Models\\ClassicgarageAdatbazisContext.cs",
               "ToolTip": "C:\\Users\\Tanulo\\Desktop\\vizsgaremek\\vizsgaremek\\backend\\Models\\ClassicgarageAdatbazisContext.cs",
               "RelativeToolTip": "backend\\Models\\ClassicgarageAdatbazisContext.cs",
-              "ViewState": "AgIAADwAAAAAAAAAAAAuwBQAAAAAAAAAAAAAAA==",
+              "ViewState": "AQIAABkAAAAAAAAAAAAowBUAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-10T11:23:29.447Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "AutokController.cs",
               "DocumentMoniker": "C:\\Users\\Tanulo\\Desktop\\vizsgaremek\\vizsgaremek\\backend\\Controllers\\AutokController.cs",
               "RelativeDocumentMoniker": "backend\\Controllers\\AutokController.cs",
               "ToolTip": "C:\\Users\\Tanulo\\Desktop\\vizsgaremek\\vizsgaremek\\backend\\Controllers\\AutokController.cs",
               "RelativeToolTip": "backend\\Controllers\\AutokController.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAA1wCAAAAArAAAAAAAAAA==",
+              "ViewState": "AQIAABUAAAAAAAAAAAAYwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-10T11:25:36.467Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Dto.cs",
               "DocumentMoniker": "C:\\Users\\Tanulo\\Desktop\\vizsgaremek\\vizsgaremek\\backend\\Models\\Dto.cs",
               "RelativeDocumentMoniker": "backend\\Models\\Dto.cs",
@@ -89,27 +89,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\Tanulo\\Desktop\\vizsgaremek\\vizsgaremek\\backend\\appsettings.json",
               "RelativeDocumentMoniker": "backend\\appsettings.json",
               "ToolTip": "C:\\Users\\Tanulo\\Desktop\\vizsgaremek\\vizsgaremek\\backend\\appsettings.json",
               "RelativeToolTip": "backend\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-02-10T10:41:52.014Z"
+              "WhenOpened": "2025-02-10T10:41:52.014Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Tanulo\\Desktop\\vizsgaremek\\vizsgaremek\\backend\\Program.cs",
               "RelativeDocumentMoniker": "backend\\Program.cs",
               "ToolTip": "C:\\Users\\Tanulo\\Desktop\\vizsgaremek\\vizsgaremek\\backend\\Program.cs",
               "RelativeToolTip": "backend\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAyAAAAAAAAAA==",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-10T09:51:39.916Z"
+              "WhenOpened": "2025-02-10T09:51:39.916Z",
+              "EditorCaption": ""
             }
           ]
         }

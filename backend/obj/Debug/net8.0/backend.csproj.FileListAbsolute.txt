@@ -701,7 +701,3 @@ C:\Users\Tanulo\Downloads\vizsgaremek\backend\bin\Debug\net8.0\backend.staticweb
 C:\Users\Tanulo\Downloads\vizsgaremek\backend\obj\Debug\net8.0\staticwebassets.build.endpoints.json
 C:\Users\Tanulo\Downloads\vizsgaremek\backend\obj\Debug\net8.0\staticwebassets\msbuild.backend.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
 C:\Users\Tanulo\Downloads\vizsgaremek\backend\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
-C:\Users\Tanulo\Desktop\vizsgaremek\vizsgaremek\backend\bin\Debug\net8.0\backend.staticwebassets.endpoints.json
-C:\Users\Tanulo\Desktop\vizsgaremek\vizsgaremek\backend\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\Users\Tanulo\Desktop\vizsgaremek\vizsgaremek\backend\obj\Debug\net8.0\staticwebassets\msbuild.backend.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
-C:\Users\Tanulo\Desktop\vizsgaremek\vizsgaremek\backend\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

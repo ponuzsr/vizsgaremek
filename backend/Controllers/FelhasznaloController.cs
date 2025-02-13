@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using backend.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace backend.Controllers
 {
@@ -7,5 +9,6 @@ namespace backend.Controllers
     [ApiController]
     public class FelhasznaloController : ControllerBase
     {
+       
     }
 }

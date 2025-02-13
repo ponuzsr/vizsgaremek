@@ -7,7 +7,9 @@ public partial class Comment
 {
     public Guid Id { get; set; }
 
-    public Guid CommenteloId { get; set; }
+    public string CommenteloId { get; set; } = null!;
 
     public string Comment1 { get; set; } = null!;
+
+    public virtual Aspnetuser Commentelo { get; set; } = null!;
 }

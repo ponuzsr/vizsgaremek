@@ -8,9 +8,8 @@ function Navbar() {
   return (
     <nav className="navbar_our">
       <Link className="navBtn" to="/">🏠︎ Főoldal</Link>
-      <Link className="navBtn" to="/ertesitesek">Értesítések</Link>
+      <Link className="navBtn" to="/ertesitesek">??????</Link>
       <Link className="navBtn" to="/bejelentkezes">𖨆 Bejelentkezés</Link>
-
       <Dropdown isOpen={isDropdownOpen} setIsOpen={setIsDropdownOpen} />
     </nav>
   );

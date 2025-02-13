@@ -7,7 +7,7 @@ import Fooldal from "./Fooldal";
 import Ertesitesek from "./Ertesitesek";
 import Bejelentkezes from "./Bejelentkezes";
 import Autok from "./Autok";
-
+import Onecar from "./Onecar";
 const App = () => {
   const location = useLocation();
 
@@ -48,6 +48,7 @@ const App = () => {
             <Route path="/ertesitesek" element={<Ertesitesek />} />
             <Route path="/bejelentkezes" element={<Bejelentkezes />} />
             <Route path="/autok/:ev" element={<Autok />} />
+            <Route path="/Onecar/:id" element={<Onecar/>}/>
           </Routes>
         </div>
       </div>

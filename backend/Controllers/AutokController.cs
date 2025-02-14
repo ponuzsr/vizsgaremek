@@ -21,6 +21,19 @@ namespace backend.Controllers
             var autok = await _context.Autoks.ToListAsync();
             return Ok(autok);
         }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult> GetAutoById(Guid id)
+        {
+            var auto = await _context.Autoks.Where(auto => auto.Id == id).FirstOrDefaultAsync();
+
+            if (auto != null)
+            {
+                return Ok(auto);
+            }
+            return NotFound(new { message = "Az autó nem található az adatbázisban."});
+        }
+
         [HttpPost]
 
         public async Task<ActionResult> Post(CreateAutokDto createAutokDto)

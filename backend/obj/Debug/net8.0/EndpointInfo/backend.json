@@ -104,6 +104,63 @@
             "description": "OK"
           }
         }
+      },
+      "put": {
+        "tags": [
+          "Autok"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateAutokDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateAutokDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateAutokDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Autok"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Autok"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Autok"
+                }
+              }
+            }
+          }
+        }
       }
     }
   },
@@ -151,6 +208,32 @@
         "additionalProperties": false
       },
       "CreateAutokDto": {
+        "type": "object",
+        "properties": {
+          "idEv": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "marka": {
+            "type": "string",
+            "nullable": true
+          },
+          "gyartasEv": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tortenet": {
+            "type": "string",
+            "nullable": true
+          },
+          "kep": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateAutokDto": {
         "type": "object",
         "properties": {
           "idEv": {

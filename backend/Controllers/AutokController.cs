@@ -64,7 +64,7 @@ namespace backend.Controllers
         [HttpDelete]
         public async Task<ActionResult> Delete(Guid Id)
         {
-            var Auto = await _context.Autoks.SingleOrDefaultAsync(a =>a.Id == Id);
+            var Auto = await _context.Autoks.FirstOrDefaultAsync(a =>a.Id == Id);
 
             if(Auto != null)
             {
@@ -73,6 +73,24 @@ namespace backend.Controllers
                 return Ok("Sikeres törlés");
             }
             return BadRequest(new { message = "Sikertelen törlés" });
+        }
+
+        [HttpPut("{id}")]
+        public async Task<ActionResult<Autok>> Put(UpdateAutokDto updateAutokDto,Guid id)
+        {
+            var existingAuto = await _context.Autoks.FirstOrDefaultAsync(a => a.Id == id);
+            if(existingAuto != null)
+            {
+                existingAuto.IdEv = updateAutokDto.IdEv;
+                existingAuto.Marka = updateAutokDto.Marka;
+                existingAuto.GyartasEv = updateAutokDto?.GyartasEv;
+                existingAuto.Tortenet = updateAutokDto?.Tortenet;
+                existingAuto.Kep = updateAutokDto?.Kep;
+                _context.Autoks.Update(existingAuto);
+                await _context.SaveChangesAsync();
+                return Ok(existingAuto);
+            }
+            return NotFound(new { message = "Az autó nem található az adatbázisban." });
         }
     }
 }

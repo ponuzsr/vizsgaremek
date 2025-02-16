@@ -8,6 +8,7 @@ import Ertesitesek from "./Ertesitesek";
 import Bejelentkezes from "./Bejelentkezes";
 import Autok from "./Autok";
 import Onecar from "./Onecar";
+
 const App = () => {
   const location = useLocation();
 

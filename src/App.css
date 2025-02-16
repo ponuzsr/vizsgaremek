@@ -16,10 +16,15 @@
   flex-grow: 1;
   min-height: 100vh;
 }
-
+.cardback
+{
+  background-size: 100vw 100vh;
+  background-image: url(/pics/Cardback.png);
+  
+}
 .navbar_our {
   width: 200px;
-  height: 100vh;
+  height:initial;
  background-image: url(/pics/navbar.jpg);
   padding-top: 20px;
   display: flex;
@@ -86,18 +91,22 @@ transition: all 0.3s ease-in-out;
 .dropdown-btn {
   position: relative;
 }
-
+.center_texts
+{
+  
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-grow: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
 .content {
   flex-grow: 1;
   padding: 20px;
   background-color:#0D3173;
   color:white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
-  
   border:7px solid black;
   
 }

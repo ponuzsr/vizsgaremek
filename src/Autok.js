@@ -10,7 +10,7 @@ function Autok () {
   }, [params.ev])
   function Get()
   {
-    fetch("http://10.169.84.39:5198/api/Autok/")
+    fetch("http://localhost:5198/api/Autok"/*http://10.169.84.39:5198/api/Autok/*/)
     .then(Response=>Response.json())
     .then(function(data){
       let filtered = data.filter(auto=> auto.idEv==params.ev )
@@ -28,7 +28,7 @@ function Autok () {
   };*/
 
   return (
-      <div>
+      <div className="row row-cols-1 row-cols-md-6 g-4">
           {
             
             database.map((auto)=>{return(<AutoKartya datak={auto}/>)})

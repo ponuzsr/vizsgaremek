@@ -2,9 +2,11 @@ import React from "react";
 
 function Ertesitesek () {
   return (
-    <div className="notifications-container">
-      <h2>Értesítések</h2>
-      <p>Nincsenek új értesítéseid.</p>
+    <div className="center_texts">
+      <div className="notifications-container">
+        <h2>??????????</h2>
+        <p>Work in progress</p>
+      </div>
     </div>
   );
 };

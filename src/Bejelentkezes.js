@@ -4,7 +4,7 @@ export default function
 () {
   return (
     <form>
-    <div>
+    <div className='center_texts'>
       <div class="email">
         <label for="exampleInputEmail1" class="form-label">Email address</label>
         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>

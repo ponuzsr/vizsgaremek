@@ -6,7 +6,7 @@ function Fooldal () {
     <div className="home-container">
       <h1>Üdvözöllek a ClassicGarage oldalon!</h1>
       <p>A ClassicGarage egy olyan weboldal, amely a klasszikus autók szerelmeseinek készült.</p>
-      <img></img>
+      <img/>
     </div>
   </div>
   );

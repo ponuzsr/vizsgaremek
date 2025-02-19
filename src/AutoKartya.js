@@ -6,14 +6,17 @@ export default function AutoKartya(props) {
       <div class="card cardback" style={{border:"1px solid #0D3173"}}>
           <img src={props.datak.kep}  class="card-img-top" alt="..."/>
           <div className="card-body">
-            <h5 className="card-title" style={{color:"white"}}>{props.datak.marka}</h5>
-            <p className="card-text" style={{color:"white"}}>{props.datak.gyartasEv}</p>
-           
+            <h5 className="card-title" style={{color:"white"}}>Márkaja: {props.datak.marka}</h5>
+            <p className="card-text" style={{color:"white"}}>Gyártás kezdete: {props.datak.gyartasEv}</p>
+            
                   <Link className='nav-item nav-link' to={"/Onecar/"+props.datak.id}>
                       <a style={{backgroundColor:"#0806A8",color:"white"}} className="btn btn">Részletesebben</a>
                   </Link>
                   <br/>
-                  <a href="#" style={{backgroundColor:"#0806A8",color:"white"}} className="btn btn">Commentek</a>
+                  <Link className='nav-item nav-link' key={props.datak.commentId} to={"/Comment/"+props.datak.commentId}>
+                      <a style={{backgroundColor:"#0806A8",color:"white"}} className="btn btn">Commentek</a>
+                  </Link>
+                  
                 </div>
            
       </div>

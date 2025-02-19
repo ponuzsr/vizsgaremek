@@ -10,7 +10,7 @@ export default function Onecar() {
   }, [])
   function Get()
     {
-        fetch("http://localhost:5198/api/Autok/"/*http://10.169.84.39:5198/api/Autok/*/+param.id)
+        fetch("http://localhost:5198/api/Autok/"/*"http://10.169.84.233:5198/api/Autok/"*/+param.id)
         .then(Response=>Response.json())
         .then(function(data){
         console.log(data)

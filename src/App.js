@@ -8,7 +8,7 @@ import Ertesitesek from "./Ertesitesek";
 import Bejelentkezes from "./Bejelentkezes";
 import Autok from "./Autok";
 import Onecar from "./Onecar";
-
+import Comment from "./Comment";
 const App = () => {
   const location = useLocation();
 
@@ -50,6 +50,7 @@ const App = () => {
             <Route path="/bejelentkezes" element={<Bejelentkezes />} />
             <Route path="/autok/:ev" element={<Autok />} />
             <Route path="/Onecar/:id" element={<Onecar/>}/>
+            <Route path="/Comment/:comid" element={<Comment/>}/>
           </Routes>
         </div>
       </div>

@@ -6,6 +6,7 @@ function Navbar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   return (
+    
     <nav className="navbar_our">
       <Link className="navBtn" to="/">🏠︎ Főoldal</Link>
       <Link className="navBtn" to="/ertesitesek">??????</Link>

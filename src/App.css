@@ -22,6 +22,7 @@
   background-image: url(/pics/Cardback.png);
   
 }
+/* már nem működik*/
 .navbar_our {
   width: 200px;
   height:initial;
@@ -222,4 +223,76 @@ transition: all 0.3s ease-in-out;
   background-color: #fefefe !important;
 }
 
+/*Responsive navbar css
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  height:initial;
+  background-image: url(/pics/navbar.jpg);
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
 
+width: 200px;
+  height:initial;
+ background-image: url(/pics/navbar.jpg);
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+  padding: 15px;
+  border: none;
+  color: white;
+  background: linear-gradient(135deg, #555, #222);
+  display: block;
+  text-align: center;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 5px;
+  border-radius: 8px;
+  box-shadow: 0px 3px 6px rgba(19, 2, 89, 0.932);
+}
+ 
+.sidebar a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+div.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
+  
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}*/

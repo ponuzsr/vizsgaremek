@@ -15,6 +15,8 @@ public partial class ClassicgarageAdatbazisContext : DbContext
     {
     }
 
+    public DbSet<Aspnetuser> aspnetUsers { get; set; } = null!;
+
     public virtual DbSet<Aspnetrole> Aspnetroles { get; set; }
 
     public virtual DbSet<Aspnetroleclaim> Aspnetroleclaims { get; set; }
@@ -34,6 +36,7 @@ public partial class ClassicgarageAdatbazisContext : DbContext
     public virtual DbSet<Efmigrationshistory> Efmigrationshistories { get; set; }
 
     
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Aspnetrole>(entity =>
@@ -171,7 +174,7 @@ public partial class ClassicgarageAdatbazisContext : DbContext
 
             entity.ToTable("autok");
 
-            entity.HasIndex(e => new { e.ComenteiId, e.MuszakiId }, "Comentei_ID");
+            entity.HasIndex(e => e.ComenteiId, "Comentei_ID");
 
             entity.HasIndex(e => e.MuszakiId, "Muszaki_ID");
 
@@ -208,11 +211,19 @@ public partial class ClassicgarageAdatbazisContext : DbContext
 
             entity.HasIndex(e => e.CommenteloId, "CommenteloID");
 
+            entity.HasIndex(e => e.AutokId, "autokId");
+
             entity.Property(e => e.Id).HasColumnName("ID");
+            entity.Property(e => e.AutokId).HasColumnName("autokId");
             entity.Property(e => e.Comment1)
                 .HasMaxLength(255)
                 .HasColumnName("Comment");
             entity.Property(e => e.CommenteloId).HasColumnName("CommenteloID");
+
+            entity.HasOne(d => d.Autok).WithMany(p => p.Comments)
+                .HasForeignKey(d => d.AutokId)
+                .OnDelete(DeleteBehavior.Restrict)
+                .HasConstraintName("comment_ibfk_2");
 
             entity.HasOne(d => d.Commentelo).WithMany(p => p.Comments)
                 .HasForeignKey(d => d.CommenteloId)

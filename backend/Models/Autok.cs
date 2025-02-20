@@ -20,4 +20,6 @@ public partial class Autok
     public Guid? ComenteiId { get; set; }
 
     public Guid? MuszakiId { get; set; }
+
+    public virtual ICollection<Comment> Comments { get; set; } = new List<Comment>();
 }

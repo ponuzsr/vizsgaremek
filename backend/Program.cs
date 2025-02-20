@@ -1,9 +1,42 @@
 //using backend.Models;
 
 using backend.Models;
+using backend.Services;
+using backend.Services.IAuthService;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<ClassicgarageAdatbazisContext>();
+builder.Services.AddScoped<IAuth, Auth>();
+
+
+var settingsSection = builder.Configuration.GetSection("AuthSettings:JwtOptions");
+
+var secret = settingsSection.GetValue<string>("Secret");
+var issuer = settingsSection.GetValue<string>("Issuer");
+var auidience = settingsSection.GetValue<string>("Audience");
+
+var key = Encoding.ASCII.GetBytes(secret);
+
+builder.Services.AddAuthentication(x =>
+{
+    x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(x =>
+{
+    x.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = new SymmetricSecurityKey(key),
+        ValidateIssuer = true,
+        ValidIssuer = issuer,
+        ValidAudience = auidience,
+        ValidateAudience = true
+    };
+});
 
 
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";

@@ -11,5 +11,9 @@ public partial class Comment
 
     public string Comment1 { get; set; } = null!;
 
+    public Guid AutokId { get; set; }
+
+    public virtual Autok Autok { get; set; } = null!;
+
     public virtual Aspnetuser Commentelo { get; set; } = null!;
 }

@@ -9,6 +9,7 @@ import Bejelentkezes from "./Bejelentkezes";
 import Autok from "./Autok";
 import Onecar from "./Onecar";
 import Comment from "./Comment";
+import Regisztracio from "./Regisztracio";
 const App = () => {
   const location = useLocation();
 
@@ -51,6 +52,7 @@ const App = () => {
             <Route path="/autok/:ev" element={<Autok />} />
             <Route path="/Onecar/:id" element={<Onecar/>}/>
             <Route path="/Comment/:comid" element={<Comment/>}/>
+            <Route path="/regisztracio" element={<Regisztracio/>}/>
           </Routes>
         </div>
       </div>

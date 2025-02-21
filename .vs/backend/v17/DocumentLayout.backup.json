@@ -37,6 +37,7 @@
               "$type": "Document",
               "DocumentIndex": 0,
 <<<<<<< HEAD
+<<<<<<< HEAD
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Tanulo\\Desktop\\vizsgaremek\\vizsgaremek\\backend\\Program.cs",
               "RelativeDocumentMoniker": "backend\\Program.cs",
@@ -44,12 +45,17 @@
               "RelativeToolTip": "backend\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAlAAAAAAAAAA==",
 =======
+=======
+>>>>>>> parent of 588d314 (User registration is ready to use)
               "Title": "AutokController.cs",
               "DocumentMoniker": "C:\\Users\\Tanulo\\Desktop\\Classic Garage\\vizsgaremek\\backend\\Controllers\\AutokController.cs",
               "RelativeDocumentMoniker": "backend\\Controllers\\AutokController.cs",
               "ToolTip": "C:\\Users\\Tanulo\\Desktop\\Classic Garage\\vizsgaremek\\backend\\Controllers\\AutokController.cs*",
               "RelativeToolTip": "backend\\Controllers\\AutokController.cs*",
               "ViewState": "AgIAAEMAAAAAAAAAAAAAwFAAAABXAAAAAAAAAA==",
+<<<<<<< HEAD
+>>>>>>> parent of 588d314 (User registration is ready to use)
+=======
 >>>>>>> parent of 588d314 (User registration is ready to use)
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-14T07:31:14.324Z",

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("felhasznalok")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+595f4376741062102b3be827ef34d6ab578c7472")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1116cdf544e4640d06ac45abcf72be1da2194abc")]
 [assembly: System.Reflection.AssemblyProductAttribute("felhasznalok")]
 [assembly: System.Reflection.AssemblyTitleAttribute("felhasznalok")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

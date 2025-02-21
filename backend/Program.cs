@@ -4,18 +4,13 @@ using backend.Models;
 using backend.Services;
 using backend.Services.IAuthService;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using System;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<ClassicgarageAdatbazisContext>();
 builder.Services.AddScoped<IAuth, Auth>();
-
-builder.Services.AddIdentity<Aspnetuser, IdentityRole>().AddEntityFrameworkStores<ClassicgarageAdatbazisContext>()
-              .AddDefaultTokenProviders();
 
 
 var settingsSection = builder.Configuration.GetSection("AuthSettings:JwtOptions");

@@ -1,10 +1,9 @@
-﻿using Microsoft.AspNetCore.Identity;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace backend.Models;
 
-public partial class Aspnetuser : IdentityUser
+public partial class Aspnetuser
 {
     public string Id { get; set; } = null!;
 

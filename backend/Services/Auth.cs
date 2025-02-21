@@ -17,7 +17,7 @@ namespace backend.Services
             this.userManager = userManager;
         }
 
-        public async Task<object> Register(RegisterRequestDto registerRequestDto)
+        public async Task<string> Register(RegisterRequestDto registerRequestDto)
         {
             var user = new Aspnetuser
             {
@@ -30,10 +30,8 @@ namespace backend.Services
             if(result.Succeeded)
             {
                 var userReturn = await _context.aspnetUsers.FirstOrDefaultAsync(user => user.UserName == registerRequestDto.UserName);
-                return new {result = userReturn, message = "Sikeres regisztráció!"};
             }
-            return new { result = "", message = result.Errors.FirstOrDefault().Description };
-            //2025-01-16 11-16-26.mkv következik
+            //2025-01-16 10-56-06.mkv következik
         }
     }
 }

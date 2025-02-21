@@ -4,6 +4,6 @@ namespace backend.Services.IAuthService
 {
     public interface IAuth
     {
-        Task<object> Register(RegisterRequestDto registerRequestDto);
+        Task<string> Register(RegisterRequestDto registerRequestDto);
     }
 }

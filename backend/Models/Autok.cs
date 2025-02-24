@@ -11,15 +11,21 @@ public partial class Autok
 
     public string? Marka { get; set; }
 
+    public string? Nev { get; set; }
+
     public int? GyartasEv { get; set; }
+
+    public bool ritkae {  get; set; }
+
+    public string? Kerekmeghajtas { get; set; }
+
+    public string? maxteljesitmeny {  get; set; }
 
     public string? Tortenet { get; set; }
 
     public string? Kep { get; set; }
 
-    public Guid? ComenteiId { get; set; }
-
-    public Guid? MuszakiId { get; set; }
-
     public virtual ICollection<Comment> Comments { get; set; } = new List<Comment>();
+   
+
 }

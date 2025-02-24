@@ -9,29 +9,36 @@ namespace backend.Services
     public class Auth : IAuth
     {
         public readonly ClassicgarageAdatbazisContext _context;
-        public readonly UserManager<Aspnetuser> userManager;
+        public readonly UserManager<ApplicationUser> userManager;
 
-        public Auth(ClassicgarageAdatbazisContext context, UserManager<Aspnetuser> userManager)
+        public Auth(ClassicgarageAdatbazisContext context, UserManager<ApplicationUser> userManager)
         {
             _context = context;
             this.userManager = userManager;
         }
 
-        public async Task<string> Register(RegisterRequestDto registerRequestDto)
+        public async Task<object> Register(RegisterRequestDto registerRequestDto)
         {
-            var user = new Aspnetuser
+            ApplicationUser user = new()
             {
-                UserName = registerRequestDto.UserName,
+                UserName = registerRequestDto.UserName, // Használjuk a kérésből érkező felhasználónevet
                 Email = registerRequestDto.Email
-                
             };
+
             var result = await userManager.CreateAsync(user, registerRequestDto.Password);
 
             if(result.Succeeded)
             {
-                var userReturn = await _context.aspnetUsers.FirstOrDefaultAsync(user => user.UserName == registerRequestDto.UserName);
+                var userReturn = await _context.ApplicationUsers
+    .FirstOrDefaultAsync(user => user.UserName.Equals(registerRequestDto.UserName, StringComparison.OrdinalIgnoreCase));
+
+
+
+                return new { result = userReturn, message = "Sikeres regisztráció." };
             }
-            //2025-01-16 10-56-06.mkv következik
+
+            return new { result = "", message = result.Errors.FirstOrDefault().Description };
+            //2025-01-16 11-03-44.mkv következik
         }
     }
 }

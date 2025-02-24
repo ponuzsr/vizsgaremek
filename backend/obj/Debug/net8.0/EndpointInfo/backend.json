@@ -162,10 +162,108 @@
           }
         }
       }
+    },
+    "/Felhasználók": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {
     "schemas": {
+      "ApplicationUser": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "userName": {
+            "type": "string",
+            "nullable": true
+          },
+          "normalizedUserName": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "normalizedEmail": {
+            "type": "string",
+            "nullable": true
+          },
+          "emailConfirmed": {
+            "type": "boolean"
+          },
+          "passwordHash": {
+            "type": "string",
+            "nullable": true
+          },
+          "securityStamp": {
+            "type": "string",
+            "nullable": true
+          },
+          "concurrencyStamp": {
+            "type": "string",
+            "nullable": true
+          },
+          "phoneNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "phoneNumberConfirmed": {
+            "type": "boolean"
+          },
+          "twoFactorEnabled": {
+            "type": "boolean"
+          },
+          "lockoutEnd": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "lockoutEnabled": {
+            "type": "boolean"
+          },
+          "accessFailedCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fullName": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "Autok": {
         "type": "object",
         "properties": {
@@ -181,9 +279,24 @@
             "type": "string",
             "nullable": true
           },
+          "nev": {
+            "type": "string",
+            "nullable": true
+          },
           "gyartasEv": {
             "type": "integer",
             "format": "int32",
+            "nullable": true
+          },
+          "ritkae": {
+            "type": "boolean"
+          },
+          "kerekmeghajtas": {
+            "type": "string",
+            "nullable": true
+          },
+          "maxteljesitmeny": {
+            "type": "string",
             "nullable": true
           },
           "tortenet": {
@@ -194,15 +307,40 @@
             "type": "string",
             "nullable": true
           },
-          "comenteiId": {
+          "comments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Comment"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Comment": {
+        "type": "object",
+        "properties": {
+          "id": {
             "type": "string",
-            "format": "uuid",
+            "format": "uuid"
+          },
+          "postComment": {
+            "type": "string",
             "nullable": true
           },
-          "muszakiId": {
+          "commenteloId": {
             "type": "string",
-            "format": "uuid",
             "nullable": true
+          },
+          "autoId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "commentelo": {
+            "$ref": "#/components/schemas/ApplicationUser"
+          },
+          "auto": {
+            "$ref": "#/components/schemas/Autok"
           }
         },
         "additionalProperties": false
@@ -227,6 +365,24 @@
             "nullable": true
           },
           "kep": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RegisterRequestDto": {
+        "type": "object",
+        "properties": {
+          "userName": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
             "type": "string",
             "nullable": true
           }

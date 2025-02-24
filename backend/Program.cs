@@ -4,13 +4,18 @@ using backend.Models;
 using backend.Services;
 using backend.Services.IAuthService;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using System;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<ClassicgarageAdatbazisContext>();
 builder.Services.AddScoped<IAuth, Auth>();
+
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<ClassicgarageAdatbazisContext>()
+              .AddDefaultTokenProviders();
 
 
 var settingsSection = builder.Configuration.GetSection("AuthSettings:JwtOptions");
@@ -63,7 +68,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<ClassicgarageAdatbazisContext>(option =>
 {
-    var connectionstring = builder.Configuration.GetConnectionString("Mysql");
+    var connectionstring = builder.Configuration.GetConnectionString("MySql");
     option.UseMySQL(connectionstring);
 });
 

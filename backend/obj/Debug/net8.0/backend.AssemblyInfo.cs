@@ -14,11 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("backend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-<<<<<<< HEAD
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+32c2cfb643fcdabe9751d5069e740542672c44f4")]
-=======
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+595f4376741062102b3be827ef34d6ab578c7472")]
->>>>>>> parent of 588d314 (User registration is ready to use)
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+38f3ccc37fdff08ec7d1eb96651a4db1e5305b77")]
 [assembly: System.Reflection.AssemblyProductAttribute("backend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("backend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

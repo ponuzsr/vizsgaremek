@@ -6,14 +6,12 @@ namespace backend.Models;
 public partial class Comment
 {
     public Guid Id { get; set; }
+    public string PostComment { get; set; } = null!;
 
-    public string CommenteloId { get; set; } = null!;
+    
+    public string CommenteloId { get; set; }
+    public Guid AutoId { get; set; }
 
-    public string Comment1 { get; set; } = null!;
-
-    public Guid AutokId { get; set; }
-
-    public virtual Autok Autok { get; set; } = null!;
-
-    public virtual Aspnetuser Commentelo { get; set; } = null!;
+    public virtual ApplicationUser Commentelo { get; set; } = null!;
+    public virtual Autok Auto { get; set; } = null!;
 }

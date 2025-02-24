@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "kQdKKGbCpJUbCEXl9cukjDDNSBGBrtlqSCVBm1+PCAQ=",
+  "Hash": "YR8TV/+taBw1ktuGD0q6lHt9TJDnJSYTPaiHoDVF0Hc=",
   "Source": "felhasznalok",
   "BasePath": "_content/felhasznalok",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }

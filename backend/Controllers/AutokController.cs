@@ -46,8 +46,7 @@ namespace backend.Controllers
                 IdEv = createAutokDto.IdEv,
                 Tortenet = createAutokDto.Tortenet,
                 Kep = createAutokDto.Kep,
-                ComenteiId = Guid.NewGuid(),
-                MuszakiId = Guid.NewGuid()
+             
             };
 
             if (auto != null)

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "syuUEmE/HFg=",
+  "dgSpecHash": "r95a0nq+cTY=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Tanulo\\Desktop\\vizsgaremek\\vizsgaremek\\felhasznalok\\felhasznalok.csproj",
+  "projectFilePath": "C:\\Users\\Tanulo\\Desktop\\20250224Backend\\vizsgaremek\\felhasznalok\\felhasznalok.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Tanulo\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\Tanulo\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",

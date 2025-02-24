@@ -7,7 +7,7 @@ function Navbar() {
 
   return (
     
-    <nav className="navbar_our">
+    <nav className="sidebar">
        {/* Nav linkek*/}
       <Link className="navBtn" to="/"><i class="bi bi-house"></i>Főoldal</Link>
       <Link className="navBtn" to="/ertesitesek">??????</Link>

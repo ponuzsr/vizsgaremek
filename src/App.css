@@ -5,16 +5,20 @@
   padding: 15px;
   font-size: 24px;
   font-weight: bold;
+ 
   box-shadow: 0 4px 8px rgba(29, 7, 115, 0.937);
   font-family: 'Times New Roman', Times, serif;
   text-shadow: 2px 2px 8px #1c07f9;
   font-size: 180%;
+  
+ 
 }
 
 .main-container {
   display: flex;
   flex-grow: 1;
   min-height: 100vh;
+  
 }
 .cardback
 {
@@ -23,7 +27,7 @@
   
 }
 /* már nem működik*/
-.navbar_our {
+/*.navbar_our {
   width: 200px;
   height:initial;
  background-image: url(/pics/navbar.jpg);
@@ -63,7 +67,7 @@ transition: all 0.3s ease-in-out;
 .navbar_our .navBtn:active {
   transform: scale(0.95);
 }
-
+*/
 .dropdown-container {
   position: relative;
 }
@@ -105,6 +109,7 @@ transition: all 0.3s ease-in-out;
 }
 .content {
   flex-grow: 1;
+  
   padding: 20px;
   background-color:#0D3173;
   color:white;
@@ -223,10 +228,11 @@ transition: all 0.3s ease-in-out;
   background-color: #fefefe !important;
 }
 
-/*Responsive navbar css
+/*Responsive navbar css*/
 .sidebar {
   margin: 0;
   padding: 0;
+
   width: 200px;
   height:initial;
   background-image: url(/pics/navbar.jpg);
@@ -236,15 +242,17 @@ transition: all 0.3s ease-in-out;
   overflow: auto;
 }
 
-width: 200px;
+/*width: 200px;
   height:initial;
  background-image: url(/pics/navbar.jpg);
   padding-top: 20px;
   display: flex;
   flex-direction: column;
   padding: 10px;
-
+*/
 .sidebar a {
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
   display: block;
   color: black;
   padding: 16px;
@@ -262,15 +270,28 @@ width: 200px;
   border-radius: 8px;
   box-shadow: 0px 3px 6px rgba(19, 2, 89, 0.932);
 }
- 
-.sidebar a.active {
-  background-color: #04AA6D;
+.sidebar .navBtn {
+  text-decoration: none;
+  padding: 15px;
+  border: none;
   color: white;
+  background: linear-gradient(135deg, #555, #222);
+  display: block;
+  text-align: center;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 5px;
+  border-radius: 8px;
+  box-shadow: 0px 3px 6px rgba(19, 2, 89, 0.932);
+}
+.sidebar a.active {
+  transform: scale(0.95);
 }
 
 .sidebar a:hover:not(.active) {
-  background-color: #555;
-  color: white;
+  background: linear-gradient(135deg, #777, #333);
+  transform: scale(1.05);
 }
 
 div.content {
@@ -295,4 +316,4 @@ div.content {
     text-align: center;
     float: none;
   }
-}*/
+}

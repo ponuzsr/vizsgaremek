@@ -24,8 +24,11 @@ export default function Onecar() {
             <img style={{border:"5px solid black"}} src={datam.kep} class="card-img-top" alt="..."/>  
           </div>
           <div className='col'>
-            <h5 style={{color:"white",fontSize:"200%"}}>Név:{datam.marka}</h5>
-            <p style={{color:"white",fontSize:"200%"}}>Gyártás kezdete:{datam.gyartasEv}</p>
+            <h5 style={{color:"white",fontSize:"200%"}}>Név: {datam.nev}</h5>
+            <p style={{color:"white",fontSize:"200%"}}>marka: {datam.marka}</p>
+            <p style={{color:"white",fontSize:"200%"}}>Gyártás kezdete: {datam.gyartasEv}</p>
+            <p style={{color:"white",fontSize:"200%"}}>Meghajtás: {datam.kerekmeghajtas}</p>
+            <p style={{color:"white",fontSize:"200%"}}>Teljesítmény: {datam.maxteljesitmeny} ló erő</p>
             <Link className='nav-item nav-link' to={"/autok/"+datam.idEv}>
                 <a style={{backgroundColor:"black",color:"white"}} className="btn btn">Vissza</a>
             </Link>

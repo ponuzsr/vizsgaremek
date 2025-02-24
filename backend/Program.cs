@@ -13,6 +13,7 @@ using System.Text;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<ClassicgarageAdatbazisContext>();
 builder.Services.AddScoped<IAuth, Auth>();
+builder.Services.AddScoped<ITokenGenerator, TokenGenerator>();
 
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<ClassicgarageAdatbazisContext>()
               .AddDefaultTokenProviders();

@@ -100,8 +100,45 @@
   },
   {
     "ContainingType": "backend.Controllers.UserController",
+    "Method": "AddRole",
+    "RelativePath": "Felhaszn\u00E1l\u00F3k/AssignRole",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "UserName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "roleName",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "backend.Controllers.UserController",
+    "Method": "LoginUser",
+    "RelativePath": "Felhaszn\u00E1l\u00F3k/Login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "loginRequestDto",
+        "Type": "backend.Services.Dtos.LoginRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "backend.Controllers.UserController",
     "Method": "AddNewUser",
-    "RelativePath": "Felhaszn\u00E1l\u00F3k",
+    "RelativePath": "Felhaszn\u00E1l\u00F3k/Register",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,

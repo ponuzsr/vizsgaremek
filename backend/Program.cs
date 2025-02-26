@@ -18,6 +18,8 @@ builder.Services.AddScoped<ITokenGenerator, TokenGenerator>();
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<ClassicgarageAdatbazisContext>()
               .AddDefaultTokenProviders();
 
+builder.Services.Configure<JwtOptions>(builder.Configuration.GetSection("AuthSettings:JwtOptions"));
+
 
 var settingsSection = builder.Configuration.GetSection("AuthSettings:JwtOptions");
 

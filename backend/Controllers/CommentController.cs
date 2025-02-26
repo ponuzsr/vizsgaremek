@@ -34,5 +34,31 @@ namespace backend.Controllers
             }
             return NotFound(new {message = "A komment nem található"});
         }
+
+        [HttpGet("autocomment/{id}")]
+        public async Task<ActionResult> GetCommentByAutoId(Guid id)
+        {
+            var comment = await _context.Comments.Where(comment => comment.AutoId  == id).ToListAsync();
+            if (comment != null)
+            {
+                
+                    return Ok(comment);
+                
+                
+            }
+            return NotFound(new { message = "A komment nem található." });
+
+        }
+
+        /*[HttpPost]
+        public async Task<ActionResult> Post(CreateCommentDto createCommentDto)
+        {
+            var comment = new Comment
+            {
+                Id = Guid.NewGuid(),
+                AutoId = createCommentDto.AutoId,
+                
+            }
+        }*/
     }
 }

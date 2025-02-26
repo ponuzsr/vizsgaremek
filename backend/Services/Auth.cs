@@ -77,7 +77,7 @@ namespace backend.Services
             }
 
             return new { result = "", message = result.Errors.FirstOrDefault().Description };
-            //2025-01-16 11-03-44.mkv következik
+            
         }
     }
 }

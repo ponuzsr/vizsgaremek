@@ -135,6 +135,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "backend.Controllers.CommentController",
+    "Method": "GetCommentByAutoId",
+    "RelativePath": "Comment/autocomment/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "backend.Controllers.UserController",
     "Method": "AddRole",
     "RelativePath": "Felhaszn\u00E1l\u00F3k/AssignRole",

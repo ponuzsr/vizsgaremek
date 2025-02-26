@@ -15,6 +15,8 @@ namespace backend.Controllers
         {
             this._context = _context;
         }
+
+        //Atók lekérése
         [HttpGet]
         public async Task<ActionResult<Autok>> Get()
         {
@@ -22,6 +24,7 @@ namespace backend.Controllers
             return Ok(autok);
         }
 
+        //Auto lekérése id alapján
         [HttpGet("{id}")]
         public async Task<ActionResult> GetAutoById(Guid id)
         {
@@ -34,6 +37,7 @@ namespace backend.Controllers
             return NotFound(new { message = "Az autó nem található az adatbázisban."});
         }
 
+        //Új autó hozzáadása
         [HttpPost]
 
         public async Task<ActionResult> Post(CreateAutokDto createAutokDto)

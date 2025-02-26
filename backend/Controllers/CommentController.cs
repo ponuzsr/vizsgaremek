@@ -17,12 +17,15 @@ namespace backend.Controllers
             this._context = _context;
         }
 
+        //Kommentek lekérése
         [HttpGet]
         public async Task<ActionResult<Comment>> Get()
         {
             var Comments = await _context.Comments.ToListAsync();
             return Ok(Comments);
         }
+
+        //Komment lekérése id alapján
         [HttpGet("{id}")]
         public async Task<ActionResult> GetCommentById(Guid id)
         {
@@ -35,6 +38,7 @@ namespace backend.Controllers
             return NotFound(new {message = "A komment nem található"});
         }
 
+        //Komment lekérése auto id alapján
         [HttpGet("autocomment/{id}")]
         public async Task<ActionResult> GetCommentByAutoId(Guid id)
         {

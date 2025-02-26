@@ -6,7 +6,7 @@ using static backend.Models.Dto;
 
 namespace backend.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("Autók")]
     [ApiController]
     public class AutokController : ControllerBase
     {

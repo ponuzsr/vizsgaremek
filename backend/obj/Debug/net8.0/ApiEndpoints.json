@@ -2,7 +2,7 @@
   {
     "ContainingType": "backend.Controllers.AutokController",
     "Method": "Get",
-    "RelativePath": "api/Autok",
+    "RelativePath": "Aut\u00F3k",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -22,7 +22,7 @@
   {
     "ContainingType": "backend.Controllers.AutokController",
     "Method": "Post",
-    "RelativePath": "api/Autok",
+    "RelativePath": "Aut\u00F3k",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -38,7 +38,7 @@
   {
     "ContainingType": "backend.Controllers.AutokController",
     "Method": "Delete",
-    "RelativePath": "api/Autok",
+    "RelativePath": "Aut\u00F3k",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -54,7 +54,7 @@
   {
     "ContainingType": "backend.Controllers.AutokController",
     "Method": "GetAutoById",
-    "RelativePath": "api/Autok/{id}",
+    "RelativePath": "Aut\u00F3k/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -70,7 +70,7 @@
   {
     "ContainingType": "backend.Controllers.AutokController",
     "Method": "Put",
-    "RelativePath": "api/Autok/{id}",
+    "RelativePath": "Aut\u00F3k/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -97,6 +97,42 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "backend.Controllers.CommentController",
+    "Method": "Get",
+    "RelativePath": "Comment",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "backend.Models.Comment",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "backend.Controllers.CommentController",
+    "Method": "GetCommentById",
+    "RelativePath": "Comment/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "backend.Controllers.UserController",

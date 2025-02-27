@@ -61,9 +61,34 @@ namespace backend.Controllers
             {
                 Id = Guid.NewGuid(),
                 AutoId = createCommentDto.AutoId,
-                
-                
+                CommenteloId = createCommentDto.CommenteloId,
+                PostComment = createCommentDto.PostComment
+
+
+            };
+            if (comment != null)
+            {
+                await _context.Comments.AddAsync(comment);
+                _context.SaveChanges();
+                return StatusCode(201, comment);
             }
+            return  BadRequest(new {result = comment, message = "Hiba az objektum képzése során."});
+        }
+
+        [HttpDelete]
+
+        public async Task<ActionResult> Delete(Guid id)
+        {
+            var comment = await _context.Comments.FirstOrDefaultAsync(comment => comment.Id == id);
+
+            if (comment != null)
+            {
+                _context.Comments.Remove(comment);
+                await _context.SaveChangesAsync();
+                return Ok("Sikeres törlés.");
+
+            }
+            return BadRequest(new { message = "Sikertelen törlés." });
         }
     }
 }

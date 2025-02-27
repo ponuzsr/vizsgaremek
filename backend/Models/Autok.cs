@@ -21,6 +21,10 @@ public partial class Autok
 
     public string? maxteljesitmeny {  get; set; }
 
+    public string? Kobcenti {  get; set; }
+
+    public string? Tipus {  get; set; }
+
     public string? Tortenet { get; set; }
 
     public string? Kep { get; set; }

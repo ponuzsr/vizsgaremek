@@ -50,6 +50,8 @@ namespace backend.Controllers
                 IdEv = createAutokDto.IdEv,
                 Tortenet = createAutokDto.Tortenet,
                 Kep = createAutokDto.Kep,
+                Kobcenti = createAutokDto.Kobcenti,
+                Tipus = createAutokDto.Tipus
              
             };
 
@@ -89,6 +91,8 @@ namespace backend.Controllers
                 existingAuto.GyartasEv = updateAutokDto?.GyartasEv;
                 existingAuto.Tortenet = updateAutokDto?.Tortenet;
                 existingAuto.Kep = updateAutokDto?.Kep;
+                existingAuto.Kobcenti = updateAutokDto.Kobcenti;
+                existingAuto.Tipus = updateAutokDto.Tipus;
                 _context.Autoks.Update(existingAuto);
                 await _context.SaveChangesAsync();
                 return Ok(existingAuto);

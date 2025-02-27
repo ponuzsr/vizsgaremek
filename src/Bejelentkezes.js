@@ -22,8 +22,8 @@ export default function() {
     .then(function(response) {
       console.log(response)
       localStorage.setItem("token", response.token)
-      var myToken =jwtDecode(localStorage.getItem("token"));
-      console.log(myToken.name);
+      let myToken =jwtDecode(localStorage.getItem("token"));
+      console.log(myToken.sub);
       //const token = localStorage.getItem("token")
     }) .then(function() {
       navigate("/profil")

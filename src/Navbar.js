@@ -4,7 +4,7 @@ import Dropdown from "./Dropdown";
 
 function Navbar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
+  const token = localStorage.getItem("token")
   return (
     
     <nav className="sidebar">

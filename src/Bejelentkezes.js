@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
+import { jwtDecode } from "jwt-decode";
 export default function() {
     let navigate=useNavigate();
   function Post(){
@@ -12,6 +13,8 @@ export default function() {
       password: document.getElementById("exampleInputPassword1").value,
   
     }
+    console.log(felhasznalo.userName);
+    console.log(felhasznalo.password);
     fetch("http://localhost:5198/Felhasználók/Login",{method:"POST",body:JSON.stringify(felhasznalo),headers:{"content-type":"application/json"}}) 
     .then(function(response) {
       return response.json()
@@ -19,6 +22,8 @@ export default function() {
     .then(function(response) {
       console.log(response)
       localStorage.setItem("token", response.token)
+      var myToken =jwtDecode(localStorage.getItem("token"));
+      console.log(myToken.name);
       //const token = localStorage.getItem("token")
     }) .then(function() {
       navigate("/profil")

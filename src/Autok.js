@@ -10,7 +10,7 @@ function Autok () {
   }, [params.ev])
   function Get()
   {
-    fetch("http://localhost:5198/api/Autok"/*"http://10.169.84.233:5198/api/Autok/"*/)
+    fetch("http://localhost:5198/Autok"/*"http://10.169.84.233:5198/api/Autok/"*/)
     .then(Response=>Response.json())
     .then(function(data){
       let filtered = data.filter(auto=> auto.idEv==params.ev )

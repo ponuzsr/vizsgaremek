@@ -6,7 +6,7 @@ using static backend.Models.Dto;
 
 namespace backend.Controllers
 {
-    [Route("Autók")]
+    [Route("Autok")]
     [ApiController]
     public class AutokController : ControllerBase
     {
@@ -20,7 +20,7 @@ namespace backend.Controllers
         [HttpGet]
         public async Task<ActionResult<Autok>> Get()
         {
-            var autok = await _context.Autoks.ToListAsync();
+            var autok = await _context.Autoks.Include(x => x.Comments).ToListAsync();
             return Ok(autok);
         }
 

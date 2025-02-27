@@ -54,7 +54,7 @@ namespace backend.Controllers
 
         }
 
-        /*[HttpPost]
+        [HttpPost]
         public async Task<ActionResult> Post(CreateCommentDto createCommentDto)
         {
             var comment = new Comment
@@ -62,7 +62,8 @@ namespace backend.Controllers
                 Id = Guid.NewGuid(),
                 AutoId = createCommentDto.AutoId,
                 
+                
             }
-        }*/
+        }
     }
 }

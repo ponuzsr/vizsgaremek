@@ -91,8 +91,8 @@ namespace backend.Controllers
                 existingAuto.GyartasEv = updateAutokDto?.GyartasEv;
                 existingAuto.Tortenet = updateAutokDto?.Tortenet;
                 existingAuto.Kep = updateAutokDto?.Kep;
-                existingAuto.Kobcenti = updateAutokDto.Kobcenti;
-                existingAuto.Tipus = updateAutokDto.Tipus;
+                existingAuto.Kobcenti = updateAutokDto?.Kobcenti;
+                existingAuto.Tipus = updateAutokDto?.Tipus;
                 _context.Autoks.Update(existingAuto);
                 await _context.SaveChangesAsync();
                 return Ok(existingAuto);

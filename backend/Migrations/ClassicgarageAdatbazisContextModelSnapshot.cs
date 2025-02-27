@@ -271,6 +271,9 @@ namespace backend.Migrations
                         .IsRequired()
                         .HasColumnType("varchar(255)");
 
+                    b.Property<DateTime>("CreatedTime")
+                        .HasColumnType("datetime(6)");
+
                     b.Property<string>("PostComment")
                         .IsRequired()
                         .HasColumnType("longtext");

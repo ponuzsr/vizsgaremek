@@ -9,6 +9,7 @@ public partial class Comment
     public Guid Id { get; set; }
     public string PostComment { get; set; } = null!;
 
+    public DateTime CreatedTime { get; set; }
     
     public string CommenteloId { get; set; }
     public Guid AutoId { get; set; }

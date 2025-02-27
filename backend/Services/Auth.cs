@@ -44,7 +44,7 @@ namespace backend.Services
         {
             var user = await _context.ApplicationUsers.FirstOrDefaultAsync(user => user.NormalizedUserName == loginRequestDto.UserName.ToUpper());
 
-            bool isValid = await userManager.CheckPasswordAsync(user, loginRequestDto.Password);
+            bool isValid = await userManager.CheckPasswordAsync(user, loginRequestDto.Password+'!');
 
             if (!isValid)
             {

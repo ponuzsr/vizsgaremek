@@ -62,7 +62,8 @@ namespace backend.Controllers
                 Id = Guid.NewGuid(),
                 AutoId = createCommentDto.AutoId,
                 CommenteloId = createCommentDto.CommenteloId,
-                PostComment = createCommentDto.PostComment
+                PostComment = createCommentDto.PostComment,
+                CreatedTime = createCommentDto.CreatedTime.AddHours(1)
 
 
             };

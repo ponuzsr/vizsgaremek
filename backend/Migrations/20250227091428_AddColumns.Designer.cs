@@ -11,8 +11,8 @@ using backend.Models;
 namespace backend.Migrations
 {
     [DbContext(typeof(ClassicgarageAdatbazisContext))]
-    [Migration("20250227085627_AddColums")]
-    partial class AddColums
+    [Migration("20250227091428_AddColumns")]
+    partial class AddColumns
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -273,6 +273,9 @@ namespace backend.Migrations
                     b.Property<string>("CommenteloId")
                         .IsRequired()
                         .HasColumnType("varchar(255)");
+
+                    b.Property<DateTime>("CreatedTime")
+                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("PostComment")
                         .IsRequired()

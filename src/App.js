@@ -45,6 +45,7 @@ const App = () => {
         <Navbar />
         <div className="content">
         
+        {/*Routok */}
           <Routes>
             <Route path="/" element={<Fooldal />} />
             <Route path="/ertesitesek" element={<Ertesitesek />} />

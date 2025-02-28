@@ -51,8 +51,10 @@ namespace backend.Controllers
                 Tortenet = createAutokDto.Tortenet,
                 Kep = createAutokDto.Kep,
                 Kobcenti = createAutokDto.Kobcenti,
-                Tipus = createAutokDto.Tipus
-             
+                Tipus = createAutokDto.Tipus,
+                Kerekmeghajtas = createAutokDto.Kerekmeghajtas,
+                maxteljesitmeny = createAutokDto.maxteljesitmeny
+
             };
 
             if (auto != null)

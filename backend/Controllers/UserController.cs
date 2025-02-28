@@ -16,6 +16,7 @@ namespace backend.Controllers
             this.auth = auth;
         }
 
+        //Felhasználó hozzáadása
         [HttpPost("Register")]
         public async Task<ActionResult> AddNewUser(RegisterRequestDto registerRequestDto)
         {
@@ -28,6 +29,7 @@ namespace backend.Controllers
             return BadRequest(new { result = "", message = "Sikertelen regisztráció." });
         }
 
+        //Bejelentkezés
         [HttpPost("Login")]
         public async Task<ActionResult> LoginUser(LoginRequestDto loginRequestDto)
         {
@@ -41,6 +43,7 @@ namespace backend.Controllers
             return NotFound(res);
         }
 
+        //Szerepkör hozzá rendelés felhasználóhoz
         [HttpPost("AssignRole")]
         public async Task<ActionResult> AddRole(string UserName, string roleName)
         {

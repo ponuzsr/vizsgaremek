@@ -23,6 +23,7 @@ namespace backend.Services
             this.tokenGenerator = tokenGenerator;
         }
 
+        //Szerepkör hozzá rendelés felhasználóhoz
         public async Task<object> AssignRole(string UserName, string RoleName)
         {
             var user = await _context.ApplicationUsers.FirstOrDefaultAsync(user => user.NormalizedUserName == UserName.ToUpper());
@@ -40,6 +41,7 @@ namespace backend.Services
             return new { resutr = "", message = "Sikertelen hozzárendelés." };
         }
 
+        //Bejelentkezés
         public async Task<object> Login(LoginRequestDto loginRequestDto)
         {
             var user = await _context.ApplicationUsers.FirstOrDefaultAsync(user => user.NormalizedUserName == loginRequestDto.UserName.ToUpper());
@@ -57,6 +59,7 @@ namespace backend.Services
             return new { result = "", message = "Nem regisztrált.", token = "" };
         }
 
+        //Regisztráció
         public async Task<object> Register(RegisterRequestDto registerRequestDto)
         {
             ApplicationUser user = new()

@@ -54,6 +54,7 @@ namespace backend.Controllers
 
         }
 
+        //Komment hozzáadása
         [HttpPost]
         public async Task<ActionResult> Post(CreateCommentDto createCommentDto)
         {
@@ -76,6 +77,7 @@ namespace backend.Controllers
             return  BadRequest(new {result = comment, message = "Hiba az objektum képzése során."});
         }
 
+        //Komment törlése
         [HttpDelete]
 
         public async Task<ActionResult> Delete(Guid id)

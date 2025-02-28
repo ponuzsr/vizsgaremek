@@ -7,6 +7,7 @@ using System.Text;
 
 namespace backend.Services.IAuthService
 {
+    //Token generátor
     public class TokenGenerator : ITokenGenerator
     {
         private readonly JwtOptions jwtOptions;
@@ -45,7 +46,6 @@ namespace backend.Services.IAuthService
 
             return tokenHandler.WriteToken(token);
 
-            //2025-01-23 09-04-08.mkv Következik
         }
     }
 }

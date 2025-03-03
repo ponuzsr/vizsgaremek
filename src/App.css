@@ -1,3 +1,13 @@
+.body-fooldal{
+  background-image: url(/pics/background.gif);
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+ 
+ }
+
  .header_our {
   background-image: url(/pics/header.jpg);
   color: white;
@@ -7,17 +17,29 @@
   font-weight: bold;
  
   box-shadow: 0 4px 8px rgba(29, 7, 115, 0.937);
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'cursive';
   text-shadow: 2px 2px 8px #1c07f9;
   font-size: 180%;
   
  
 }
 
+
+
+/*Bemutatkozás*/
+.introduction{
+  padding: 30px;
+    background-color: rgba(29, 7, 115, 0.5); 
+    border-radius: 10px; 
+    text-align: center;
+    font-family: Monospace;
+}
+
 .main-container {
   display: flex;
   flex-grow: 1;
   min-height: 100vh;
+  
   
 }
 .cardback
@@ -369,7 +391,6 @@ div.content {
   transform: scale(0.95);
 }
 
-/* Main content */
 div.content {
   margin-left: 200px;
   padding: 20px;
@@ -377,7 +398,6 @@ div.content {
   overflow: auto; /* Ha több tartalom van, görgessen */
 }
 
-/* Media queries */
 @media screen and (max-width: 700px) {
   .sidebar {
     width: 100%;

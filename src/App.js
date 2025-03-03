@@ -4,7 +4,7 @@ import "./App.css";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
 import Fooldal from "./Fooldal";
-import Ertesitesek from "./Ertesitesek";
+import Game from "./Game";
 import Bejelentkezes from "./Bejelentkezes";
 import Autok from "./Autok";
 import Onecar from "./Onecar";
@@ -15,17 +15,17 @@ const App = () => {
 
   function getPageTitle(pathname) {
     switch (pathname) {
-      case "/ertesitesek":
-        return "Értesítések";
+      case "/Game":
+        return "Ricsi kicsi kocsija";
       case "/bejelentkezes":
         return "Bejelentkezés";
-      case "/autok/50s":
+      case "/autok/50":
         return "50-es évek autói";
-      case "/autok/60s":
+      case "/autok/60":
         return "60-as évek autói";
-      case "/autok/70s":
+      case "/autok/70":
         return "70-es évek autói";
-      case "/autok/80s":
+      case "/autok/80":
         return "80-as évek autói";
       default:
         return "Főoldal";
@@ -48,7 +48,7 @@ const App = () => {
         {/*Routok */}
           <Routes>
             <Route path="/" element={<Fooldal />} />
-            <Route path="/ertesitesek" element={<Ertesitesek />} />
+            <Route path="/Game"element={<Game/>}/>
             <Route path="/bejelentkezes" element={<Bejelentkezes />} />
             <Route path="/autok/:ev" element={<Autok />} />
             <Route path="/Onecar/:id" element={<Onecar/>}/>

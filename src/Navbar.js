@@ -11,7 +11,7 @@ function Navbar() {
        {/* Nav linkek*/}
       <Link className="navBtn" to="/"><i class="bi bi-house"></i>Főoldal</Link>
       <Link className="navBtn" to="/ertesitesek">??????</Link>
-      {!myToken ?<Link className="navBtn" to="/bejelentkezes">Bejelentkezés/Regisztráció</Link>:<Link className="navBtn" to="/profil"> <i class="bi bi-person-circle"></i>Profil</Link>}
+      {!myToken ?<Link className="navBtn" to="/bejelentkezes">Bejelentkezés/<br/>Regisztráció</Link>:<Link className="navBtn" to="/profil"> <i class="bi bi-person-circle"></i>Profil</Link>}
       <Dropdown isOpen={isDropdownOpen} setIsOpen={setIsDropdownOpen} />
     </nav>
   );

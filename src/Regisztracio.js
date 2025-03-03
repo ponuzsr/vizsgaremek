@@ -1,5 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import { jwtDecode } from 'jwt-decode';
 export default function Regisztracio() {
   let navigate=useNavigate();
   function Post(){
@@ -11,7 +12,28 @@ export default function Regisztracio() {
       password: document.getElementById("exampleInputPassword").value,
   
     }
+    let role_adat=
+    {
+      userName: document.getElementById("exampleInputEmailnev").value,
+      role: "user"
+    }
     fetch("http://localhost:5198/Felhasználók/Register",{method:"POST",body:JSON.stringify(felhasznalo),headers:{"content-type":"application/json"}}) 
+    /*.then(function(response)
+    {
+      return response.json()
+    }
+    )
+    .then(function(response) {
+      console.log(response)
+      localStorage.setItem("token", response.token)
+      let myToken =jwtDecode(localStorage.getItem("token"));
+      console.log(myToken);}
+    )*/
+    .then(function () {
+      fetch(`http://localhost:5198/Felhasználók/AssignRole?UserName=${role_adat.userName}&roleName=${role_adat.role}`,{method:"POST",headers:{"content-type":"application/json"}})
+    } 
+    )
+    //.then(function(){localStorage.removeItem("token")})
     .then(function() {
         navigate("/bejelentkezes")
     })

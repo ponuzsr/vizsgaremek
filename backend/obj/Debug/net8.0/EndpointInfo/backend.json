@@ -5,7 +5,7 @@
     "version": "1.0"
   },
   "paths": {
-    "/Autók": {
+    "/Autok": {
       "get": {
         "tags": [
           "Autok"
@@ -83,7 +83,7 @@
         }
       }
     },
-    "/Autók/{id}": {
+    "/Autok/{id}": {
       "get": {
         "tags": [
           "Autok"
@@ -188,6 +188,55 @@
                 }
               }
             }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Comment"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCommentDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCommentDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCommentDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Comment"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
           }
         }
       }
@@ -331,73 +380,6 @@
   },
   "components": {
     "schemas": {
-      "ApplicationUser": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "nullable": true
-          },
-          "userName": {
-            "type": "string",
-            "nullable": true
-          },
-          "normalizedUserName": {
-            "type": "string",
-            "nullable": true
-          },
-          "email": {
-            "type": "string",
-            "nullable": true
-          },
-          "normalizedEmail": {
-            "type": "string",
-            "nullable": true
-          },
-          "emailConfirmed": {
-            "type": "boolean"
-          },
-          "passwordHash": {
-            "type": "string",
-            "nullable": true
-          },
-          "securityStamp": {
-            "type": "string",
-            "nullable": true
-          },
-          "concurrencyStamp": {
-            "type": "string",
-            "nullable": true
-          },
-          "phoneNumber": {
-            "type": "string",
-            "nullable": true
-          },
-          "phoneNumberConfirmed": {
-            "type": "boolean"
-          },
-          "twoFactorEnabled": {
-            "type": "boolean"
-          },
-          "lockoutEnd": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "lockoutEnabled": {
-            "type": "boolean"
-          },
-          "accessFailedCount": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "fullName": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
       "Autok": {
         "type": "object",
         "properties": {
@@ -433,6 +415,14 @@
             "type": "string",
             "nullable": true
           },
+          "kobcenti": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipus": {
+            "type": "string",
+            "nullable": true
+          },
           "tortenet": {
             "type": "string",
             "nullable": true
@@ -462,6 +452,10 @@
             "type": "string",
             "nullable": true
           },
+          "createdTime": {
+            "type": "string",
+            "format": "date-time"
+          },
           "commenteloId": {
             "type": "string",
             "nullable": true
@@ -469,12 +463,6 @@
           "autoId": {
             "type": "string",
             "format": "uuid"
-          },
-          "commentelo": {
-            "$ref": "#/components/schemas/ApplicationUser"
-          },
-          "auto": {
-            "$ref": "#/components/schemas/Autok"
           }
         },
         "additionalProperties": false
@@ -501,6 +489,44 @@
           "kep": {
             "type": "string",
             "nullable": true
+          },
+          "kobcenti": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipus": {
+            "type": "string",
+            "nullable": true
+          },
+          "maxteljesitmeny": {
+            "type": "string",
+            "nullable": true
+          },
+          "kerekmeghajtas": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateCommentDto": {
+        "type": "object",
+        "properties": {
+          "postComment": {
+            "type": "string",
+            "nullable": true
+          },
+          "commenteloId": {
+            "type": "string",
+            "nullable": true
+          },
+          "autoId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "createdTime": {
+            "type": "string",
+            "format": "date-time"
           }
         },
         "additionalProperties": false
@@ -557,6 +583,22 @@
             "nullable": true
           },
           "kep": {
+            "type": "string",
+            "nullable": true
+          },
+          "kobcenti": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipus": {
+            "type": "string",
+            "nullable": true
+          },
+          "maxteljesitmeny": {
+            "type": "string",
+            "nullable": true
+          },
+          "kerekmeghajtas": {
             "type": "string",
             "nullable": true
           }

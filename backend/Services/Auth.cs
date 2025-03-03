@@ -3,6 +3,7 @@ using backend.Services.Dtos;
 using backend.Services.IAuthService;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using System.Data;
 
 namespace backend.Services
 {
@@ -75,9 +76,10 @@ namespace backend.Services
                 var userReturn = await _context.ApplicationUsers
     .FirstOrDefaultAsync(user => user.UserName.Equals(registerRequestDto.UserName, StringComparison.OrdinalIgnoreCase));
 
+                var roles = await userManager.GetRolesAsync(user);
+                var jwtToken = tokenGenerator.GenerateToken(user, roles);
 
-
-                return new { result = userReturn, message = "Sikeres regisztráció." };
+                return new { result = userReturn, message = "Sikeres regisztráció.", token = jwtToken };
             }
 
             return new { result = "", message = result.Errors.FirstOrDefault().Description };

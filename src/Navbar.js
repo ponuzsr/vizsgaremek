@@ -10,7 +10,7 @@ function Navbar() {
     <nav className="sidebar">
        {/* Nav linkek*/}
       <Link className="navBtn" to="/"><i class="bi bi-house"></i>Főoldal</Link>
-      <Link className="navBtn" to="/Game"><i class="bi bi-controller"></i>Játék</Link>
+      <Link className="navBtn" to="/GameStart"><i class="bi bi-controller"></i>Játék</Link>
       {!myToken ?<Link className="navBtn" to="/bejelentkezes"><i class="bi bi-door-open"></i>Bejelentkezés</Link>:<Link className="navBtn" to="/profil"> <i class="bi bi-person-circle"></i>Profil</Link>}
       <Dropdown isOpen={isDropdownOpen} setIsOpen={setIsDropdownOpen} />
     </nav>

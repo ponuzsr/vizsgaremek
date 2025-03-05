@@ -10,6 +10,9 @@ import Autok from "./Autok";
 import Onecar from "./Onecar";
 import Regisztracio from "./Regisztracio";
 import Profil from "./Profil";
+import GameStarter from "./GameStarter";
+import Admin from "./Admin";
+import Moderator from "./Moderator";
 const App = () => {
   const location = useLocation();
 
@@ -17,6 +20,8 @@ const App = () => {
     switch (pathname) {
       case "/Game":
         return "Ricsi kicsi kocsija";
+      case "/GameStart":
+          return "Ricsi kicsi kocsija";
       case "/bejelentkezes":
         return "Bejelentkezés";
       case "/autok/50":
@@ -54,6 +59,9 @@ const App = () => {
             <Route path="/Onecar/:id" element={<Onecar/>}/>
             <Route path="/regisztracio" element={<Regisztracio/>}/>
             <Route path="/profil" element={<Profil/>}/>
+            <Route path="/GameStart" element={<GameStarter/>}/>
+            <Route path="/admin" element={<Admin/>}/>
+            <Route path="/mod" element={<Moderator/>}/>
           </Routes>
         </div>
       </div>

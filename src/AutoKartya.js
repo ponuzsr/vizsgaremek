@@ -11,7 +11,7 @@ export default function AutoKartya(props) {
             <p className="card-text" style={{color:"white"}}>Gyártás kezdete: {props.datak.gyartasEv}</p>
             
                   <Link className='nav-item nav-link' to={"/Onecar/"+props.datak.id}>
-                      <a style={{backgroundColor:"#0806A8",color:"white"}} className="btn btn">Részletesebben</a>
+                      <a style={{backgroundColor:"#0806A8",color:"white"}} className="btn btn w-100">Részletesebben</a>
                   </Link>   
           </div>
       </div>

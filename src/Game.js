@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import auto from "./suzuki.png";
 import bummKep from "./bumm.png";
-
+import { Link } from "react-router-dom";
 export default function Game() {
   const [kocsik, setKocsik] = useState([]);
   const [robbanasok, setRobbanasok] = useState([]); 
@@ -61,9 +61,15 @@ export default function Game() {
 
   return (
     <div className="game-content">
+    <div>      
       <h2>Életek: {eletek}</h2>
       <br/>
       <h2>Pontok: {pontok}</h2>
+      
+      <Link className='nav-item nav-link' to={"/GameStart"}>
+      <a style={{backgroundColor:"black",color:"white"}} className="btn btn w-100">Kilépés</a>
+      </Link>   
+      </div>
       <div
         className="kocsicontent"
        

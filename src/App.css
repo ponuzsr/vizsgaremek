@@ -1,5 +1,5 @@
 .body-fooldal{
-  background-image: url(/pics/background.gif);
+  background-image: url(/public/pics/background.gif);
   background-size: cover;
   background-position: center;
   height: 100%;
@@ -13,11 +13,14 @@
     height: 100vh;
     width: 100vw;
     overflow: hidden;
-    -webkit-user-drag: none;
+    
  }
-
+img{
+  user-select: none;
+  -webkit-user-drag: none;
+}
  .game-content{
-  background-image: url(/pics/gamebackground.webp);
+  background-image: url(/public/pics/game_background.png);
   background-size: cover;
   background-position: center;
   height: 100%;
@@ -29,7 +32,7 @@
  
 
  .header_our {
-  background-image: url(/pics/header.jpg);
+  background-image: url(/public/pics/header.jpg);
   color: white;
   text-align: center;
   padding: 15px;
@@ -65,7 +68,7 @@
 .cardback
 {
   background-size: 100vw 100vh;
-  background-image: url(/pics/Cardback.png);
+  background-image: url(/public/pics/Cardback.png);
   
 }
 /* már nem működik*/
@@ -367,7 +370,7 @@ div.content {
   position: fixed;
   top: 0;
   left: 0;
-  background-image: url(/pics/navbar.jpg);
+  background-image: url(/public/pics/navbar.jpg);
  
   padding: 20px;
   box-shadow: 0px 3px 6px rgba(19, 2, 89, 0.932);

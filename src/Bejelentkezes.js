@@ -23,10 +23,22 @@ export default function() {
       console.log(response)
       localStorage.setItem("token", response.token)
       let myToken =jwtDecode(localStorage.getItem("token"));
-      console.log(myToken.sub);
+      console.log(myToken);
       //const token = localStorage.getItem("token")
     }) .then(function() {
-      navigate("/profil")
+      let myToken =jwtDecode(localStorage.getItem("token"));
+      if (myToken.role=="user") {
+          navigate("/profil")
+      }
+      else if(myToken.role=="admin")
+      {
+        navigate("/admin")
+      }
+      else
+      {
+        navigate("/mod")
+      }
+      
   })
   }
   return (

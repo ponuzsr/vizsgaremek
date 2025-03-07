@@ -13,6 +13,7 @@ import Profil from "./Profil";
 import GameStarter from "./GameStarter";
 import Admin from "./Admin";
 import Moderator from "./Moderator";
+import Onecar2 from "./Onecar2";
 const App = () => {
   const location = useLocation();
 
@@ -62,6 +63,7 @@ const App = () => {
             <Route path="/GameStart" element={<GameStarter/>}/>
             <Route path="/admin" element={<Admin/>}/>
             <Route path="/mod" element={<Moderator/>}/>
+            <Route path="/Onecar2/:id" element={<Onecar2/>}/>
           </Routes>
         </div>
       </div>

@@ -3,7 +3,9 @@ import { useEffect,useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Commentek from './Commentek';
-export default function Onecar() {  
+import { jwtDecode } from 'jwt-decode'
+export default function Onecar2() {
+  let userToken =jwtDecode(localStorage.getItem("token"));
     const param = useParams();
   const[datam,setdata]=useState([]);
   const[commentek,setcomments]=useState([])
@@ -11,7 +13,18 @@ export default function Onecar() {
     Get()
   }, [])
   //29cc4580-b1a6-4c4c-a665-6f7daba47c75
-  
+  function Post()
+  {
+    let comment=
+    {     postComment:document.getElementById('comment').value,
+          commenteloId:userToken.sub,
+          autoId: param.id,
+          createdTime: new Date().toJSON(),
+          //comment
+    }
+    console.log(comment)
+    fetch("http://localhost:5198/Comment",{method:"POST",body:JSON.stringify(comment),headers:{"content-type":"application/json"}}).then(function(){Get()})
+  }
   function Get()
     {
         fetch("http://localhost:5198/Autok/"/*"http://10.169.84.233:5198/api/Autok/"*/+param.id)
@@ -54,15 +67,22 @@ export default function Onecar() {
                 }
             </div>
             <div className='col'>
-             
-                  <form>
-                        <div class="input-group">
-                            <span class="input-group-text">Comment</span>
-                            <textarea class="form-control" aria-label="With textarea"></textarea>
-                        </div>
-                        <button type="submit" disabled class="btn btn-primary">Küldés</button>
-                    </form>
-             
+            
+                   <form onSubmit={function(event) {
+                    event.preventDefault()
+                    Post()
+                    
+                    }}>
+                       <h2>{userToken.name}</h2>
+                      <div class="input-group">
+                         
+                          <span class="input-group-text">Comment</span>
+                          
+                          <input type="text" id='comment' class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"/>
+                      </div>
+                      <button type="submit" class="btn btn-primary">Küldés</button>
+                  </form>
+                 
             </div>
           </div>
       </div>

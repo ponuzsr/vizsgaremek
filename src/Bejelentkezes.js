@@ -34,10 +34,7 @@ export default function() {
       {
         navigate("/admin")
       }
-      else
-      {
-        navigate("/mod")
-      }
+     
       
   })
   }

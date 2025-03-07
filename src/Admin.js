@@ -1,8 +1,10 @@
 import React from 'react'
 import { jwtDecode } from 'jwt-decode'
 import { Link } from 'react-router-dom';
+
 export default function Admin() {
   let myToken =jwtDecode(localStorage.getItem("token"));
+
   return (
     <div className="row row-cols-1 row-cols-md-2 g-4">
       <div className='col'>

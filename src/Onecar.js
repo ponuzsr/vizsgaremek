@@ -29,7 +29,6 @@ export default function Onecar() {
           }
         )
     }
-  
   return (
     <div>
       <div className="row g-3">
@@ -50,7 +49,12 @@ export default function Onecar() {
           <div className="row g-3">
             <div className='col'>
                 {
-                   commentek.map((comments)=>{return(<Commentek datak={comments}/>)})
+                   commentek.map((comments)=>{return(
+                    <div style={{backgroundColor:"black",color:"white"}}>      
+                        <p class="text-break">{comments.postComment}</p>
+                        
+                    </div>
+                   )})
                 }
             </div>
             <div className='col'>

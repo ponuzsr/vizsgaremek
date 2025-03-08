@@ -26,15 +26,7 @@ export default function() {
       console.log(myToken);
       //const token = localStorage.getItem("token")
     }) .then(function() {
-      let myToken =jwtDecode(localStorage.getItem("token"));
-      if (myToken.role=="user") {
-          navigate("/profil")
-      }
-      else if(myToken.role=="admin")
-      {
-        navigate("/admin")
-      }
-     
+      navigate("/profil")
       
   })
   }

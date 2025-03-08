@@ -36,13 +36,23 @@ export default function Onecar2() {
         .then(
           function()
           {
-            fetch("http://localhost:5198/Comment/autocomment/"+param.id)
+            fetch("http://localhost:5198/Comment")
             .then(Response=>Response.json()).then(function(commentek){setcomments(commentek)})
             
           }
         )
     }
-  
+  function delete_button(id)
+    {
+        /*fetch(`http://localhost:5198/Comment?id=${id}`, {method:"DELETE"}).then(
+            function(res)
+            {
+                alert("Sikeres törlés!");
+                Get()
+            }
+        )*/
+       alert("Sikeres törlés")
+    }
   return (
     <div>
       <div className="row g-3">
@@ -63,15 +73,23 @@ export default function Onecar2() {
           <div className="row g-3">
             <div className='col'>
                 {
-                   commentek.map((comments)=>{return(<Commentek datak={comments}/>)})
+                   commentek.map((comments)=>{return(         
+                    userToken.sub==comments.commenteloId?        
+                    <div style={{backgroundColor:"black",color:"white"}}>      
+                        <p class="text-break">{comments.postComment}</p>
+                        <a onClick={function() {if(window.confirm("Biztosan törölni szeretnél?")){delete_button(comments.id)}}} class="btn btn-danger">törlés</a>
+                    </div>:
+                     <div style={{backgroundColor:"black",color:"white"}}>      
+                     <p class="text-break">{comments.postComment}</p>
+                 </div>
+                  )})
                 }
             </div>
             <div className='col'>
             
                    <form onSubmit={function(event) {
                     event.preventDefault()
-                    Post()
-                    
+                    Post()  
                     }}>
                        <h2>{userToken.name}</h2>
                       <div class="input-group">

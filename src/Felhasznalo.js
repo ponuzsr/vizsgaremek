@@ -1,10 +1,21 @@
 import React from 'react'
 import { jwtDecode } from 'jwt-decode'
 import { Link } from 'react-router-dom';
-export default function Felhasznalo() {
-  
-  
+import { useEffect,useState } from "react";
+
+export default function Felhasznalo() { 
   let myToken =jwtDecode(localStorage.getItem("token"));
+  let usercheck="@"+myToken.name;
+  console.log(usercheck);
+  const[commentek,setcomments]=useState([])
+  useEffect(() => {
+      Getcom()
+    }, [])
+  function Getcom()
+    {
+      fetch("http://localhost:5198/Comment")
+      .then(Response=>Response.json()).then(function(commentek){setcomments(commentek) })
+    }
   return (
     <div> 
       <div className="row row-cols-1 row-cols-md-2 g-4">
@@ -17,7 +28,18 @@ export default function Felhasznalo() {
         </div>
         <div className='col'>
           <h3>Értesítések</h3>
-          <div class="ertesitesek-item" style={{}}>Valaki válaszolt a hozzászólásodra</div>        
+          <div class="ertesitesek-item" style={{}}>
+                {
+                   commentek.map((comments)=>{return(
+                    comments.postComment.includes(usercheck)?
+                   <div style={{backgroundColor:"black",color:"white"}}>      
+                        <p class="text-break">{comments.postComment}</p>    
+                    </div>:
+                    <div/>
+                    
+                   )})
+                }
+          </div>        
         </div>
               
       </div>

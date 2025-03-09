@@ -74,7 +74,7 @@ export default function Onecar2() {
             <div className='col'>
                 {
                    commentek.map((comments)=>{return(         
-                    userToken.sub==comments.commenteloId?        
+                    userToken.sub==comments.commenteloId||userToken.role=="admin"?        
                     <div style={{backgroundColor:"black",color:"white"}}>      
                         <p class="text-break">{comments.postComment}</p>
                         <a onClick={function() {if(window.confirm("Biztosan törölni szeretnél?")){delete_button(comments.id)}}} class="btn btn-danger">törlés</a>

@@ -44,14 +44,15 @@ export default function Onecar2() {
     }
   function delete_button(id)
     {
-        /*fetch(`http://localhost:5198/Comment?id=${id}`, {method:"DELETE"}).then(
+        fetch(`http://localhost:5198/Comment?id=${id}`, {method:"DELETE"}).then(
             function(res)
             {
                 alert("Sikeres törlés!");
+                
                 Get()
             }
-        )*/
-       alert("Sikeres törlés")
+        )
+       
     }
   return (
     <div>

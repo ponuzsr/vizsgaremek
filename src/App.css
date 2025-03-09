@@ -5,6 +5,8 @@
   height: 100%;
   box-sizing: border-box;
   display: flex;
+  justify-content: center;
+
  
  }
 
@@ -33,19 +35,18 @@ img{
  /*Játék leírása*/
  .description{
   padding: 50px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.99);
-  background-color: rgb(6, 23, 96); 
-  border-radius: 10px; 
+  box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.99);
+  background-color: rgb(24, 38, 100); 
+  border-radius: 18px; 
   text-align:left;
   font-family: Monospace;
-
  }
 
  /*Játék elindítása gomb*/
  .gameStart{
   padding: 10px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.99);
-  background-color: rgb(6, 23, 96); 
+  background-color: rgb(24, 38, 100); 
   font-size: 150%;
   border-radius: 10px; 
   text-align:center;
@@ -73,10 +74,7 @@ img{
   text-shadow: 2px 2px 8px #1c07f9;
   font-size: 180%;
   
- 
 }
-
-
 
 /*Bemutatkozás*/
 .introduction{
@@ -90,8 +88,11 @@ img{
 .main-container {
   display: flex;
   flex-grow: 1;
-  min-height: 100vh;
-  
+  height: 100%;
+  width: 100%;
+  padding: 0px;
+  margin: 0;
+  justify-content: center;
   
 }
 .cardback
@@ -100,6 +101,29 @@ img{
   background-image: url(/public/pics/Cardback.png);
   
 }
+
+
+.username{
+  width: 400px;
+  text-align: left;
+}
+
+.password{
+  text-align: left;
+}
+
+
+.profil{
+  background-image: url(/public/pics/login_background.gif);
+  background-size: cover;
+  padding: 5px;
+  box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.99);
+  color: rgb(0, 0, 0);
+  border-radius: 15px; 
+  font-size: 33px;
+  font-family:'Times New Roman', Times, serif;
+}
+
 /* már nem működik*/
 /*.navbar_our {
   width: 200px;
@@ -170,6 +194,20 @@ transition: all 0.3s ease-in-out;
 .dropdown-btn {
   position: relative;
 }
+/*.bejelentkezes{
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.bejelentkezes :hover{
+  background-color: #138496;
+  border-color: #117a8b;
+}
+*/
+
 .center_texts
 {
   
@@ -183,12 +221,12 @@ transition: all 0.3s ease-in-out;
 }
 .content {
   flex-grow: 1;
-  
-  padding: 20px;
-  background-color:#0D3173;
+  padding: 10px;
+  margin: 0;
   color:white;
-  border:7px solid black;
-  
+  border: 7px solid black;
+  background-color:rgb(6, 23, 96)
+
 }
 .login-container {
   background: white;
@@ -227,6 +265,13 @@ transition: all 0.3s ease-in-out;
   outline: none;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 
+}
+.form-control{
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
 }
 
 .login-btn {
@@ -445,9 +490,9 @@ div.content {
 
 div.content {
   margin-left: 200px;
-  padding: 20px;
-  height: 100vh; /* Teljes képernyő magasság */
-  overflow: auto; /* Ha több tartalom van, görgessen */
+  padding: 5px;
+  height: 100vh; 
+  overflow: auto; 
 }
 
 @media screen and (max-width: 700px) {
@@ -469,4 +514,20 @@ div.content {
     text-align: center;
     float: none;
   }
+}
+
+
+.game-pontozas{
+  border: 2px solid #000;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: rgb(24, 38, 100); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.game-pontozas h2 {
+  margin: 0;
+  font-size: 1.5em;
 }

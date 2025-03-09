@@ -4,13 +4,13 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 export default function Game() {
   const [kocsik, setKocsik] = useState([]);
-  const [robbanasok, setRobbanasok] = useState([]); 
+  const [robbanasok, setRobbanasok] = useState([]);
   const [pontok, setPontok] = useState(0);
   const [sebesseg, setSebesseg] = useState(35);
   const [eletek, setEletek] = useState(3);
 
   const bummkep = "pics/bumm.png";
-  const auto="pics/suzuki.png";
+  const auto = "pics/suzuki.png";
   useEffect(() => {
     const mozgatInterval = setInterval(() => {
       setKocsik((prevKocsik) =>
@@ -18,7 +18,7 @@ export default function Game() {
           .map((kocsi) => ({ ...kocsi, left: kocsi.left + sebesseg }))
           .filter((kocsi) => kocsi.left < window.innerWidth)
       );
-      
+
     }, 50);
 
     const kocsirajInterval = setInterval(() => {
@@ -66,18 +66,19 @@ export default function Game() {
 
   return (
     <div className="game-content">
-    <div>      
-      <h2>Életek: {eletek}</h2>
-      <br/>
-      <h2>Pontok: {pontok}</h2>
-      
-      <Link className='nav-item nav-link' to={"/GameStart"}>
-      <a style={{backgroundColor:"black",color:"white"}} className="btn btn w-100">Kilépés</a>
-      </Link>   
-    </div>
+      <div>
+        <div className="game-pontozas">
+          <h2>Életek: {eletek}</h2>
+          <br />
+          <h2>Pontok: {pontok}</h2>
+        </div>
+        <Link className='nav-item nav-link' to={"/GameStart"}>
+          <a style={{ backgroundColor: "black", color: "white" }} className="btn btn w-100">Kilépés</a>
+        </Link>
+      </div>
       <div
         className="kocsicontent"
-       
+
       >
         {/* Autók megjelenítése */}
         {kocsik.map((kocsi) => (

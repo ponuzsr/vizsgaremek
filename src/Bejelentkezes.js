@@ -37,20 +37,20 @@ export default function() {
             event.preventDefault()
             Post()
         }}>
-          <div id='profil'>
+          <div className='profil'>
 
           
            {/*Bejelentkezéshez adatok */}
           <div className='center_texts d-grid gap-2 col-5 mx-auto'>
             
             {/*Felhasználónév */}
-            <div class="username">
+            <div className="username">
               <label for="exampleInputEmail1" class="form-label">Felhasználónév</label>
               <input type="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
             </div>
 
             {/*Jelszó */}
-            <div class="password">
+            <div className="password">
               <label for="exampleInputPassword1" class="form-label">Jelszó</label>
               <input type="password" class="form-control" id="exampleInputPassword1" />
             </div>
@@ -67,7 +67,8 @@ export default function() {
         </form>
       </div>
       <div className='col'>
-
+          <h2>Szia! Jelentkezz be a profilodba és nézd meg milyen új értesítéseid jöttek!</h2><i class="bi bi-emoji-smile-upside-down-fill"></i>
+          
       </div>
     </div>
   )

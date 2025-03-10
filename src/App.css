@@ -112,18 +112,49 @@ img{
   text-align: left;
 }
 
+.email{
+  text-align: left;
+}
 
+/*Bejelentkezés*/
 .profil{
   background-image: url(/public/pics/login_background.gif);
   background-size: cover;
-  padding: 5px;
-  box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.99);
-  color: rgb(0, 0, 0);
+  padding: 35px;
+  box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.99);
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 2px 8px #000000 ;
   border-radius: 15px; 
-  font-size: 33px;
-  font-family:'Times New Roman', Times, serif;
+  font-size: 30px;
+  font-family: cursive;
 }
 
+/*Regisztráció*/
+.signin{
+  background-image: url(/public/pics/signin_background.gif);
+  background-size: cover;
+  padding: 35px;
+  box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.99);
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 2px 8px #000000 ;
+  border-radius: 15px; 
+  font-size: 30px;
+  font-family: cursive;
+}
+
+.feltetelek{
+  font-family: cursive;
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 2px 8px #000000 ;
+  font-size: 18px;
+}
+
+.koszones{
+  font-family: cursive;
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 2px 8px #000000 ;
+  font-size: 20px;
+}
 /* már nem működik*/
 /*.navbar_our {
   width: 200px;

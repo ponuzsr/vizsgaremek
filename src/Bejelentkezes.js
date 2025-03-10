@@ -56,19 +56,21 @@ export default function() {
             </div>
             <br />
 
-            <button type="submit" class="btn btn-info">Bejelentkezés</button>
+            <button className='login' type="submit" class="btn btn-info">Bejelentkezés</button>
 
             {/*Át navigál a Regisztrációs oldalra */}
             <Link to={"/regisztracio"}>
-              <button type="submit" class="btn btn-info">Regisztráció</button>
+              <button className='signin' type="submit" class="btn btn-info">Regisztráció</button>
             </Link>
           </div>
           </div>
         </form>
       </div>
       <div className='col'>
-          <h2>Szia! Jelentkezz be a profilodba és nézd meg milyen új értesítéseid jöttek!</h2><i class="bi bi-emoji-smile-upside-down-fill"></i>
-          
+        <div className='koszones'>
+          <h2>Hello! Köszönjük, hogy beregisztráltál oldalunkra. Jelentkezzbe és nézd meg új értesítéseidet. Kommentelj kocsiaink alá oszd meg velünk
+            és másokkal vélemyényedet.</h2><i class="bi bi-emoji-smile-upside-down-fill"></i>
+            </div>
       </div>
     </div>
   )

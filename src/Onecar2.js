@@ -25,6 +25,15 @@ export default function Onecar2() {
     console.log(comment)
     fetch("http://localhost:5198/Comment",{method:"POST",body:JSON.stringify(comment),headers:{"content-type":"application/json"}}).then(function(){Get()})
   }
+  function Put(id)
+  {
+    let edit=
+    {
+      postComment: document.getElementById(id).firstElementChild.value
+    }
+    console.log(edit)
+    fetch("http://localhost:5198/Comment/"+id,{method:"PUT",body:JSON.stringify(edit),headers:{"content-type":"application/json"}}).then(function(res){Get()})
+  }
   function Get()
     {
         fetch("http://localhost:5198/Autok/"/*"http://10.169.84.233:5198/api/Autok/"*/+param.id)
@@ -76,13 +85,25 @@ export default function Onecar2() {
                 {
                    commentek.map((comments)=>{return(         
                     userToken.sub==comments.commenteloId||userToken.role=="admin"?        
-                    <div style={{backgroundColor:"black",color:"white"}}>      
-                        <p class="text-break">{comments.postComment}</p>
+                    <div style={{backgroundColor:"black",color:"white"}}> 
+                        
+                         
+                          <p id={comments.id} onDoubleClick={function(e){e.target.innerHTML=`<input value=${comments.postComment}>`}} class="text-break">{comments.postComment}</p>
+                         
+                       
+                        {userToken.sub==comments.commenteloId&&userToken.role=="user"?
+                        <div>                  
+                        <a onClick={function(){Put(comments.id)}} class="btn btn-warning">módosítás</a>
                         <a onClick={function() {if(window.confirm("Biztosan törölni szeretnél?")){delete_button(comments.id)}}} class="btn btn-danger">törlés</a>
+                        </div>:
+                        <a onClick={function() {if(window.confirm("Biztosan törölni szeretnél?")){delete_button(comments.id)}}} class="btn btn-danger">törlés</a>
+                        }
                     </div>:
-                     <div style={{backgroundColor:"black",color:"white"}}>      
+                     <div style={{backgroundColor:"black",color:"white"}}>  
+                     
                      <p class="text-break">{comments.postComment}</p>
-                 </div>
+                      
+                    </div>
                   )})
                 }
             </div>

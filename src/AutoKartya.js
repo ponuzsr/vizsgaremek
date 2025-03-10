@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 export default function AutoKartya(props) {
   let myToken =localStorage.getItem("token");
+  
   return (
     <div className='col'>
       <div class="card cardback" style={{border:"1px solid #0D3173"}}>

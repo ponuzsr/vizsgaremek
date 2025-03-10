@@ -3,6 +3,7 @@ import { useEffect,useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Commentek from './Commentek';
+import "./Commentek.css";
 export default function Onecar() {  
     const param = useParams();
   const[datam,setdata]=useState([]);

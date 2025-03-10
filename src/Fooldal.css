@@ -1,0 +1,19 @@
+.body-fooldal{
+    background-image: url(/public/pics/background.gif);
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+  
+   }
+
+   /*Bemutatkozás*/
+.introduction{
+    padding: 30px;
+      background-color: rgba(29, 7, 115, 0.5); 
+      border-radius: 10px; 
+      text-align: center;
+      font-family: Monospace;
+  }

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import "./Game.css";
 export default function GameStarter() {
   return (
     <div>

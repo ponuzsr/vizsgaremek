@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Commentek from './Commentek';
 import { jwtDecode } from 'jwt-decode'
+import "./Commentek.css";
 export default function Onecar2() {
   let userToken =jwtDecode(localStorage.getItem("token"));
     const param = useParams();

@@ -1,4 +1,5 @@
 import React from "react";
+import "./Fooldal.css";
 function Fooldal () {
     
   return (

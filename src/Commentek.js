@@ -1,4 +1,5 @@
 import React from 'react'
+import "./Commentek.css";
 
 export default function Commentek(props) {
   function delete_button(id)

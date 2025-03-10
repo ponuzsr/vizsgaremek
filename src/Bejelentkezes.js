@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import { jwtDecode } from "jwt-decode";
+import "./Profil.css";
 export default function() {
     let navigate=useNavigate();
   function Post(){

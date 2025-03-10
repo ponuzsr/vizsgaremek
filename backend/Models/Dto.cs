@@ -6,7 +6,8 @@
         public record UpdateAutokDto(int IdEv, string Marka, int GyartasEv, string Tortenet, string Kep, string Kobcenti, string Tipus, string maxteljesitmeny, string Kerekmeghajtas);
 
         public record CreateCommentDto(string PostComment, string CommenteloId, Guid AutoId, DateTime CreatedTime);
+        public record UpdateCommentDto(string PostComment);
 
-       
+
     }
 }

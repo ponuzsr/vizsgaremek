@@ -35,20 +35,20 @@ namespace backend.Controllers
             {
                 return Ok(comment);
             }
-            return NotFound(new {message = "A komment nem található"});
+            return NotFound(new { message = "A komment nem található" });
         }
 
         //Komment lekérése auto id alapján
         [HttpGet("autocomment/{id}")]
         public async Task<ActionResult> GetCommentByAutoId(Guid id)
         {
-            var comment = await _context.Comments.Where(comment => comment.AutoId  == id).ToListAsync();
+            var comment = await _context.Comments.Where(comment => comment.AutoId == id).ToListAsync();
             if (comment != null)
             {
-                
-                    return Ok(comment);
-                
-                
+
+                return Ok(comment);
+
+
             }
             return NotFound(new { message = "A komment nem található." });
 
@@ -74,7 +74,21 @@ namespace backend.Controllers
                 _context.SaveChanges();
                 return StatusCode(201, comment);
             }
-            return  BadRequest(new {result = comment, message = "Hiba az objektum képzése során."});
+            return BadRequest(new { result = comment, message = "Hiba az objektum képzése során." });
+        }
+
+        [HttpPut("{id}")]
+        public async Task<ActionResult<Comment>> Put(UpdateCommentDto updateCommentDto, Guid id)
+        {
+            var existingComment = await _context.Comments.FirstOrDefaultAsync(comment => comment.Id == id);
+            if (existingComment != null)
+            {
+                existingComment.PostComment = updateCommentDto.PostComment;
+                await _context.SaveChangesAsync();
+                return Ok(existingComment);
+            }
+
+            return NotFound(new { message = "A komment nem található." });
         }
 
         //Komment törlése

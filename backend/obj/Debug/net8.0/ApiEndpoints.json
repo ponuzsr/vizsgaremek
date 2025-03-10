@@ -168,6 +168,37 @@
   },
   {
     "ContainingType": "backend.Controllers.CommentController",
+    "Method": "Put",
+    "RelativePath": "Comment/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "updateCommentDto",
+        "Type": "backend.Models.Dto\u002BUpdateCommentDto",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "backend.Models.Comment",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "backend.Controllers.CommentController",
     "Method": "GetCommentByAutoId",
     "RelativePath": "Comment/autocomment/{id}",
     "HttpMethod": "GET",

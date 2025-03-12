@@ -2,7 +2,6 @@ import React from 'react'
 import { useEffect,useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import Commentek from './Commentek';
 import { jwtDecode } from 'jwt-decode'
 import "./Commentek.css";
 export default function Onecar2() {
@@ -82,6 +81,23 @@ export default function Onecar2() {
           </div>
           <h5 style={{color:"white"}}>{datam.tortenet}</h5>
           <div className="row g-3">
+           
+            <div className='col'>
+            
+                   <form onSubmit={function(event) {
+                    event.preventDefault()
+                    Post()  
+                    }}>
+                       <h2>{userToken.name}</h2>
+                       <label>Komment</label>
+                      <div class="input-group">
+                          
+                          <input type="text" id='comment' class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" className='comment_input'/>
+                      </div>
+                      <button type="submit" class="btn btn-primary">Küldés</button>
+                  </form>
+                 
+            </div>
             <div className='col'>
                 {
                    commentek.map((comments)=>{return(         
@@ -107,23 +123,6 @@ export default function Onecar2() {
                     </div>
                   )})
                 }
-            </div>
-            <div className='col'>
-            
-                   <form onSubmit={function(event) {
-                    event.preventDefault()
-                    Post()  
-                    }}>
-                       <h2>{userToken.name}</h2>
-                      <div class="input-group">
-                         
-                          <span class="input-group-text">Comment</span>
-                          
-                          <input type="text" id='comment' class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"/>
-                      </div>
-                      <button type="submit" class="btn btn-primary">Küldés</button>
-                  </form>
-                 
             </div>
           </div>
       </div>

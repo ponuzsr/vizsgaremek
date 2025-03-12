@@ -2,7 +2,6 @@ import React from 'react'
 import { useEffect,useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import Commentek from './Commentek';
 import "./Commentek.css";
 export default function Onecar() {  
     const param = useParams();
@@ -48,16 +47,7 @@ export default function Onecar() {
           </div>
           <h5 style={{color:"white"}}>{datam.tortenet}</h5>
           <div className="row g-3">
-            <div className='col'>
-                {
-                   commentek.map((comments)=>{return(
-                    <div style={{backgroundColor:"black",color:"white"}}>      
-                        <p class="text-break">{comments.postComment}</p>
-                        
-                    </div>
-                   )})
-                }
-            </div>
+           
             <div className='col'>
              
                   <form>
@@ -68,6 +58,16 @@ export default function Onecar() {
                         <button type="submit" disabled class="btn btn-primary">Küldés</button>
                     </form>
              
+            </div>
+            <div className='col'>
+                {
+                   commentek.map((comments)=>{return(
+                    <div style={{backgroundColor:"black",color:"white"}}>      
+                        <p class="text-break">{comments.postComment}</p>
+                        
+                    </div>
+                   )})
+                }
             </div>
           </div>
       </div>

@@ -76,7 +76,7 @@ export default function Onecar2() {
             <p style={{color:"white",fontSize:"200%"}}>Meghajtás: {datam.kerekmeghajtas}</p>
             <p style={{color:"white",fontSize:"200%"}}>Teljesítmény: {datam.maxteljesitmeny} ló erő</p>
             <Link className='nav-item nav-link' to={"/autok/"+datam.idEv}>
-                <a style={{backgroundColor:"black",color:"white"}} className="btn btn">Vissza</a>
+                <button className="back"><i class="bi bi-arrow-bar-left"></i>Vissza</button>
             </Link>
           </div>
           <h5 style={{color:"white"}}>{datam.tortenet}</h5>
@@ -94,7 +94,7 @@ export default function Onecar2() {
                           
                           <input type="text" id='comment' class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" className='comment_input'/>
                       </div>
-                      <button type="submit" class="btn btn-primary">Küldés</button>
+                      <button type="submit" className='submit'>Küldés</button>
                   </form>
                  
             </div>

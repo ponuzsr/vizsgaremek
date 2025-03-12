@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { jwtDecode } from 'jwt-decode';
-import "./Profil.css";
+import "./Bejelentkezes.css";
 export default function Regisztracio() {
   let navigate=useNavigate();
   function Post(){
@@ -48,32 +48,32 @@ export default function Regisztracio() {
             Post()
         }}>
 
-          <div className='signin'>
+          <div className='signin_container'>
          {/*Regisztrációhoz adatok */}
         <div className='center_texts d-grid gap-2 col-5 mx-auto'>
 
            {/*Felhasználónév */}
         <div className="username">
-            <label for="exampleInputEmailnev" class="form-label">Felhasználónév</label>
-            <input type="username" class="form-control" id="exampleInputEmailnev" aria-describedby="emailHelp"/>
+            <label for="exampleInputEmailnev" class="form-label" className='label'>Felhasználónév</label>
+            <input type="username" class="form-control" id="exampleInputEmailnev" aria-describedby="emailHelp" className='input'/>
           </div>
 
            {/*Email */}
           <div className="email">
-            <label for="exampleInputEmailcim" class="form-label">Email cím</label>
-            <input type="email" class="form-control" id="exampleInputEmailcim" aria-describedby="emailHelp"/>
+            <label for="exampleInputEmailcim" class="form-label" className='label'>Email cím</label>
+            <input type="email" class="form-control" id="exampleInputEmailcim" aria-describedby="emailHelp" className='input'/>
           </div>
 
            {/*Jelszó */}
           <div className="password">
-            <label for="exampleInputPassword" class="form-label">Jelszó</label>
-            <input type="password" class="form-control" id="exampleInputPassword"/>
+            <label for="exampleInputPassword" class="form-label" className='label'>Jelszó</label>
+            <input type="password" class="form-control" id="exampleInputPassword" className='input'/>
           </div>
           <br/>
 
            {/*Sikeres regisztrálás után vissza dob a bejelentkezés oldalra */}
           
-          <button onClick={function(){alert("Köszönjük! Az ön regisztrálása sikeres!")}} type="submit" class="btn btn-info">Regisztráció</button>
+          <button onClick={function(){alert("Köszönjük! Az ön regisztrálása sikeres!")}} type="submit" className='button'>Regisztráció</button>
           </div>
           
         </div>

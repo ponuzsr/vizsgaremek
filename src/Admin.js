@@ -11,7 +11,7 @@ export default function Admin() {
         <h2>{myToken.name}</h2>
             <p>{myToken.email}</p>
             <Link to={'/bejelentkezes'}>
-              <button onClick={function(){localStorage.removeItem("token")}} class="upload-btn">Kijelentekzes</button>
+              <button onClick={function(){localStorage.removeItem("token")}} class="upload-btn">Kijelentkezés</button>
             </Link>
       </div>
       <div className='col'>

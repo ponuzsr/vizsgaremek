@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import { jwtDecode } from "jwt-decode";
-import "./Profil.css";
+import "./Bejelentkezes.css";
 export default function() {
     let navigate=useNavigate();
   function Post(){
@@ -46,22 +46,22 @@ export default function() {
             
             {/*Felhasználónév */}
             <div className="username">
-              <label for="exampleInputEmail1" class="form-label">Felhasználónév</label>
-              <input type="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+              <label for="exampleInputEmail1" class="form-label" className='label'>Felhasználónév</label>
+              <input type="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" className='input' />
             </div>
 
             {/*Jelszó */}
             <div className="password">
-              <label for="exampleInputPassword1" class="form-label">Jelszó</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" />
+              <label for="exampleInputPassword1" class="form-label" className='label'>Jelszó</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" className='input' />
             </div>
             <br />
-
-            <button className='login' type="submit" class="btn btn-info">Bejelentkezés</button>
-
+            
+            <button className='button' type="submit">Bejelentkezés</button>
+    
             {/*Át navigál a Regisztrációs oldalra */}
             <Link to={"/regisztracio"}>
-              <button className='signin' type="submit" class="btn btn-info">Regisztráció</button>
+              <button className='button'type="submit">Regisztráció</button>
             </Link>
           </div>
           </div>
@@ -69,8 +69,10 @@ export default function() {
       </div>
       <div className='col'>
         <div className='koszones'>
-          <h2>Hello! Köszönjük, hogy beregisztráltál oldalunkra. Jelentkezzbe és nézd meg új értesítéseidet. Kommentelj kocsiaink alá oszd meg velünk
-            és másokkal vélemyényedet.</h2><i class="bi bi-emoji-smile-upside-down-fill"></i>
+          <h2>Hello! Köszönjük, hogy beregisztráltál oldalunkra. 
+            Jelentkezz be és nézd meg új értesítéseidet. Kommentelj kocsiaink alá oszd meg velünk és másokkal vélemyényedet.</h2>
+            <h2>Ha még nem lennél beregisztrálva akkor a "Regisztráció" gombra kattintva ezt is megteheted.</h2>
+              <h2>További jó szórakozást!</h2>
             </div>
       </div>
     </div>

@@ -1,5 +1,4 @@
-
-  /*Bejelentkezés*/
+ /*Bejelentkezés*/
   .profil{
     background-image: url(/public/pics/login_background.gif);
     background-size: cover;
@@ -11,26 +10,19 @@
     font-size: 30px;
     font-family: cursive;
   }
-  
-  /*Regisztráció*/
-  .signin_container{
-    background-image: url(/public/pics/signin_background.gif);
+
+  @media (max-width: 768px) {
+    .profil {
+    background-image: url(/public/pics/login_background.gif);
     background-size: cover;
-    padding: 35px;
+    padding: 25px;
     box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.99);
     color: rgb(255, 255, 255);
     text-shadow: 2px 2px 8px #000000 ;
-    border-radius: 15px; 
-    font-size: 30px;
+    border-radius: 11px; 
+    font-size: 23px;
     font-family: cursive;
-  }
-  
-  /*Regisztrációs feltételek*/
-  .feltetelek{
-    font-family: cursive;
-    color: rgb(255, 255, 255);
-    text-shadow: 2px 2px 8px #000000 ;
-    font-size: 18px;
+    }
   }
   
   .koszones{
@@ -39,6 +31,14 @@
     text-shadow: 2px 2px 8px #000000 ;
     font-size: 20px;
   }
+
+  @media (max-width: 768px) {
+    .koszones {
+      font-family: cursive;
+      color: rgb(255, 255, 255);
+      text-shadow: 2px 2px 8px #000000 ;
+      font-size: 15px;
+    }}
 
   /*Gombok*/
   .button {
@@ -115,6 +115,7 @@
     -moz-transition: box-shadow 0.2s ease-in;
     transition: box-shadow 0.2s ease-in;
   }
+
   
   /*Bevitelimezők*/
   .input {
@@ -131,6 +132,8 @@
   .input:active {
     box-shadow: 5px 2px 15px #1f00b8 inset;
   }
+
+
 
   /*Szöveg*/
   .label{

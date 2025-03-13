@@ -3,6 +3,7 @@ import { useEffect,useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { jwtDecode } from 'jwt-decode'
+import "./CardInner.css"; 
 import "./Commentek.css";
 export default function Onecar2() {
   let userToken =jwtDecode(localStorage.getItem("token"));
@@ -67,19 +68,23 @@ export default function Onecar2() {
     <div>
       <div className="row g-3">
           <div  className="col">
-            <img style={{border:"5px solid black"}} src={datam.kep} class="card-img-top" alt="..."/>  
-          </div>
-          <div className='col'>
-            <h5 style={{color:"white",fontSize:"200%"}}>Név: {datam.nev}</h5>
-            <p style={{color:"white",fontSize:"200%"}}>marka: {datam.marka}</p>
-            <p style={{color:"white",fontSize:"200%"}}>Gyártás kezdete: {datam.gyartasEv}</p>
-            <p style={{color:"white",fontSize:"200%"}}>Meghajtás: {datam.kerekmeghajtas}</p>
-            <p style={{color:"white",fontSize:"200%"}}>Teljesítmény: {datam.maxteljesitmeny} ló erő</p>
+            <img style={{border:"4px solid black"}} src={datam.kep} class="card-img-top" alt="..."/> 
+            <br/>
             <Link className='nav-item nav-link' to={"/autok/"+datam.idEv}>
                 <button className="back"><i class="bi bi-arrow-bar-left"></i>Vissza</button>
-            </Link>
+            </Link> 
           </div>
-          <h5 style={{color:"white"}}>{datam.tortenet}</h5>
+          <div className='col'>
+            <p className='p'>Márka: {datam.marka}</p>
+            <p className='p'>Gyártás kezdete: {datam.gyartasEv}</p>
+            <p className='p'>Meghajtás: {datam.kerekmeghajtas}</p>
+            <p className='p'>Teljesítmény: {datam.maxteljesitmeny} Ló erő</p>
+            <p className='p'>Köbcenti:{datam.kobcenti}</p>
+            <p className='p'>Tipus: {datam.tipus}</p>
+            
+          </div>
+          <h5>Története:</h5>
+          <p className='tortenet'>{datam.tortenet}</p>
           <div className="row g-3">
            
             <div className='col'>

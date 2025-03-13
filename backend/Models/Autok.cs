@@ -11,8 +11,6 @@ public partial class Autok
 
     public string? Marka { get; set; }
 
-    public string? Nev { get; set; }
-
     public int? GyartasEv { get; set; }
 
     public bool ritkae {  get; set; }

@@ -12,6 +12,7 @@ import Regisztracio from "./Regisztracio";
 import Profil from "./Profil";
 import GameStarter from "./GameStarter";
 import Onecar2 from "./Onecar2";
+import Modosito from "./Modosito";
 const App = () => {
   const location = useLocation();
 
@@ -60,6 +61,7 @@ const App = () => {
             <Route path="/profil" element={<Profil/>}/>
             <Route path="/GameStart" element={<GameStarter/>}/>
             <Route path="/Onecar2/:id" element={<Onecar2/>}/>
+            <Route path="/modsitas/:id" element={<Modosito/>}/>
           </Routes>
         </div>
       </div>

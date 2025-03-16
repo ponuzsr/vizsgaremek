@@ -34,6 +34,9 @@ export default function Felhasznalo() {
                     comments.postComment.includes(usercheck)?
                    <div style={{backgroundColor:"black",color:"white"}}>      
                         <p class="text-break">{comments.postComment}</p>    
+                        <Link to={"/Onecar2/"+comments.autoId}>
+                            <button style={{backgroundColor:"#0806A8",color:"white"}} className="btn btn w-100">Az utóhoz</button>
+                        </Link>    
                     </div>:
                     <div/>
                     

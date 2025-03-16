@@ -36,6 +36,18 @@ export default function Admin() {
         fetch(`http://localhost:5198/Felhasználók/AssignRole?UserName=${role_adat.userName}&roleName=${role_adat.role}`,{method:"POST",headers:{"content-type":"application/json"}})
       
     }
+    function delete_button(id)
+    {
+        fetch(`http://localhost:5198/Autok?Id=${id}`, {method:"DELETE"}).then(
+            function(res)
+            {
+                alert("Sikeres törlés!");
+                
+                Get()
+            }
+        )
+       
+    }
   return (
     <div> 
       <div className="row row-cols-1 row-cols-md-2 g-4">
@@ -100,7 +112,7 @@ export default function Admin() {
           autobase.map((autok)=>{return(
             <div style={{backgroundColor:"black"}} className='col'>
                 <p style={{color:"white"}}>{autok.marka}</p>
-                <button className='btn btn-danger'>Törlés</button>
+                <button onClick={function() {if(window.confirm("Biztosan törölni szeretnél?")){delete_button(autok.id)}}} className='btn btn-danger'>Törlés</button>
                 <Link to={"/modsitas/"+autok.id}>
                     <a className='btn btn-warning'>Módosítás</a>
                 </Link>

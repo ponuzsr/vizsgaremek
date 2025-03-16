@@ -46,7 +46,7 @@ export default function Onecar2() {
         .then(
           function()
           {
-            fetch("http://localhost:5198/Comment")
+            fetch("http://localhost:5198/Comment/autocomment/"+param.id)
             .then(Response=>Response.json()).then(function(commentek){setcomments(commentek)})
             
           }
@@ -68,8 +68,8 @@ export default function Onecar2() {
     <div>
       <div className="row g-3">
           <div  className="col">
-            <img style={{border:"4px solid black"}} src={datam.kep} class="card-img-top" alt="..."/> 
-            <br/>
+            <img src={datam.kep} className='car_img card' alt="..." /> 
+          
             <Link className='nav-item nav-link' to={"/autok/"+datam.idEv}>
                 <button className="back"><i class="bi bi-arrow-bar-left"></i>Vissza</button>
             </Link> 
@@ -94,7 +94,6 @@ export default function Onecar2() {
                     Post()  
                     }}>
                        <h2>{userToken.name}</h2>
-                       <label>Komment</label>
                       <div class="input-group">
                           
                           <input type="text" id='comment' class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" className='comment_input'/>
@@ -104,10 +103,11 @@ export default function Onecar2() {
                  
             </div>
             <div className='col'>
+              <h3 className='kommentek'>Kommentek</h3>
                 {
                    commentek.map((comments)=>{return(         
                     userToken.sub==comments.commenteloId||userToken.role=="admin"?        
-                    <div style={{backgroundColor:"black",color:"white"}}> 
+                    <div className='comments'> 
                         
                          
                           <p id={comments.id} onDoubleClick={function(e){e.target.innerHTML=`<input value=${comments.postComment}>`}} class="text-break">{comments.postComment}</p>
@@ -115,8 +115,8 @@ export default function Onecar2() {
                        
                         {userToken.sub==comments.commenteloId&&userToken.role=="user"?
                         <div>                  
-                        <a onClick={function(){Put(comments.id)}} class="btn btn-warning">módosítás</a>
-                        <a onClick={function() {if(window.confirm("Biztosan törölni szeretnél?")){delete_button(comments.id)}}} class="btn btn-danger">törlés</a>
+                        <a onClick={function(){Put(comments.id)}} className='modositas'>Módosítás</a>
+                        <a onClick={function() {if(window.confirm("Biztosan törölni szeretnél?")){delete_button(comments.id)}}} className='torles'><i class="bi bi-trash"></i> Törlés</a>
                         </div>:
                         <a onClick={function() {if(window.confirm("Biztosan törölni szeretnél?")){delete_button(comments.id)}}} class="btn btn-danger">törlés</a>
                         }

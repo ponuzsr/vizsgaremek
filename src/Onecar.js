@@ -34,36 +34,42 @@ export default function Onecar() {
     <div>
       <div className="row g-3">
           <div  className="col">
-            <img style={{border:"5px solid black"}} src={datam.kep} class="card-img-top" alt="..."/>  
-          </div>
-          <div className='col'>
-            <h5 style={{color:"white",fontSize:"200%"}}>Név: {datam.nev}</h5>
-            <p style={{color:"white",fontSize:"200%"}}>marka: {datam.marka}</p>
-            <p style={{color:"white",fontSize:"200%"}}>Gyártás kezdete: {datam.gyartasEv}</p>
-            <p style={{color:"white",fontSize:"200%"}}>Meghajtás: {datam.kerekmeghajtas}</p>
-            <p style={{color:"white",fontSize:"200%"}}>Teljesítmény: {datam.maxteljesitmeny} ló erő</p>
-            <Link className='nav-item nav-link' to={"/autok/"+datam.idEv}>
-                <a style={{backgroundColor:"black",color:"white"}} className="btn btn">Vissza</a>
+          <img src={datam.kep} className='car_img card' alt="..." /> 
+          <Link className='nav-item nav-link' to={"/autok/"+datam.idEv}>
+            <button className="back"><i class="bi bi-arrow-bar-left"></i>Vissza</button>
             </Link>
           </div>
-          <h5 style={{color:"white"}}>{datam.tortenet}</h5>
+          <div className='col'>
+            <p className='p'>Márka: {datam.marka}</p>
+            <p className='p'>Gyártás kezdete: {datam.gyartasEv}</p>
+            <p className='p'>Meghajtás: {datam.kerekmeghajtas}</p>
+            <p className='p'>Teljesítmény: {datam.maxteljesitmeny} Ló erő</p>
+            <p className='p'>Köbcenti:{datam.kobcenti}</p>
+            <p className='p'>Tipus: {datam.tipus}</p>
+            
+          </div>
+          <h5>Története:</h5>
+          <p className='tortenet'>{datam.tortenet}</p>
           <div className="row g-3">
            
             <div className='col'>
              
                   <form>
                         <div class="input-group">
-                            <span class="input-group-text">Comment</span>
-                            <textarea class="form-control" aria-label="With textarea"></textarea>
+                       
+                        <input type="text" id='comment' class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" className='comment_input'/>
+                        
+          
                         </div>
-                        <button type="submit" disabled class="btn btn-primary">Küldés</button>
+                        <button type="submit" className='submit'>Küldés</button>
                     </form>
              
             </div>
             <div className='col'>
+            <h3 className='kommentek'>Kommentek</h3>
                 {
                    commentek.map((comments)=>{return(
-                    <div style={{backgroundColor:"black",color:"white"}}>      
+                    <div className='comments'>      
                         <p class="text-break">{comments.postComment}</p>
                         
                     </div>

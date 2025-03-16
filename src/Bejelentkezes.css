@@ -11,6 +11,20 @@
     font-family: cursive;
   }
 
+  @media screen and (max-width: 1024px) {
+    .profil{
+      background-image: url(/public/pics/login_background.gif);
+      background-size: cover;
+      padding: 30px;
+      box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.99);
+      color: rgb(255, 255, 255);
+      text-shadow: 2px 2px 8px #000000 ;
+      border-radius: 15px; 
+      font-size: 25px;
+      font-family: cursive;
+    }
+}
+
   @media (max-width: 768px) {
     .profil {
     background-image: url(/public/pics/login_background.gif);
@@ -31,6 +45,15 @@
     text-shadow: 2px 2px 8px #000000 ;
     font-size: 20px;
   }
+
+  @media screen and (max-width: 1024px) {
+    .koszones{
+      font-family: cursive;
+      color: rgb(255, 255, 255);
+      text-shadow: 2px 2px 8px #000000 ;
+      font-size: 17px;
+    }
+}
 
   @media (max-width: 768px) {
     .koszones {

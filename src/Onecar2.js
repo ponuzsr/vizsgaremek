@@ -111,15 +111,15 @@ export default function Onecar2() {
                         
                          
                           <p id={comments.id} onDoubleClick={function(e){e.target.innerHTML=`<input value=${comments.postComment}>`}} class="text-break">{comments.postComment}</p>
-                         
                        
-                        {userToken.sub==comments.commenteloId&&userToken.role=="user"?
+                        {userToken.sub==comments.commenteloId?
                         <div>                  
                         <a onClick={function(){Put(comments.id)}} className='modositas'>Módosítás</a>
                         <a onClick={function() {if(window.confirm("Biztosan törölni szeretnél?")){delete_button(comments.id)}}} className='torles'><i class="bi bi-trash"></i> Törlés</a>
                         </div>:
                         <a onClick={function() {if(window.confirm("Biztosan törölni szeretnél?")){delete_button(comments.id)}}} class="btn btn-danger">törlés</a>
                         }
+                    
                     </div>:
                      <div style={{backgroundColor:"black",color:"white"}}>  
                      

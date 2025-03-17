@@ -4,12 +4,16 @@ import { Link } from 'react-router-dom';
 import { useEffect,useState } from "react";
 import AutoFelvitel from './AutoFelvitel';
 import Rolechanger from './Rolechanger';
+import Modosito from './Modosito';
+import "./modal.css"
 export default function Admin() {
   let myToken =jwtDecode(localStorage.getItem("token"));
   let usercheck="@"+myToken.name;
   console.log(usercheck);
   const[commentek,setcomments]=useState([])
   const[autobase,setautobase]=useState([]);
+  const[modalOpened,setModalOpened]=useState(false)
+  console.log(modalOpened);
   useEffect(() => {
       Getcom()
       Get()
@@ -41,7 +45,53 @@ export default function Admin() {
         )
        
     }
+   //teszt
+   function mod1()
+   {
+    
+    let modal = document.getElementById("myModal");
+    modal.style.display = "block";
+    setModalOpened(true)
+    
+  
+   // var span = document.getElementsByClassName("close1")[0];
+    
+    
+    // When the user clicks on <span> (x), close the modal
+   /* span.onclick = function() {
+      modal.style.display = "none";
+    }*/
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+   }
+  }
+  function mod2()
+  {
    
+   let modal = document.getElementById("myModal2");
+   modal.style.display = "block";
+   setModalOpened(true)
+   
+ 
+   //var span = document.getElementsByClassName("close2")[0];
+   
+   
+   // When the user clicks on <span> (x), close the modal
+   /*span.onclick = function() {
+     modal.style.display = "none";
+   }*/
+   
+   // When the user clicks anywhere outside of the modal, close it
+   window.onclick = function(event) {
+     if (event.target == modal) {
+       modal.style.display = "none";
+     }
+  }
+ }
   return (
     <div> 
       <div className="row row-cols-1 row-cols-md-2 g-4">
@@ -74,10 +124,23 @@ export default function Admin() {
       </div>
       <div className='row row-cols-1 row-cols-md-2 g-4'>
         <div className='col'>
-          <Rolechanger/>
-        </div>
-        <div className='col'>
-            <AutoFelvitel/>
+        <button onClick={mod1} id="myBtn">Előléptetés</button>
+            <div id="myModal" className="modal">
+            <div style={{backgroundColor:"black"}} className="modal-content">
+             {/* <span className="close1">&times;</span>*/}
+               <Rolechanger/>
+            </div>
+            </div>
+         
+        <br/>
+            {/*<AutoFelvitel/>*/}
+            <button onClick={mod2} id="myBtn">Új Autó</button>
+            <div id="myModal2" className="modal">
+            <div style={{backgroundColor:"black"}} className="modal-content">
+              {/*<span className="close2">&times;</span>*/}
+               <AutoFelvitel/>
+            </div>
+            </div>   
         </div>
       </div>
       <div className="row row-cols-1 row-cols-md-5 g-4">
@@ -89,6 +152,7 @@ export default function Admin() {
                 <Link to={"/modsitas/"+autok.id}>
                     <a className='btn btn-warning'>Módosítás</a>
                 </Link>
+                
             </div>
           )})
         }

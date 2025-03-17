@@ -3,6 +3,7 @@ import { jwtDecode } from 'jwt-decode'
 import { Link } from 'react-router-dom';
 import { useEffect,useState } from "react";
 import AutoFelvitel from './AutoFelvitel';
+import Rolechanger from './Rolechanger';
 export default function Admin() {
   let myToken =jwtDecode(localStorage.getItem("token"));
   let usercheck="@"+myToken.name;
@@ -40,16 +41,7 @@ export default function Admin() {
         )
        
     }
-    function Post()
-    {
-      let role_adat=
-      {
-        userName: document.getElementById("nev").value,
-        role: document.getElementById("rol").value,
-      }
-        fetch(`http://localhost:5198/Felhasználók/AssignRole?UserName=${role_adat.userName}&roleName=${role_adat.role}`,{method:"POST",headers:{"content-type":"application/json"}})
-      
-    }
+   
   return (
     <div> 
       <div className="row row-cols-1 row-cols-md-2 g-4">
@@ -80,34 +72,12 @@ export default function Admin() {
         </div>
               
       </div>
-      <div className='row g-3'>
+      <div className='row row-cols-1 row-cols-md-2 g-4'>
         <div className='col'>
-          <szerepkorvaltoztato/>
-        <h2>Adminná változtatás</h2>
-        <form onSubmit={function(event) {
-            event.preventDefault()
-            Post()
-        }}>
-        <div>
-            <label for="nev" class="form-label" className='label'>Felhasználónév</label>
-            <br/>
-                <input type="username" class="form-control" id="nev" aria-describedby="nevHelp"/>
-            </div>
-
-            {/*Jelszó */}
-            <div>
-                <label for="rol" class="form-label" className='label'>Új szerepkör</label>
-                <br/>
-                <input type="text" class="form-control" id="rol" />
-            </div>
-            <br />
-            
-            <button onClick={function(){alert(document.getElementById("nev").value+" mostantól admin")}} className='btn btn-primary' type="submit">Előléptetés</button>
-            <div/>
-        </form>
+          <Rolechanger/>
         </div>
         <div className='col'>
-              <AutoFelvitel/>
+            <AutoFelvitel/>
         </div>
       </div>
       <div className="row row-cols-1 row-cols-md-5 g-4">

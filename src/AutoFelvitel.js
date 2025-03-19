@@ -21,7 +21,7 @@ export default function AutoFelvitel(props) {
   }
   return (
     <div className='newcar'>
-      <h2>Új autó felvitele</h2>
+      <h2 className='new'>Új autó felvitele</h2>
        <form onSubmit={function(event) {
             event.preventDefault()
             Post();
@@ -29,58 +29,58 @@ export default function AutoFelvitel(props) {
             
                 <label for="marka" class="form-label" className='label'>Márka</label>
                 <br/>
-                <input type="text" class="form-control" id="marka" className='input'/>
+                <input type="text" class="form-control" id="marka" className='bevitel'/>
             
 
             <div>
                 <label for="evid" class="form-label" className='label'>Év azonosító:</label>
                 <br/>
-                <input type="text" class="form-control" id="evid" className='input' />
+                <input type="text" class="form-control" id="evid" className='bevitel' />
             </div>
 
             <div>
                 <label for="Gyarev" class="form-label" className='label'>Gyártási év:</label>
                 <br/>
-                <input type="text" class="form-control" id="Gyarev" className='input' />
+                <input type="text" class="form-control" id="Gyarev" className='bevitel' />
             </div>
 
             <div>
-                <label for="kep" class="form-label" className='label'>kép:</label>
+                <label for="kep" class="form-label" className='label'>Kép:</label>
                 <br/>
-                <input type="text" class="form-control" id="kep" className='input' />
+                <input type="text" class="form-control" id="kep" className='bevitel' />
             </div>
 
             <div>
                 <label for="kob" class="form-label" className='label'>Köbcenti:</label>
                 <br/>
-                <input type="text" class="form-control" id="kob" className='input' />
+                <input type="text" class="form-control" id="kob" className='bevitel' />
             </div>
 
             <div>
                 <label for="tip" class="form-label" className='label'>Tipus:</label>
                 <br/>
-                <input type="text" class="form-control" id="tip" className='input'/>
+                <input type="text" class="form-control" id="tip" className='bevitel'/>
             </div>
 
             <div>
                 <label for="max" class="form-label" className='label'>Max teljesítmény:</label>
                 <br/>
-                <input type="text" class="form-control" id="max" className='input' />
+                <input type="text" class="form-control" id="max" className='bevitel' />
             </div>
             
             <div>
                 <label for="ker" class="form-label" className='label'>Kerékmeghajtás:</label>
                 <br/>
-                <input type="text" class="form-control" id="ker" className='input' />
+                <input type="text" class="form-control" id="ker" className='bevitel' />
             </div>
 
             <div>
                 <label for="tor" class="form-label" className='label'>Történet:</label>
                 <br/>
-                <textarea id='tor' className='input'></textarea>
+                <textarea id='tor' className='bevitel'></textarea>
             </div>
             <br />
-            <button className='btn btn-primary' type="submit">Új autó</button>
+            <button className='newcar_button' type="submit">Új autó</button>
             <div/>
            
         </form>

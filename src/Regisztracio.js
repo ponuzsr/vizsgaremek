@@ -56,19 +56,19 @@ export default function Regisztracio() {
            {/*Felhasználónév */}
         <div className="username">
             <label for="exampleInputEmailnev" class="form-label" className='label'>Felhasználónév</label>
-            <input type="username" class="form-control" id="exampleInputEmailnev" aria-describedby="emailHelp" className='input'/>
+            <input type="username" class="form-control" id="exampleInputEmailnev" aria-describedby="emailHelp" className='data'/>
           </div>
 
            {/*Email */}
           <div className="email">
             <label for="exampleInputEmailcim" class="form-label" className='label'>Email cím</label>
-            <input type="email" class="form-control" id="exampleInputEmailcim" aria-describedby="emailHelp" className='input'/>
+            <input type="email" class="form-control" id="exampleInputEmailcim" aria-describedby="emailHelp" className='data'/>
           </div>
 
            {/*Jelszó */}
           <div className="password">
             <label for="exampleInputPassword" class="form-label" className='label'>Jelszó</label>
-            <input type="password" class="form-control" id="exampleInputPassword" className='input'/>
+            <input type="password" class="form-control" id="exampleInputPassword" className='data'/>
           </div>
           <br/>
 

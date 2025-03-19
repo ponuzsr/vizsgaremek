@@ -1,10 +1,10 @@
 .newcar{
     background-image: url(/public/pics/newcar_background.webp);
     background-size: cover;
-    padding: 20px;
+    padding: 25px;
 }
 
-.input {
+.bevitel {
     width: 60%;
     background-color: #1a1a1a;
     border: none;
@@ -14,9 +14,42 @@
     color: rgb(48, 8, 247);
   }
   
-  .input:focus {
+  .bevitel:focus {
     animation: rotateShadow 2s infinite linear;
   }
+
+@media (max-width: 768px) {
+  .bevitel {
+    width: 80%;
+    background-color: #1a1a1a;
+    border: none;
+   height: 40px;
+    border-radius: 5px;
+    outline: none;
+    color: rgb(48, 8, 247);
+  }
+  
+  .bevitel:focus {
+    animation: rotateShadow 2s infinite linear;
+  }
+}
+
+@media (max-width: 1656px) {
+  .bevitel {
+    width: 60%;
+    background-color: #1a1a1a;
+    border: none;
+    height: 60px;
+    border-radius: 5px;
+    outline: none;
+    color: rgb(48, 8, 247);
+    font-size: 19px;
+  }
+  
+  .bevitel:focus {
+    animation: rotateShadow 2s infinite linear;
+  }
+}
   
   @keyframes rotateShadow {
     0% {
@@ -36,16 +69,59 @@
     }
   }
 
-  .label{
+  .newcar label{
     color: #000000;
     text-shadow: 2px 3px 10px #ffffff;
     font-size: 10px;
     font-family: Monospace;
   }
 
-  .newcar h2{
+  @media (max-width: 768px) {
+    .newcar label{
+      color: #000000;
+      text-shadow: 2px 3px 10px #ffffff;
+      font-size: 20px;
+      font-family: Monospace;
+    }
+}
+
+@media (max-width: 1656px) {
+  .newcar label{
+    color: #000000;
+    text-shadow: 2px 3px 10px #ffffff;
+    font-size: 35px;
+    font-family: Monospace;
+  }
+}
+
+  .new{
     color: #ffffff;
-    text-shadow: 5px 7px 15px #000000;
+    text-shadow: 2px 2px 7px #000000;
     font-size: 50px;
     font-family: Monospace;
+  }
+
+  @media (max-width: 768px) {
+    .new{
+      color: #ffffff;
+      text-shadow: 20px 20px 40px #000000;
+      font-size: 35px;
+      font-family: Monospace;
+    }
+}
+
+.newcar_button{
+  color: #ffffff;
+  text-shadow: 5px 7px 15px #000000;
+    border: 2px solid rgb(5, 19, 143);
+    border-radius: 5px;
+    padding: 15px 65px;
+    background: transparent;
+    font-size: 25px;
+    font-family: Monospace;
+  }
+  
+  .newcar_button:hover {
+    box-shadow: 2px 2px 15px #4607aa inset;
+    border: 2px solid rgb(132, 85, 219);
   }

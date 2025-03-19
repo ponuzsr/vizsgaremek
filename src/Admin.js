@@ -138,7 +138,7 @@ export default function Admin() {
             <div id="myModal2" className="modal">
             <div style={{backgroundColor:"black"}} className="modal-content">
               {/*<span className="close2">&times;</span>*/}
-               <AutoFelvitel/>
+               <AutoFelvitel get={Get}/>
             </div>
             </div>   
         </div>

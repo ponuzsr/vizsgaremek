@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function AutoFelvitel() {
+export default function AutoFelvitel(props) {
   function Post()
   {
     let auto=
@@ -17,7 +17,7 @@ export default function AutoFelvitel() {
     }
     //http://localhost:5198/Autok
     fetch("http://localhost:5198/Autok",{method:"POST",body:JSON.stringify(auto),headers:{"content-type":"application/json"}})
-    .then(alert("Az utó sikeresen felökerült az adatbázisba!"))
+    .then(alert("Az utó sikeresen felökerült az adatbázisba!")).then(function(res){props.get()})
   }
   return (
     <div>
@@ -42,12 +42,6 @@ export default function AutoFelvitel() {
                 <label for="Gyarev" class="form-label" className='label'>Gyártási év:</label>
                 <br/>
                 <input type="text" class="form-control" id="Gyarev" />
-            </div>
-
-            <div>
-                <label for="tor" class="form-label" className='label'>Történet:</label>
-                <br/>
-                <input type="text" class="form-control" id="tor" />
             </div>
 
             <div>
@@ -78,6 +72,12 @@ export default function AutoFelvitel() {
                 <label for="ker" class="form-label" className='label'>Kerékmeghajtás:</label>
                 <br/>
                 <input type="text" class="form-control" id="ker" />
+            </div>
+
+            <div>
+                <label for="tor" class="form-label" className='label'>Történet:</label>
+                <br/>
+                <textarea id='tor'></textarea>
             </div>
             <br />
             <button className='btn btn-primary' type="submit">Új autó</button>

@@ -108,17 +108,26 @@ export default function Onecar2() {
                    commentek.map((comments)=>{return(         
                     userToken.sub==comments.commenteloId||userToken.role=="admin"?        
                     <div className='comments'> 
-                        
-                         
+                        {userToken.sub==comments.commenteloId?
+                        <div>
                           <p id={comments.id} onDoubleClick={function(e){e.target.innerHTML=`<input value=${comments.postComment}>`}} class="text-break">{comments.postComment}</p>
                        
-                        {userToken.sub==comments.commenteloId?
-                        <div>                  
-                        <a onClick={function(){Put(comments.id)}} className='modositas'>Módosítás</a>
-                        <a onClick={function() {if(window.confirm("Biztosan törölni szeretnél?")){delete_button(comments.id)}}} className='torles'><i class="bi bi-trash"></i> Törlés</a>
+                        
+                            <div>                  
+                            <a onClick={function(){Put(comments.id)}} className='modositas'>Módosítás</a>
+                            <a onClick={function() {if(window.confirm("Biztosan törölni szeretnél?")){delete_button(comments.id)}}} className='torles'><i class="bi bi-trash"></i> Törlés</a>
+                            </div>
                         </div>:
-                        <a onClick={function() {if(window.confirm("Biztosan törölni szeretnél?")){delete_button(comments.id)}}} class="btn btn-danger">törlés</a>
+                        <div>
+                          
+                          <p class="text-break">{comments.postComment}</p>   
+                            <div>      
+                                <a onClick={function() {if(window.confirm("Biztosan törölni szeretnél?")){delete_button(comments.id)}}} class="btn btn-danger">törlés</a>
+                            </div>
+                        </div>
                         }
+                        
+                        
                     
                     </div>:
                      <div style={{backgroundColor:"black",color:"white"}}>  

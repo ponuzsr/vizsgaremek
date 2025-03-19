@@ -1,5 +1,5 @@
 import React from 'react'
-
+import "./Autofelvitel.css";
 export default function AutoFelvitel(props) {
   function Post()
   {
@@ -20,69 +20,71 @@ export default function AutoFelvitel(props) {
     .then(alert("Az utó sikeresen felökerült az adatbázisba!")).then(function(res){props.get()})
   }
   return (
-    <div>
+    <div className='newcar'>
       <h2>Új autó felvitele</h2>
        <form onSubmit={function(event) {
             event.preventDefault()
             Post();
         }}>
-            <div>
+            
                 <label for="marka" class="form-label" className='label'>Márka</label>
                 <br/>
-                <input type="text" class="form-control" id="marka"/>
-            </div>
+                <input type="text" class="form-control" id="marka" className='input'/>
+            
 
             <div>
                 <label for="evid" class="form-label" className='label'>Év azonosító:</label>
                 <br/>
-                <input type="text" class="form-control" id="evid" />
+                <input type="text" class="form-control" id="evid" className='input' />
             </div>
 
             <div>
                 <label for="Gyarev" class="form-label" className='label'>Gyártási év:</label>
                 <br/>
-                <input type="text" class="form-control" id="Gyarev" />
+                <input type="text" class="form-control" id="Gyarev" className='input' />
             </div>
 
             <div>
                 <label for="kep" class="form-label" className='label'>kép:</label>
                 <br/>
-                <input type="text" class="form-control" id="kep" />
+                <input type="text" class="form-control" id="kep" className='input' />
             </div>
 
             <div>
                 <label for="kob" class="form-label" className='label'>Köbcenti:</label>
                 <br/>
-                <input type="text" class="form-control" id="kob" />
+                <input type="text" class="form-control" id="kob" className='input' />
             </div>
 
             <div>
                 <label for="tip" class="form-label" className='label'>Tipus:</label>
                 <br/>
-                <input type="text" class="form-control" id="tip" />
+                <input type="text" class="form-control" id="tip" className='input'/>
             </div>
 
             <div>
                 <label for="max" class="form-label" className='label'>Max teljesítmény:</label>
                 <br/>
-                <input type="text" class="form-control" id="max" />
+                <input type="text" class="form-control" id="max" className='input' />
             </div>
             
             <div>
                 <label for="ker" class="form-label" className='label'>Kerékmeghajtás:</label>
                 <br/>
-                <input type="text" class="form-control" id="ker" />
+                <input type="text" class="form-control" id="ker" className='input' />
             </div>
 
             <div>
                 <label for="tor" class="form-label" className='label'>Történet:</label>
                 <br/>
-                <textarea id='tor'></textarea>
+                <textarea id='tor' className='input'></textarea>
             </div>
             <br />
             <button className='btn btn-primary' type="submit">Új autó</button>
             <div/>
+           
         </form>
     </div>
+   
   )
 }

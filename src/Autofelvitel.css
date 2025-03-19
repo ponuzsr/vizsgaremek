@@ -1,0 +1,51 @@
+.newcar{
+    background-image: url(/public/pics/newcar_background.webp);
+    background-size: cover;
+    padding: 20px;
+}
+
+.input {
+    width: 60%;
+    background-color: #1a1a1a;
+    border: none;
+   
+    border-radius: 5px;
+    outline: none;
+    color: rgb(48, 8, 247);
+  }
+  
+  .input:focus {
+    animation: rotateShadow 2s infinite linear;
+  }
+  
+  @keyframes rotateShadow {
+    0% {
+      box-shadow: -2px -2px 8px 1px #aa00ff, 2px 2px 8px 1px #3700ff;
+    }
+    25% {
+      box-shadow: -2px 2px 8px 1px #aa00ff, 2px -2px 8px 1px #3700ff;
+    }
+    50% {
+      box-shadow: 2px 2px 8px 1px #aa00ff, -2px -2px 8px 1px #3700ff;
+    }
+    75% {
+      box-shadow: 2px -2px 8px 1px #aa00ff, -2px 2px 8px 1px #3700ff;
+    }
+    100% {
+      box-shadow: -2px -2px 8px 1px #aa00ff, 2px 2px 8px 1px #3700ff;
+    }
+  }
+
+  .label{
+    color: #000000;
+    text-shadow: 2px 3px 10px #ffffff;
+    font-size: 10px;
+    font-family: Monospace;
+  }
+
+  .newcar h2{
+    color: #ffffff;
+    text-shadow: 5px 7px 15px #000000;
+    font-size: 50px;
+    font-family: Monospace;
+  }

@@ -1,0 +1,71 @@
+.rolechange{
+    background-image: url(/public/pics/backgrounds.gif);
+    background-size: cover;
+    padding: 20px;
+}
+
+.szerepkor {
+    background-color: #212121;
+    height: 40px;
+    width: 500px;
+    border: 2px solid white;
+    border-radius: 5px;
+    box-shadow: 3px 3px 2px rgb(249, 255, 85); 
+  }
+  
+  .szerepkor:focus {
+    color: rgb(0, 255, 255);
+    background-color: #212121;
+    outline-color: rgb(0, 123, 255);
+    box-shadow: 3px 3px 12px rgb(0, 123, 255);
+    transition: .1s;
+    transition-property: box-shadow;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .szerepkor {
+        background-color: #212121;
+        height: 40px;
+        width: 320px;
+        border: 2px solid white;
+        border-radius: 5px;
+        box-shadow: 3px 3px 2px rgb(249, 255, 85); 
+      }
+      
+      .szerepkor:focus {
+        color: rgb(0, 255, 255);
+        background-color: #212121;
+        outline-color: rgb(0, 123, 255);
+        box-shadow: 3px 3px 12px rgb(0, 123, 255);
+        transition: .1s;
+        transition-property: box-shadow;
+      }
+}
+
+  .eloleptetes {
+    color: #ffffff;
+    border: 2px solid rgb(249, 255, 85);
+    border-radius: 10px;
+    padding: 10px 25px;
+    background: transparent;
+    font-size: 16px;
+    font-family: Monospace;
+  }
+  
+  .eloleptetes:hover {
+    box-shadow: 2px 2px 15px #0713ff inset;
+    border: 2px solid rgb(0, 123, 255);
+  }
+
+  .label{
+    font-family: Monospace;
+    font-size: 20px;
+  }
+
+  .admin{
+    font-family: Monospace;
+    font-size: 40px;
+    text-shadow: 2px 3px 7px #000000
+  }
+  
+  

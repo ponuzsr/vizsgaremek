@@ -126,7 +126,7 @@ export default function Admin() {
         <div className='col'>
         <button onClick={mod1} id="myBtn">Előléptetés</button>
             <div id="myModal" className="modal">
-            <div style={{backgroundColor:"black"}} className="modal-content">
+            <div className="modal-content">
              {/* <span className="close1">&times;</span>*/}
                <Rolechanger/>
             </div>
@@ -136,7 +136,7 @@ export default function Admin() {
             {/*<AutoFelvitel/>*/}
             <button onClick={mod2} id="myBtn">Új Autó</button>
             <div id="myModal2" className="modal">
-            <div style={{backgroundColor:"black"}} className="modal-content">
+            <div className="modal-content">
               {/*<span className="close2">&times;</span>*/}
                <AutoFelvitel get={Get}/>
             </div>

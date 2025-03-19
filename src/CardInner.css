@@ -1,18 +1,43 @@
 .p {
-    font-size: 33px;
-    margin-bottom: 10px;
-    font-family: cursive;
-}
-
-.tortenet{
-  font-size: 20px;
+  font-size: 33px;
+  margin-bottom: 10px;
   font-family: cursive;
 }
 
+@media (max-width: 768px) {
+.p {
+  font-size: 20px;
+  margin-bottom: 7px;
+  font-family: cursive;
+}}
+
+.tortenet{
+font-size: 20px;
+font-family: cursive;
+}
+
+@media (max-width: 768px) {
+.tortenet{
+  font-size: 15px;
+  font-family: cursive;
+}}
+
 
 .car_img {
-    width: 650px; 
-   
+  width: 650px; 
+  object-fit: cover;
+  background: transparent;
+  border: 2px solid #fdfdfd;
+  box-shadow: 200px 200px 15px #ffffff inset;
+  display: block;
+  transition: all 0.3s ease-in-out;
+  object-fit: cover; 
+  border-width: 10px;
+}
+
+@media (max-width: 768px) {
+  .car_img {
+    width: 320px; 
     object-fit: cover;
     background: transparent;
     border: 2px solid #fdfdfd;
@@ -20,13 +45,20 @@
     display: block;
     transition: all 0.3s ease-in-out;
     object-fit: cover; 
-    border-width: 10px;
-  }
-  
+    border-width: 8px;
+  }}
+
+.car_img:hover {
+  color: #000000;
+  border-width: 5px;
+  box-shadow: 10px 10px 15px #000000;
+  border-color: #000000;
+}
+
+@media (max-width: 768px) {
   .car_img:hover {
     color: #000000;
-    border-width: 5px;
+    border-width: 4px;
     box-shadow: 10px 10px 15px #000000;
     border-color: #000000;
-  }
-  
+  }}

@@ -1,4 +1,5 @@
 import React from 'react'
+import "./Rolechanger.css";
 
 export default function Rolechanger() {
     function Post()
@@ -12,8 +13,8 @@ export default function Rolechanger() {
       
     }
   return (
-    <div>
-         <h2>Adminná változtatás</h2>
+    <div className='rolechange'>
+         <h2 className='admin'>Adminná változtatás</h2>
         <form onSubmit={function(event) {
             event.preventDefault()
             Post()
@@ -21,18 +22,20 @@ export default function Rolechanger() {
         <div>
             <label for="nev" class="form-label" className='label'>Felhasználónév</label>
             <br/>
-                <input type="username" class="form-control" id="nev" aria-describedby="nevHelp"/>
+                <input type="username" class="form-control" className='szerepkor' id="nev" aria-describedby="nevHelp"/>
             </div>
+
+            <br/>
 
             {/*Jelszó */}
             <div>
                 <label for="rol" class="form-label" className='label'>Új szerepkör</label>
                 <br/>
-                <input type="text" class="form-control" id="rol" />
+                <input type="text" class="form-control" className='szerepkor' id="rol" />
             </div>
             <br />
             
-            <button onClick={function(){alert(document.getElementById("nev").value+" mostantól admin")}} className='btn btn-primary' type="submit">Előléptetés</button>
+            <button onClick={function(){alert(document.getElementById("nev").value+" mostantól admin")}} className='eloleptetes' type="submit">Előléptetés</button>
             <div/>
         </form>
     </div>

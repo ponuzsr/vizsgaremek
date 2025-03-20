@@ -104,7 +104,7 @@ export default function Admin() {
               </Link>
         </div>
         <div className='col'>
-          <h3>Értesítések</h3>
+          <h3 className='notifications'>Értesítések</h3>
           <div class="ertesitesek-item" style={{}}>
                 {
                    commentek.map((comments)=>{return(

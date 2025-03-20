@@ -118,7 +118,7 @@ export default function Onecar2() {
                             <a onClick={function() {if(window.confirm("Biztosan törölni szeretnél?")){delete_button(comments.id)}}} className='torles'><i class="bi bi-trash"></i> Törlés</a>
                             </div>
                         </div>:
-                        <div>
+                        <div className='comments'>
                           
                           <p class="text-break">{comments.postComment}</p>   
                             <div>      
@@ -130,7 +130,7 @@ export default function Onecar2() {
                         
                     
                     </div>:
-                     <div style={{backgroundColor:"black",color:"white"}}>  
+                     <div className='comments'>  
                      
                      <p class="text-break">{comments.postComment}</p>
                       

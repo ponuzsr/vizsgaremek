@@ -1,0 +1,81 @@
+.users_notifications{
+    width: 95%;
+    max-width: 560px;
+    padding: 10px;
+    border-radius: 12px;
+    background: #1e1e2e;
+    color: white;
+    font-weight: bold;
+    position: relative;
+    transition: 0.3s;
+    box-shadow: 0 0 10px rgba(248, 248, 248, 0.842);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+  }
+  
+.users_notifications:hover {
+    box-shadow: 0 0 20px rgba(3, 219, 190, 0.966);
+  }
+
+  .usersNotifications_button {
+    font-size: 15px;
+    padding: 0.5em 2em;
+    border: transparent;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+    background: rgb(0, 0, 0);
+    color: white;
+    border-radius: 4px;
+    font-family: Monospace;
+    }
+    
+    .usersNotifications_button:hover {
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(30,144,255,1) 0%, rgb(11, 5, 86) 100%);
+    }
+
+    .users {
+        width: 180px;
+        height: 45px;
+        font-size: 23px;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        background: transparent;
+        color: white;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: 700;
+        position: relative;
+        transition: all 0.5s;
+        z-index: 1;
+        position: relative;
+        text-align: left;
+       }
+
+       .users::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 5px;
+        height: 100%;
+        background-color: white;
+        z-index: -1;
+        transition: all 0.5s;
+       }
+       
+       .users:hover::before {
+        width: 100%;
+       }
+       
+       .users:hover {
+        color: black;
+       }
+       
+       .users:active:before {
+        background: #b9b9b9;
+       }
+
+       .notifications{
+        color: rgb(255, 255, 255);
+        text-shadow: 2px 2px 8px #000000 ;
+        font-family: cursive;
+       }

@@ -1,5 +1,4 @@
 ﻿using backend.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using static backend.Models.Dto;
@@ -34,7 +33,7 @@ namespace backend.Controllers
             {
                 return Ok(auto);
             }
-            return NotFound(new { message = "Az autó nem található az adatbázisban."});
+            return NotFound(new { message = "Az autó nem található az adatbázisban." });
         }
 
         //Új autó hozzáadása
@@ -71,9 +70,9 @@ namespace backend.Controllers
         [HttpDelete]
         public async Task<ActionResult> Delete(Guid Id)
         {
-            var Auto = await _context.Autoks.FirstOrDefaultAsync(a =>a.Id == Id);
+            var Auto = await _context.Autoks.FirstOrDefaultAsync(a => a.Id == Id);
 
-            if(Auto != null)
+            if (Auto != null)
             {
                 _context.Autoks.Remove(Auto);
                 await _context.SaveChangesAsync();
@@ -83,10 +82,10 @@ namespace backend.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult<Autok>> Put(UpdateAutokDto updateAutokDto,Guid id)
+        public async Task<ActionResult<Autok>> Put(UpdateAutokDto updateAutokDto, Guid id)
         {
             var existingAuto = await _context.Autoks.FirstOrDefaultAsync(a => a.Id == id);
-            if(existingAuto != null)
+            if (existingAuto != null)
             {
                 existingAuto.IdEv = updateAutokDto.IdEv;
                 existingAuto.Marka = updateAutokDto.Marka;
@@ -100,6 +99,35 @@ namespace backend.Controllers
                 return Ok(existingAuto);
             }
             return NotFound(new { message = "Az autó nem található az adatbázisban." });
+        }
+
+        //Komment lekérése auto id alapján
+        [HttpGet("autocommentTeszt/{id}")]
+        public async Task<ActionResult> GetCommentByAutoId(Guid id)
+        {
+            var comments = await _context.Comments
+        .Where(c => c.AutoId == id)
+        .Select(c => new
+        {
+            c.Id,
+            c.AutoId,
+            c.CommenteloId,
+            c.PostComment,
+            UserName = _context.ApplicationUsers
+                .Where(u => u.Id == c.CommenteloId)
+                .Select(u => u.UserName)
+                .FirstOrDefault()
+        })
+        .ToListAsync();
+            if (comments != null)
+            {
+
+                return Ok(comments);
+
+
+            }
+            return NotFound(new { message = "A komment nem található." });
+
         }
     }
 }

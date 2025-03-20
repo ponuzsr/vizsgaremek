@@ -1,7 +1,10 @@
-﻿using backend.Services.Dtos;
+﻿using backend.Models;
+using backend.Services.Dtos;
 using backend.Services.IAuthService;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace backend.Controllers
 {
@@ -10,11 +13,19 @@ namespace backend.Controllers
     public class UserController : ControllerBase
     {
         private readonly IAuth auth;
+        private readonly ClassicgarageAdatbazisContext _context;
+        public readonly UserManager<ApplicationUser> userManager;
 
-        public UserController(IAuth auth)
+        public UserController(IAuth auth, ClassicgarageAdatbazisContext context, UserManager<ApplicationUser> userManager)
         {
             this.auth = auth;
+            _context = context;
+            this.userManager = userManager;
         }
+
+
+
+
 
         //Felhasználó hozzáadása
         [HttpPost("Register")]
@@ -53,6 +64,31 @@ namespace backend.Controllers
                 return Ok(res);
             }
             return BadRequest(res);
+        }
+
+        //felhasználók lekérdezése
+        [HttpGet]
+        public async Task<ActionResult<ApplicationUser>> Getusers()
+        {
+            var users = await userManager.Users.ToListAsync();
+
+            return Ok(users);
+
+        }
+
+        //felhasználó törlése
+        [HttpDelete]
+        public async Task<ActionResult<ApplicationUser>>DeleteUser(Guid id)
+        {
+            
+            var user = await userManager.Users.FirstOrDefaultAsync(x=>x.Id==Convert.ToString(id));
+            if (user != null)
+            {
+                _context.Users.Remove(user);
+                await _context.SaveChangesAsync();
+                return Ok("Sikeres törlés!");
+            }
+            return BadRequest(new { message = "Sikertelen törlés." });
         }
     }
 }

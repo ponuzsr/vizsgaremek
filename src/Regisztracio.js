@@ -1,7 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { jwtDecode } from 'jwt-decode';
-import "./Bejelentkezes.css";
 import "./Regisztracio.css";
 export default function Regisztracio() {
   let navigate=useNavigate();
@@ -56,19 +55,19 @@ export default function Regisztracio() {
            {/*Felhasználónév */}
         <div className="username">
             <label for="exampleInputEmailnev" class="form-label" className='label'>Felhasználónév</label>
-            <input type="username" class="form-control" id="exampleInputEmailnev" aria-describedby="emailHelp" className='data'/>
+            <input type="username" class="form-control" id="exampleInputEmailnev" aria-describedby="emailHelp" className='signin_data'/>
           </div>
 
            {/*Email */}
           <div className="email">
             <label for="exampleInputEmailcim" class="form-label" className='label'>Email cím</label>
-            <input type="email" class="form-control" id="exampleInputEmailcim" aria-describedby="emailHelp" className='data'/>
+            <input type="email" class="form-control" id="exampleInputEmailcim" aria-describedby="emailHelp" className='signin_data'/>
           </div>
 
            {/*Jelszó */}
           <div className="password">
             <label for="exampleInputPassword" class="form-label" className='label'>Jelszó</label>
-            <input type="password" class="form-control" id="exampleInputPassword" className='data'/>
+            <input type="password" class="form-control" id="exampleInputPassword" className='signin_data'/>
           </div>
           <br/>
 

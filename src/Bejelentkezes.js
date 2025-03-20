@@ -47,13 +47,13 @@ export default function() {
             {/*Felhasználónév */}
             <div className="username">
               <label for="exampleInputEmail1" class="form-label" className='label'>Felhasználónév</label>
-              <input type="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" className='data' />
+              <input type="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" className='login_data' />
             </div>
 
             {/*Jelszó */}
             <div className="password">
               <label for="exampleInputPassword1" class="form-label" className='label'>Jelszó</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" className='data' />
+              <input type="password" class="form-control" id="exampleInputPassword1" className='login_data' />
             </div>
             <br />
             

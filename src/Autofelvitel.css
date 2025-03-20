@@ -6,9 +6,9 @@
 
 .bevitel {
     width: 60%;
-    background-color: #1a1a1a;
+    background-color: #000000;
     border: none;
-   
+    height: 50px;
     border-radius: 5px;
     outline: none;
     color: rgb(48, 8, 247);
@@ -23,27 +23,10 @@
     width: 80%;
     background-color: #1a1a1a;
     border: none;
-   height: 40px;
+   height: 35px;
     border-radius: 5px;
     outline: none;
     color: rgb(48, 8, 247);
-  }
-  
-  .bevitel:focus {
-    animation: rotateShadow 2s infinite linear;
-  }
-}
-
-@media (max-width: 1656px) {
-  .bevitel {
-    width: 60%;
-    background-color: #1a1a1a;
-    border: none;
-    height: 60px;
-    border-radius: 5px;
-    outline: none;
-    color: rgb(48, 8, 247);
-    font-size: 19px;
   }
   
   .bevitel:focus {

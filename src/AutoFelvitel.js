@@ -27,7 +27,7 @@ export default function AutoFelvitel(props) {
             Post();
         }}>
             
-                <label for="marka" class="form-label" className='label'>Márka</label>
+                <label for="marka" class="form-label" className='label'>Márka:</label>
                 <br/>
                 <input type="text" class="form-control" id="marka" className='bevitel'/>
             
@@ -80,7 +80,7 @@ export default function AutoFelvitel(props) {
                 <textarea id='tor' className='bevitel'></textarea>
             </div>
             <br />
-            <button className='newcar_button' type="submit">Új autó</button>
+            <button className='newcar_button' type="submit">Új autó +</button>
             <div/>
            
         </form>

@@ -5,6 +5,7 @@ import { useEffect,useState } from "react";
 import AutoFelvitel from './AutoFelvitel';
 import Rolechanger from './Rolechanger';
 import Modosito from './Modosito';
+import "./Admin.css";
 import "./modal.css"
 export default function Admin() {
   let myToken =jwtDecode(localStorage.getItem("token"));
@@ -99,7 +100,7 @@ export default function Admin() {
           <h2>{myToken.name}</h2>
               <p>{myToken.email}</p>
               <Link to={'/bejelentkezes'}>
-                <button onClick={function(){localStorage.removeItem("token")}} class="upload-btn">Kijelentekzes</button>
+                <button onClick={function(){localStorage.removeItem("token")}} className='admin_button'><i class="bi bi-door-closed"></i> Kijelentekzes</button>
               </Link>
         </div>
         <div className='col'>
@@ -108,10 +109,10 @@ export default function Admin() {
                 {
                    commentek.map((comments)=>{return(
                     comments.postComment.includes(usercheck)?
-                   <div style={{backgroundColor:"black",color:"white"}}>      
+                   <div className='notification'>      
                         <p class="text-break">{comments.postComment}</p>    
                          <Link to={"/Onecar2/"+comments.autoId}>
-                            <button style={{backgroundColor:"#0806A8",color:"white"}} className="btn btn w-100">Az utóhoz</button>
+                            <button className="notification_button">Az autóhoz<i class="bi bi-caret-right-fill"></i></button>
                           </Link>    
                     </div>:
                     <div/>
@@ -124,7 +125,7 @@ export default function Admin() {
       </div>
       <div className='row row-cols-1 row-cols-md-2 g-4'>
         <div className='col'>
-        <button onClick={mod1} id="myBtn">Előléptetés</button>
+        <button onClick={mod1} id="myBtn" className='admin_button'><i class="bi bi-trophy"></i> Előléptetés</button>
             <div id="myModal" className="modal">
             <div  className="modal-content">
              {/* <span className="close1">&times;</span>*/}
@@ -134,7 +135,7 @@ export default function Admin() {
          
         <br/>
             {/*<AutoFelvitel/>*/}
-            <button onClick={mod2} id="myBtn">Új Autó</button>
+            <button onClick={mod2} id="myBtn" className='admin_button'><i class="bi bi-plus-circle"></i> Új Autó</button>
             <div id="myModal2" className="modal">
             <div  className="modal-content">
               {/*<span className="close2">&times;</span>*/}
@@ -146,16 +147,22 @@ export default function Admin() {
       <div className="row row-cols-1 row-cols-md-5 g-4">
         {
           autobase.map((autok)=>{return(
-            <div style={{backgroundColor:"black"}} className='col'>
-                <p style={{color:"white"}}>{autok.marka}</p>
-                <button onClick={function() {if(window.confirm("Biztosan törölni szeretnél?")){delete_button(autok.id)}}} className='btn btn-danger'>Törlés</button>
+            
+            <div className='col'>
+              <div className='cars'>
+                <div className='cars2'>
+                <p>{autok.marka}</p>
+                <button onClick={function() {if(window.confirm("Biztosan törölni szeretnél?")){delete_button(autok.id)}}} className='cars_delete'>Törlés</button>
                 <Link to={"/modsitas/"+autok.id}>
-                    <a className='btn btn-warning'>Módosítás</a>
+                    <a className='cars_modification'>Módosítás</a>
                 </Link>
-                
+                </div>
+            </div>
             </div>
           )})
+          
         }
+       
       </div>
     </div>
   )

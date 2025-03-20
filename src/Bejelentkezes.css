@@ -141,8 +141,9 @@
 
   
   /*Bevitelimezők*/
-  .data {
-    color: white;
+  .login_data {
+    color: #ffffff;
+    text-shadow: 2px 3px 10px #000000;
     border: 2px solid #ffffff;
     box-shadow: 5px 2px 15px #3a9be6 inset;
     border-radius: 10px;
@@ -150,13 +151,12 @@
     background: transparent;
     width: 400px;
     height: 50px;
+    background-color: #000000;
   }
   
-  .data:active {
+  .login_data:active {
     box-shadow: 5px 2px 15px #1f00b8 inset;
   }
-
-
 
   /*Szöveg*/
   .label{

@@ -24,7 +24,7 @@ export default function Onecar() {
         .then(
           function()
           {
-            fetch("http://localhost:5198/Comment/autocomment/"+param.id)
+            fetch("http://localhost:5198/Autok/comment/autocomment/"+param.id)
             .then(Response=>Response.json()).then(function(commentek){setcomments(commentek)})
             
           }
@@ -69,7 +69,8 @@ export default function Onecar() {
             <h3 className='kommentek'>Kommentek</h3>
                 {
                    commentek.map((comments)=>{return(
-                    <div className='comments'>      
+                    <div className='comments'>  
+                        <h3>{comments.userName}</h3>    
                         <p class="text-break">{comments.postComment}</p>
                         
                     </div>

@@ -46,7 +46,7 @@ export default function Onecar2() {
         .then(
           function()
           {
-            fetch("http://localhost:5198/Comment/autocomment/"+param.id)
+            fetch("http://localhost:5198/Autok/comment/autocomment/"+param.id)
             .then(Response=>Response.json()).then(function(commentek){setcomments(commentek)})
             
           }
@@ -110,6 +110,7 @@ export default function Onecar2() {
                     <div className='comments'> 
                         {userToken.sub==comments.commenteloId?
                         <div>
+                          <h3>{comments.userName}</h3>
                           <p id={comments.id} onDoubleClick={function(e){e.target.innerHTML=`<input value=${comments.postComment}>`}} class="text-break">{comments.postComment}</p>
                        
                         
@@ -119,7 +120,7 @@ export default function Onecar2() {
                             </div>
                         </div>:
                         <div className='comments'>
-                          
+                          <h3>{comments.userName}</h3>
                           <p class="text-break">{comments.postComment}</p>   
                             <div>      
                                 <a onClick={function() {if(window.confirm("Biztosan törölni szeretnél?")){delete_button(comments.id)}}} class="btn btn-danger">törlés</a>
@@ -131,7 +132,7 @@ export default function Onecar2() {
                     
                     </div>:
                      <div className='comments'>  
-                     
+                     <h3>{comments.userName}</h3>
                      <p class="text-break">{comments.postComment}</p>
                       
                     </div>

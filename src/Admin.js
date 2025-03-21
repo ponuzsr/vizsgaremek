@@ -14,12 +14,15 @@ export default function Admin() {
   const[commentek,setcomments]=useState([])
   const[autobase,setautobase]=useState([]);
   const[modalOpened,setModalOpened]=useState(false)
+  const[userbase,setuserbase]=useState([])
   console.log(modalOpened);
   useEffect(() => {
       Getcom()
       Get()
+      GetUsers()
     }, [])
-    function Get(){
+    function Get()
+    {
     fetch("http://localhost:5198/Autok"/*"http://10.169.84.233:5198/api/Autok/"*/)
     .then(Response=>Response.json())
     .then(function(data){
@@ -27,7 +30,7 @@ export default function Admin() {
       
       setautobase(data)
     })
-  }
+    }
   function Getcom()
     {
       fetch("http://localhost:5198/Comment")
@@ -45,6 +48,20 @@ export default function Admin() {
             }
         )
        
+    }
+    function GetUsers()
+    {
+      fetch("http://localhost:5198/Felhasználók").then(Response=>Response.json()).then(function(felhasznalok){setuserbase(felhasznalok)})
+    }
+    function DeleteUsers(id)
+    {fetch(`http://localhost:5198/Felhasználók?id=${id}`,{method:"DELETE"}).then(
+      function(res)
+      {
+        alert("Sikeres törlés!")
+        GetUsers()
+      }
+    )
+
     }
    //teszt
    function mod1()
@@ -102,6 +119,24 @@ export default function Admin() {
               <Link to={'/bejelentkezes'}>
                 <button onClick={function(){localStorage.removeItem("token")}} className='admin_button'><i class="bi bi-door-closed"></i> Kijelentekzes</button>
               </Link>
+              <br/>
+              <button onClick={mod1} id="myBtn" className='admin_button'><i class="bi bi-trophy"></i> Előléptetés</button>
+              <div id="myModal" className="modal">
+                <div  className="modal-content">
+                {/* <span className="close1">&times;</span>*/}
+                  <Rolechanger/>
+                </div>
+              </div>
+         
+              <br/>
+              {/*<AutoFelvitel/>*/}
+              <button onClick={mod2} id="myBtn" className='admin_button'><i class="bi bi-plus-circle"></i> Új Autó</button>
+              <div id="myModal2" className="modal">
+                <div  className="modal-content">
+                {/*<span className="close2">&times;</span>*/}
+                  <AutoFelvitel get={Get}/>
+                </div>
+              </div>   
         </div>
         <div className='col'>
           <h3 className='notifications'>Értesítések</h3>
@@ -123,28 +158,12 @@ export default function Admin() {
         </div>
               
       </div>
-      <div className='row row-cols-1 row-cols-md-2 g-4'>
-        <div className='col'>
-        <button onClick={mod1} id="myBtn" className='admin_button'><i class="bi bi-trophy"></i> Előléptetés</button>
-            <div id="myModal" className="modal">
-            <div  className="modal-content">
-             {/* <span className="close1">&times;</span>*/}
-               <Rolechanger/>
-            </div>
-            </div>
-         
-        <br/>
-            {/*<AutoFelvitel/>*/}
-            <button onClick={mod2} id="myBtn" className='admin_button'><i class="bi bi-plus-circle"></i> Új Autó</button>
-            <div id="myModal2" className="modal">
-            <div  className="modal-content">
-              {/*<span className="close2">&times;</span>*/}
-               <AutoFelvitel get={Get}/>
-            </div>
-            </div>   
-        </div>
-      </div>
-      <div className="row row-cols-1 row-cols-md-5 g-4">
+      <div className='row'>
+      <div className="col-md-12">
+        <div className='row'>
+        <div className='col-6 col-md-6'>
+          <h2>Autók:</h2>
+        <div className='row row-cols-1 row-cols-md-2 g-4'>
         {
           autobase.map((autok)=>{return(
             
@@ -162,8 +181,33 @@ export default function Admin() {
           )})
           
         }
-       
+        </div>
+       </div>
+       {/* className='row row-cols-1 row-cols-md-1 g-4'*/}
+       <div className='col-6 col-md-6'>
+        <h2>Felhasználók:</h2>
+        <div className='row row-cols-1 row-cols-md-2 g-4'>
+        {
+            userbase.map((users)=>{return(
+              users.userName!=myToken.name?
+              <div className='col'>
+                <div className='cars'>
+                  <div className='cars2'>
+                  <p>{users.userName}</p>
+                  <button onClick={function() {if(window.confirm("Biztosan törölni szeretnél?")){DeleteUsers(users.id)}}} className='cars_delete'>Törlés</button>
+                  </div>
+                </div>
+              </div>:
+             <div/>
+            
+            )})
+          
+          }
+          </div>
+       </div>
       </div>
+      </div>
+    </div>
     </div>
   )
 }

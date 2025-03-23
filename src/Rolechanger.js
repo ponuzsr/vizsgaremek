@@ -12,6 +12,7 @@ export default function Rolechanger() {
         fetch(`http://localhost:5198/Felhasználók/AssignRole?UserName=${role_adat.userName}&roleName=${role_adat.role}`,{method:"POST",headers:{"content-type":"application/json"}})
       
     }
+    
   return (
     <div className='rolechange'>
          <h2 className='admin'>Adminná változtatás</h2>

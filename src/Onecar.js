@@ -24,7 +24,7 @@ export default function Onecar() {
         .then(
           function()
           {
-            fetch("http://localhost:5198/Autok/comment/autocomment/"+param.id)
+            fetch("http://localhost:5198/Autok/autocommentTeszt/"+param.id)
             .then(Response=>Response.json()).then(function(commentek){setcomments(commentek)})
             
           }

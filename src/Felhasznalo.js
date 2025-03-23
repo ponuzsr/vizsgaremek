@@ -1,11 +1,12 @@
 import React from 'react'
 import { jwtDecode } from 'jwt-decode'
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 import { useEffect,useState } from "react";
 import "./Felhasznalo.css";
 
 export default function Felhasznalo() { 
   let myToken =jwtDecode(localStorage.getItem("token"));
+  let navigate=useNavigate();
   let usercheck="@"+myToken.name;
   console.log(usercheck);
   const[commentek,setcomments]=useState([])
@@ -17,6 +18,15 @@ export default function Felhasznalo() {
       fetch("http://localhost:5198/Comment")
       .then(Response=>Response.json()).then(function(commentek){setcomments(commentek) })
     }
+    function DeleteUser()
+    {
+      fetch(`http://localhost:5198/Felhasználók?id=${myToken.sub}`,{method:"DELETE"}).then(
+        function(res)
+        {
+          alert("Sikeres törlés!")
+        }
+      ).then(function(){localStorage.removeItem("token")}).then(function() {navigate("/bejelentkezes")})
+    }
   return (
     <div> 
       <div className="row row-cols-1 row-cols-md-2 g-4">
@@ -26,6 +36,8 @@ export default function Felhasznalo() {
               <Link to={'/bejelentkezes'}>
                 <button onClick={function(){localStorage.removeItem("token")}} class="users"><i class="bi bi-door-closed"></i> Kijelentekzes</button>
               </Link>
+
+              <button className='admin_button' onClick={function() {if(window.confirm("Biztosan törölni szeretnél?")){DeleteUser()}}}>Fiók törlése</button>
         </div>
         <div className='col'>
           <h3 className='notifications'>Értesítések</h3>

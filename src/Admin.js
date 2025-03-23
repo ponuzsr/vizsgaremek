@@ -1,14 +1,14 @@
 import React from 'react'
 import { jwtDecode } from 'jwt-decode'
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 import { useEffect,useState } from "react";
 import AutoFelvitel from './AutoFelvitel';
 import Rolechanger from './Rolechanger';
-import Modosito from './Modosito';
 import "./Admin.css";
 import "./modal.css"
 export default function Admin() {
   let myToken =jwtDecode(localStorage.getItem("token"));
+  let navigate=useNavigate();
   let usercheck="@"+myToken.name;
   console.log(usercheck);
   const[commentek,setcomments]=useState([])
@@ -53,6 +53,7 @@ export default function Admin() {
     {
       fetch("http://localhost:5198/Felhasználók").then(Response=>Response.json()).then(function(felhasznalok){setuserbase(felhasznalok)})
     }
+
     function DeleteUsers(id)
     {fetch(`http://localhost:5198/Felhasználók?id=${id}`,{method:"DELETE"}).then(
       function(res)
@@ -61,26 +62,22 @@ export default function Admin() {
         GetUsers()
       }
     )
-
     }
-   //teszt
+    function DeleteUser()
+    {
+      fetch(`http://localhost:5198/Felhasználók?id=${myToken.sub}`,{method:"DELETE"}).then(
+        function(res)
+        {
+          alert("Sikeres törlés!")
+        }
+      ).then(function(){localStorage.removeItem("token")}).then(function() {navigate("/bejelentkezes")})
+    }
    function mod1()
    {
     
     let modal = document.getElementById("myModal");
     modal.style.display = "block";
     setModalOpened(true)
-    
-  
-   // var span = document.getElementsByClassName("close1")[0];
-    
-    
-    // When the user clicks on <span> (x), close the modal
-   /* span.onclick = function() {
-      modal.style.display = "none";
-    }*/
-    
-    // When the user clicks anywhere outside of the modal, close it
     window.onclick = function(event) {
       if (event.target == modal) {
         modal.style.display = "none";
@@ -93,17 +90,6 @@ export default function Admin() {
    let modal = document.getElementById("myModal2");
    modal.style.display = "block";
    setModalOpened(true)
-   
- 
-   //var span = document.getElementsByClassName("close2")[0];
-   
-   
-   // When the user clicks on <span> (x), close the modal
-   /*span.onclick = function() {
-     modal.style.display = "none";
-   }*/
-   
-   // When the user clicks anywhere outside of the modal, close it
    window.onclick = function(event) {
      if (event.target == modal) {
        modal.style.display = "none";
@@ -122,8 +108,7 @@ export default function Admin() {
               <br/>
               <button onClick={mod1} id="myBtn" className='admin_button'><i class="bi bi-trophy"></i> Előléptetés</button>
               <div id="myModal" className="modal">
-                <div  className="modal-content">
-                {/* <span className="close1">&times;</span>*/}
+                <div  className="modal-content">   
                   <Rolechanger/>
                 </div>
               </div>
@@ -133,10 +118,13 @@ export default function Admin() {
               <button onClick={mod2} id="myBtn" className='admin_button'><i class="bi bi-plus-circle"></i> Új Autó</button>
               <div id="myModal2" className="modal">
                 <div  className="modal-content">
-                {/*<span className="close2">&times;</span>*/}
                   <AutoFelvitel get={Get}/>
                 </div>
               </div>   
+              <br/>
+              
+              <button className='admin_button' onClick={function() {if(window.confirm("Biztosan törölni szeretnél?")){DeleteUser()}}}>Fiók törlése</button>
+              
         </div>
         <div className='col'>
           <h3 className='notifications'>Értesítések</h3>
@@ -198,8 +186,7 @@ export default function Admin() {
                   </div>
                 </div>
               </div>:
-             <div/>
-            
+              <a/>
             )})
           
           }

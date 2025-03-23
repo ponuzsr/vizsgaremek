@@ -9,5 +9,6 @@ namespace backend.Services.IAuthService
         Task<object> Login(LoginRequestDto loginRequestDto);
 
         Task<object> AssignRole(string UserName, string RoleName);
+        Task<object> DeleteRole(string user, string role);
     }
 }

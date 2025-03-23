@@ -65,7 +65,19 @@ namespace backend.Controllers
             }
             return BadRequest(res);
         }
-
+        //Szerepkör törlése
+        [HttpDelete("DeleteRole")]
+        public async Task<ActionResult>DeleteRole(string user,string role)
+        {
+            var res=await auth.DeleteRole(user,role);
+            //var res = await _context.UserRoles.Where(y=>y.RoleId==Convert.ToString(roleid)).FirstOrDefaultAsync(x=>x.UserId==Convert.ToString(userid));
+            if (res != null)
+            {
+                return Ok("Sikeres törlés!");
+            }
+            return BadRequest(new { message = "Sikertelen törlés." });
+        }
+      
         //felhasználók lekérdezése
         [HttpGet]
         public async Task<ActionResult<ApplicationUser>> Getusers()

@@ -298,6 +298,27 @@
   },
   {
     "ContainingType": "backend.Controllers.UserController",
+    "Method": "DeleteRole",
+    "RelativePath": "Felhaszn\u00E1l\u00F3k/DeleteRole",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "role",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "backend.Controllers.UserController",
     "Method": "LoginUser",
     "RelativePath": "Felhaszn\u00E1l\u00F3k/Login",
     "HttpMethod": "POST",

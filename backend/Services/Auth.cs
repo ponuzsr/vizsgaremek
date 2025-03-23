@@ -41,7 +41,17 @@ namespace backend.Services
             }
             return new { resutr = "", message = "Sikertelen hozzárendelés." };
         }
-
+        //Szerepkör törlése
+        public async Task<object> DeleteRole(string user,string role)
+        {
+            var user_=await _context.ApplicationUsers.FirstOrDefaultAsync(user_=>user_.NormalizedUserName==user.ToUpper());
+            if (user_ != null)
+            {
+               await userManager.RemoveFromRoleAsync(user_, role);
+                return new { resutr = user, message = "Sikeres törlés." };
+            }
+            return new { resutr = "", message = "Sikertelen törlés." };
+        }
         //Bejelentkezés
         public async Task<object> Login(LoginRequestDto loginRequestDto)
         {

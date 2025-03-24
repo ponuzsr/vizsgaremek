@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React from 'react'
 import { useEffect,useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
@@ -7,15 +8,16 @@ export default function Modosito(props) {
      useEffect(() => {
         Get()
       }, [])
+
     function Get()
     {
-        fetch("http://localhost:5198/Autok/"/*"http://10.169.84.233:5198/api/Autok/"*/+param.id)
-        .then(Response=>Response.json())
-        .then(function(data){
-        console.log(data)
-        setdata(data);
+        axios.get("http://localhost:5198/Autok/"/*"http://10.169.84.233:5198/api/Autok/"*/+param.id)
+        .then(function(response){
+        console.log(response)
+        setdata(response.data);
         })
     }
+
     function Put(id)
     {
         let modositott_adatok=
@@ -31,7 +33,8 @@ export default function Modosito(props) {
           kerekmeghajtas: document.getElementById("ker").value,
         }
         console.log(modositott_adatok)
-        fetch("http://localhost:5198/Autok/"+id,{method:"PUT",body:JSON.stringify(modositott_adatok),headers:{"content-type":"application/json"}}).then(function(res){Get()})
+        axios.put("http://localhost:5198/Autok/"+id,modositott_adatok)
+        .then(function(response){Get()})
     }
   return (
     <div className='row row-cols-1 row-cols-md-2 g-4'>

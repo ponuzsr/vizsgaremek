@@ -3,6 +3,7 @@ import { jwtDecode } from 'jwt-decode'
 import { Link,useNavigate } from 'react-router-dom';
 import { useEffect,useState } from "react";
 import "./Felhasznalo.css";
+import axios from 'axios';
 
 export default function Felhasznalo() { 
   let myToken =jwtDecode(localStorage.getItem("token"));
@@ -13,15 +14,17 @@ export default function Felhasznalo() {
   useEffect(() => {
       Getcom()
     }, [])
+
   function Getcom()
     {
-      fetch("http://localhost:5198/Comment")
-      .then(Response=>Response.json()).then(function(commentek){setcomments(commentek) })
+      axios.get("http://localhost:5198/Comment")
+      .then(function(response){setcomments(response.data) })
     }
+
     function DeleteUser()
     {
-      fetch(`http://localhost:5198/Felhasználók?id=${myToken.sub}`,{method:"DELETE"}).then(
-        function(res)
+      axios.delete(`http://localhost:5198/Felhasználók?id=${myToken.sub}`)
+      .then(function(response)
         {
           alert("Sikeres törlés!")
         }

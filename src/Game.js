@@ -19,7 +19,7 @@ export default function Game() {
           .filter((kocsi) => kocsi.left < window.innerWidth)
       );
 
-    }, 50);
+    }, 70);
 
     const kocsirajInterval = setInterval(() => {
       setKocsik((prevKocsik) => [
@@ -88,8 +88,8 @@ export default function Game() {
             alt="kocsi"
             style={{
               position: "absolute",
-              width: "200px",
-              height: "100px",
+              width: "250px",
+              height: "200px",
               left: kocsi.left,
               top: kocsi.top,
             }}

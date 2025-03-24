@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import { jwtDecode } from "jwt-decode";
 import "./Bejelentkezes.css";
+import axios from 'axios';
+
 export default function() {
     let navigate=useNavigate();
   function Post(){
@@ -16,13 +18,10 @@ export default function() {
     }
     console.log(felhasznalo.userName);
     console.log(felhasznalo.password);
-    fetch("http://localhost:5198/Felhasználók/Login",{method:"POST",body:JSON.stringify(felhasznalo),headers:{"content-type":"application/json"}}) 
-    .then(function(response) {
-      return response.json()
-    })
+    axios.post("http://localhost:5198/Felhasználók/Login",felhasznalo) 
     .then(function(response) {
       console.log(response)
-      localStorage.setItem("token", response.token)
+      localStorage.setItem("token", response.data.token)
       let myToken =jwtDecode(localStorage.getItem("token"));
       console.log(myToken);
       //const token = localStorage.getItem("token")

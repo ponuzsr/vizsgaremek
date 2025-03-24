@@ -1,5 +1,6 @@
 import React from 'react'
 import "./Rolechanger.css";
+import axios from 'axios';
 
 export default function Rolechanger() {
     function Post()
@@ -9,7 +10,7 @@ export default function Rolechanger() {
         userName: document.getElementById("nev").value,
         role: document.getElementById("rol").value,
       }
-        fetch(`http://localhost:5198/Felhasználók/AssignRole?UserName=${role_adat.userName}&roleName=${role_adat.role}`,{method:"POST",headers:{"content-type":"application/json"}})
+        axios.post(`http://localhost:5198/Felhasználók/AssignRole?UserName=${role_adat.userName}&roleName=${role_adat.role}`)
       
     }
     

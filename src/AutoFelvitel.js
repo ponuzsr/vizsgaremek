@@ -1,5 +1,6 @@
 import React from 'react'
 import "./Autofelvitel.css";
+import axios from 'axios';
 export default function AutoFelvitel(props) {
   function Post()
   {
@@ -16,8 +17,8 @@ export default function AutoFelvitel(props) {
       kerekmeghajtas: document.getElementById("ker").value,
     }
     //http://localhost:5198/Autok
-    fetch("http://localhost:5198/Autok",{method:"POST",body:JSON.stringify(auto),headers:{"content-type":"application/json"}})
-    .then(alert("Az utó sikeresen felökerült az adatbázisba!")).then(function(res){props.get()})
+    axios.post("http://localhost:5198/Autok",auto)
+    .then(alert("Az utó sikeresen felökerült az adatbázisba!")).then(function(response){props.get()})
   }
   return (
     <div className='newcar'>

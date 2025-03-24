@@ -6,6 +6,8 @@ import AutoFelvitel from './AutoFelvitel';
 import Rolechanger from './Rolechanger';
 import "./Admin.css";
 import "./modal.css"
+import RoleRemover from './RoleRemover';
+import axios from 'axios';
 export default function Admin() {
   let myToken =jwtDecode(localStorage.getItem("token"));
   let navigate=useNavigate();
@@ -23,24 +25,24 @@ export default function Admin() {
     }, [])
     function Get()
     {
-    fetch("http://localhost:5198/Autok"/*"http://10.169.84.233:5198/api/Autok/"*/)
-    .then(Response=>Response.json())
-    .then(function(data){
+    axios.get("http://localhost:5198/Autok"/*"http://10.169.84.233:5198/api/Autok/"*/)
+    .then(function(response){
       
       
-      setautobase(data)
+      setautobase(response.data)
     })
     }
+
   function Getcom()
     {
-      fetch("http://localhost:5198/Comment")
-      .then(Response=>Response.json()).then(function(commentek){setcomments(commentek) })
+      axios.get("http://localhost:5198/Comment")
+      .then(function(response){setcomments(response.data) })
     }
     
     function delete_button(id)
     {
-        fetch(`http://localhost:5198/Autok?Id=${id}`, {method:"DELETE"}).then(
-            function(res)
+        axios.delete(`http://localhost:5198/Autok?Id=${id}`)
+        .then(function(response)
             {
                 alert("Sikeres törlés!");
                 
@@ -51,12 +53,13 @@ export default function Admin() {
     }
     function GetUsers()
     {
-      fetch("http://localhost:5198/Felhasználók").then(Response=>Response.json()).then(function(felhasznalok){setuserbase(felhasznalok)})
+      axios.get("http://localhost:5198/Felhasználók")
+      .then(function(response){setuserbase(response.data)})
     }
 
-    function DeleteUsers(id)
-    {fetch(`http://localhost:5198/Felhasználók?id=${id}`,{method:"DELETE"}).then(
-      function(res)
+    function DeleteUsers(id){
+      axios.delete(`http://localhost:5198/Felhasználók?id=${id}`)
+      .then(function(response)
       {
         alert("Sikeres törlés!")
         GetUsers()
@@ -65,8 +68,8 @@ export default function Admin() {
     }
     function DeleteUser()
     {
-      fetch(`http://localhost:5198/Felhasználók?id=${myToken.sub}`,{method:"DELETE"}).then(
-        function(res)
+      axios.delete(`http://localhost:5198/Felhasználók?id=${myToken.sub}`).then(
+        function(response)
         {
           alert("Sikeres törlés!")
         }
@@ -75,7 +78,7 @@ export default function Admin() {
    function mod1()
    {
     
-    let modal = document.getElementById("myModal");
+    let modal = document.getElementById("elo");
     modal.style.display = "block";
     setModalOpened(true)
     window.onclick = function(event) {
@@ -87,7 +90,7 @@ export default function Admin() {
   function mod2()
   {
    
-   let modal = document.getElementById("myModal2");
+   let modal = document.getElementById("le");
    modal.style.display = "block";
    setModalOpened(true)
    window.onclick = function(event) {
@@ -96,6 +99,18 @@ export default function Admin() {
      }
   }
  }
+ function mod3()
+ {
+  
+  let modal = document.getElementById("fel");
+  modal.style.display = "block";
+  setModalOpened(true)
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+ }
+}
   return (
     <div> 
       <div className="row row-cols-1 row-cols-md-2 g-4">
@@ -107,16 +122,22 @@ export default function Admin() {
               </Link>
               <br/>
               <button onClick={mod1} id="myBtn" className='admin_button'><i class="bi bi-trophy"></i> Előléptetés</button>
-              <div id="myModal" className="modal">
+              <div id="elo" className="modal">
                 <div  className="modal-content">   
                   <Rolechanger/>
                 </div>
               </div>
-         
+              <br/>
+              <button onClick={mod2} id="myBtn" className='admin_button'><i class="bi bi-trophy"></i> Lefokozás</button>
+              <div id="le" className="modal">
+                <div  className="modal-content">   
+                  <RoleRemover/>
+                </div>
+              </div>
               <br/>
               {/*<AutoFelvitel/>*/}
-              <button onClick={mod2} id="myBtn" className='admin_button'><i class="bi bi-plus-circle"></i> Új Autó</button>
-              <div id="myModal2" className="modal">
+              <button onClick={mod3} id="myBtn" className='admin_button'><i class="bi bi-plus-circle"></i> Új Autó</button>
+              <div id="fel" className="modal">
                 <div  className="modal-content">
                   <AutoFelvitel get={Get}/>
                 </div>
@@ -198,4 +219,3 @@ export default function Admin() {
     </div>
   )
 }
-

@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { jwtDecode } from 'jwt-decode'
 import "./CardInner.css"; 
 import "./Commentek.css";
+import axios from 'axios';
 export default function Onecar2() {
   let userToken =jwtDecode(localStorage.getItem("token"));
     const param = useParams();
@@ -24,8 +25,10 @@ export default function Onecar2() {
           //comment
     }
     console.log(comment)
-    fetch("http://localhost:5198/Comment",{method:"POST",body:JSON.stringify(comment),headers:{"content-type":"application/json"}}).then(function(){Get()})
+    axios.post("http://localhost:5198/Comment",comment)
+    .then(function(){Get()})
   }
+
   function Put(id)
   {
     let edit=
@@ -33,29 +36,30 @@ export default function Onecar2() {
       postComment: document.getElementById(id).firstElementChild.value
     }
     console.log(edit)
-    fetch("http://localhost:5198/Comment/"+id,{method:"PUT",body:JSON.stringify(edit),headers:{"content-type":"application/json"}}).then(function(res){Get()})
+    axios.put("http://localhost:5198/Comment/"+id,edit)
+    .then(function(response){Get()})
   }
+  
   function Get()
     {
-        fetch("http://localhost:5198/Autok/"/*"http://10.169.84.233:5198/api/Autok/"*/+param.id)
-        .then(Response=>Response.json())
-        .then(function(data){
-        console.log(data)
-        setdata(data);
+        axios.get("http://localhost:5198/Autok/"/*"http://10.169.84.233:5198/api/Autok/"*/+param.id)
+        .then(function(response){
+        console.log(response)
+        setdata(response.data);
         })
         .then(
           function()
           {
-            fetch("http://localhost:5198/Autok/autocommentTeszt/"+param.id)
-            .then(Response=>Response.json()).then(function(commentek){setcomments(commentek)})
+            axios.get("http://localhost:5198/Autok/autocommentTeszt/"+param.id)
+            .then(function(response){setcomments(response.data)})
             
           }
         )
     }
   function delete_button(id)
     {
-        fetch(`http://localhost:5198/Comment?id=${id}`, {method:"DELETE"}).then(
-            function(res)
+        axios.delete(`http://localhost:5198/Comment?id=${id}`)
+        .then(function(response)
             {
                 alert("Sikeres törlés!");
                 

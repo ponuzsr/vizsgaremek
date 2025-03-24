@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import "./Commentek.css";
 import "./CardInner.css"; 
+import axios from 'axios';
 export default function Onecar() {  
     const param = useParams();
   const[datam,setdata]=useState([]);
@@ -15,17 +16,16 @@ export default function Onecar() {
   
   function Get()
     {
-        fetch("http://localhost:5198/Autok/"/*"http://10.169.84.233:5198/api/Autok/"*/+param.id)
-        .then(Response=>Response.json())
-        .then(function(data){
-        console.log(data)
-        setdata(data);
+        axios.get("http://localhost:5198/Autok/"/*"http://10.169.84.233:5198/api/Autok/"*/+param.id)
+        .then(function(response){
+        console.log(response)
+        setdata(response.data);
         })
         .then(
           function()
           {
-            fetch("http://localhost:5198/Autok/autocommentTeszt/"+param.id)
-            .then(Response=>Response.json()).then(function(commentek){setcomments(commentek)})
+            axios.get("http://localhost:5198/Autok/autocommentTeszt/"+param.id)
+            .then(function(response){setcomments(response.data)})
             
           }
         )

@@ -2,6 +2,8 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import AutoKartya from "./AutoKartya";
 import { useEffect,useState } from "react";
+import axios from "axios";
+
 function Autok () {
   const params = useParams();
   const[database,setdatabase]=useState([]);
@@ -10,10 +12,9 @@ function Autok () {
   }, [params.ev])
   function Get()
   {
-    fetch("http://localhost:5198/Autok"/*"http://10.169.84.233:5198/api/Autok/"*/)
-    .then(Response=>Response.json())
-    .then(function(data){
-      let filtered = data.filter(auto=> auto.idEv==params.ev )
+    axios.get("http://localhost:5198/Autok"/*"http://10.169.84.233:5198/api/Autok/"*/)
+    .then(function(response){
+      let filtered = response.data.filter(auto=> auto.idEv==params.ev )
       console.log(filtered);
       setdatabase(filtered)
     })

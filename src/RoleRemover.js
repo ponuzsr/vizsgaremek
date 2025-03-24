@@ -1,7 +1,6 @@
-<<<<<<< HEAD
+
 import axios from 'axios'
-=======
->>>>>>> fb4bebee9a912edc0fc35cb6ddbaae027f24b8be
+
 import React, { useState } from 'react'
 
 export default function RoleRemover() {
@@ -14,11 +13,8 @@ export default function RoleRemover() {
     {
        
       console.log(name)
-<<<<<<< HEAD
       axios.delete(`http://localhost:5198/Felhasználók/DeleteRole?user=${name}&role=admin`)
-=======
       fetch(`http://localhost:5198/Felhasználók/DeleteRole?user=${name}&role=admin`,{method:"DELETE"})
->>>>>>> fb4bebee9a912edc0fc35cb6ddbaae027f24b8be
     }
   return (
         <div className='rolechange'>
@@ -42,8 +38,8 @@ export default function RoleRemover() {
         </form>
         </div>
   )
-<<<<<<< HEAD
+
 }
-=======
-}
->>>>>>> fb4bebee9a912edc0fc35cb6ddbaae027f24b8be
+
+
+

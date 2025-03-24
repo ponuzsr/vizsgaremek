@@ -7,10 +7,9 @@ import Rolechanger from './Rolechanger';
 import "./Admin.css";
 import "./modal.css"
 import RoleRemover from './RoleRemover';
-<<<<<<< HEAD
+
 import axios from 'axios';
-=======
->>>>>>> fb4bebee9a912edc0fc35cb6ddbaae027f24b8be
+
 export default function Admin() {
   let myToken =jwtDecode(localStorage.getItem("token"));
   let navigate=useNavigate();

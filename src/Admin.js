@@ -156,12 +156,13 @@ export default function Admin() {
                    commentek.map((comments)=>{return(
                     comments.postComment.includes(usercheck)?
                    <div className='notification'>      
+                        <h3>{comments.userName}</h3>
                         <p class="text-break">{comments.postComment}</p>    
                          <Link to={"/Onecar2/"+comments.autoId}>
                             <button className="notification_button">Az autóhoz<i class="bi bi-caret-right-fill"></i></button>
                           </Link>    
                     </div>:
-                    <div/>
+                    null
                     
                    )})
                 }
@@ -209,7 +210,7 @@ export default function Admin() {
                   </div>
                 </div>
               </div>:
-              <a/>
+              null
             )})
           
           }

@@ -16,8 +16,6 @@ export default function() {
       password: document.getElementById("exampleInputPassword1").value,
   
     }
-    console.log(felhasznalo.userName);
-    console.log(felhasznalo.password);
     axios.post("http://localhost:5198/Felhasználók/Login",felhasznalo) 
     .then(function(response) {
       console.log(response)

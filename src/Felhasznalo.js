@@ -49,6 +49,7 @@ export default function Felhasznalo() {
                    commentek.map((comments)=>{return(
                     comments.postComment.includes(usercheck)?
                    <div className='users_notifications'>      
+                         <h3>{comments.userName}</h3>
                         <p class="text-break">{comments.postComment}</p>    
                         <Link to={"/Onecar2/"+comments.autoId}>
                             <button className='usersNotifications_button'>Az autóhoz<i class="bi bi-caret-right-fill"></i></button>

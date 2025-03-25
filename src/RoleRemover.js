@@ -12,9 +12,11 @@ export default function RoleRemover() {
     function RemoveRole(name)
     {
        
-      console.log(name)
-      axios.delete(`http://localhost:5198/Felhasználók/DeleteRole?user=${name}&role=admin`)
-      fetch(`http://localhost:5198/Felhasználók/DeleteRole?user=${name}&role=admin`,{method:"DELETE"})
+      if(name!="")
+      {
+        axios.delete(`http://localhost:5198/Felhasználók/DeleteRole?user=${name}&role=admin`).then(function(){alert(name+" mostantól nem admin")})
+      }
+     
     }
   return (
         <div className='rolechange'>
@@ -33,7 +35,7 @@ export default function RoleRemover() {
         
             <br />
             
-            <button onClick={function(){alert(document.getElementById("nev").value+" mostantól nem admin")}} className='eloleptetes' type="submit">Lefokozás</button>
+            <button className='eloleptetes' type="submit">Lefokozás</button>
             <div/>
         </form>
         </div>

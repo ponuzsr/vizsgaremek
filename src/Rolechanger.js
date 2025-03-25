@@ -10,7 +10,10 @@ export default function Rolechanger() {
         userName: document.getElementById("nev").value,
         role: document.getElementById("rol").value,
       }
-        axios.post(`http://localhost:5198/Felhasználók/AssignRole?UserName=${role_adat.userName}&roleName=${role_adat.role}`)
+      if(role_adat.userName!=""&&role_adat.role!="")
+      {
+        axios.post(`http://localhost:5198/Felhasználók/AssignRole?UserName=${role_adat.userName}&roleName=${role_adat.role}`).then(function(){alert(role_adat.userName+" mostantól admin")})
+      }
       
     }
     
@@ -37,7 +40,7 @@ export default function Rolechanger() {
             </div>
             <br />
             
-            <button onClick={function(){alert(document.getElementById("nev").value+" mostantól admin")}} className='eloleptetes' type="submit">Előléptetés</button>
+            <button className='eloleptetes' type="submit">Előléptetés</button>
             <div/>
         </form>
     </div>

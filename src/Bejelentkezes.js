@@ -16,6 +16,14 @@ export default function() {
       password: document.getElementById("exampleInputPassword1").value,
   
     }
+    if(felhasznalo.userName==""||felhasznalo.password==null)
+    {
+      alert("valamilyen adat nincs megadva!")
+    }
+    else
+    {
+
+    
     axios.post("http://localhost:5198/Felhasználók/Login",felhasznalo) 
     .then(function(response) {
       console.log(response)
@@ -25,8 +33,8 @@ export default function() {
       //const token = localStorage.getItem("token")
     }) .then(function() {
       navigate("/profil")
-      
-  })
+    
+  })}
   }
   return (
     <div className="row row-cols-1 row-cols-md-2 g-4">

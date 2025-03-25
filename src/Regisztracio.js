@@ -19,12 +19,17 @@ export default function Regisztracio() {
       userName: document.getElementById("exampleInputEmailnev").value,
       role: "user"
     }
+    if(felhasznalo.userName==""||felhasznalo.email==""||felhasznalo.password)
+    {
+      alert("Valamilyen adat nincs megadva!")
+    }
     axios.post("http://localhost:5198/Felhasználók/Register",felhasznalo) 
     
     .then(function () {
       axios.post(`http://localhost:5198/Felhasználók/AssignRole?UserName=${role_adat.userName}&roleName=${role_adat.role}`)
     } 
     )
+    .then(function(){alert("Köszönjük! Az ön regisztrálása sikeres!")})
     .then(function() {
         navigate("/bejelentkezes")
     })
@@ -63,7 +68,7 @@ export default function Regisztracio() {
 
            {/*Sikeres regisztrálás után vissza dob a bejelentkezés oldalra */}
           
-          <button onClick={function(){alert("Köszönjük! Az ön regisztrálása sikeres!")}} type="submit" className='button'>Regisztráció</button>
+          <button type="submit" className='button'>Regisztráció</button>
           </div>
           
         </div>

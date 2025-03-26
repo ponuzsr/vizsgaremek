@@ -130,7 +130,7 @@ export default function Admin() {
                 </div>
               </div>
               <br/>
-              <button onClick={mod2} id="myBtn" className='admin_button'><i class="bi bi-trophy"></i> Lefokozás</button>
+              <button onClick={mod2} id="myBtn" className='admin_button'><i class="bi bi-emoji-frown"></i> Lefokozás</button>
               <div id="le" className="modal">
                 <div  className="modal-content">   
                   <RoleRemover/>
@@ -168,7 +168,7 @@ export default function Admin() {
                 }
           </div>        
         </div>
-              
+              <br/>
       </div>
       <div className='row'>
       <div className="col-md-12">

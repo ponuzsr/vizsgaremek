@@ -1,0 +1,67 @@
+#modositas{
+    background-image: url(/public/pics/modositas_background.png);
+    background-size: cover;
+    padding: 5px;
+}
+
+
+.mod_input {
+    width: 90%;
+    background-color: #000000;
+    border: none;
+    height: 50px;
+    border-radius: 5px;
+    outline: none;
+    color: rgb(48, 8, 247);
+  }
+  
+  .mod_input:focus {
+    animation: rotateShadow 2s infinite linear;
+  }
+
+  .mod_label{
+    color: #ffffff;
+    text-shadow: 2px 3px 10px #000000;
+    font-size: 25px;
+    font-family: Monospace;
+  }
+
+  .data_label{
+    font-size: 25px;
+    font-family: monospace;
+    text-shadow: 2px 3px 20px #00d9ff;
+  }
+
+  .data_p{
+    font-size: 14px;
+    font-family: monospace;
+  }
+
+  .vissza {
+    position: relative;
+    display: inline-block;
+    margin: 3px;
+    padding: 7px 10px;
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #00bfff;
+    background: transparent;
+    cursor: pointer;
+    transition: ease-out 0.5s;
+    border: 2px solid #00bfff;
+    border-radius: 10px;
+    box-shadow: inset 0 0 0 0 #00bfff;
+    }
+
+    .vissza:hover {
+        color: rgb(0, 0, 0);
+        box-shadow: inset 0 -100px 0 0 #00bfff;
+        }
+
+.auto_modositas{
+    text-shadow: 2px 3px 20px #00d9ff;
+    font-family: monospace;
+    font-family: 30px;
+}

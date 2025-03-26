@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React from 'react'
 import { useEffect,useState } from 'react';
+import "./Modositas.css";
 import { Link, useParams } from 'react-router-dom';
 export default function Modosito(props) {
     const param = useParams();
@@ -36,90 +37,105 @@ export default function Modosito(props) {
         axios.put("http://localhost:5198/Autok/"+id,modositott_adatok)
         .then(function(response){Get()})
     }
+
   return (
-    <div className='row row-cols-1 row-cols-md-2 g-4'>
+    <div className='row row-cols-1 row-cols-md-2 g-4' id='modositas'>
       <div className='col'>
-        <label>Márka:</label>
-        <p>{datam.marka}</p>
-        <label>Gyártási év:</label>
-        <p>{datam.gyartasEv}</p>
-        <label>Gyártás id:</label>
-        <p>{datam.idEv}</p>
-        <label>Meghajtás:</label>
-        <p>{datam.kerekmeghajtas}</p>
-        <label>Teljesítmény:</label>
-        <p>{datam.maxteljesitmeny}</p>
-        <label>Köbcenti:</label>
-        <p>{datam.kobcenti}</p>
-        <label>Tipus:</label>
-        <p>{datam.tipus}</p>
-        <label>kép:</label>
-        <p>{datam.kep}</p>
-        <label>Történet:</label>
-        <p>{datam.tortenet}</p>
+        
+        <label className='data_label'>Márka:</label>
+        <p className='data_p'>{datam.marka}</p>
+
+        <label className='data_label'>Gyártási év:</label>
+        <p className='data_p'>{datam.gyartasEv}</p>
+
+        <label className='data_label'>Gyártás id:</label>
+        <p className='data_p'>{datam.idEv}</p>
+
+        <label className='data_label'> Meghajtás:</label>
+        <p className='data_p'>{datam.kerekmeghajtas}</p>
+
+        <label className='data_label'>Teljesítmény:</label>
+        <p className='data_p'>{datam.maxteljesitmeny}</p>
+
+        <label className='data_label'>Köbcenti:</label>
+        <p className='data_p'>{datam.kobcenti}</p>
+
+        <label className='data_label'>Tipus:</label>
+        <p className='data_p'>{datam.tipus}</p>
+
+        <label className='data_label'>Kép:</label>
+        <p className='data_p'>{datam.kep}</p>
+
+        <label className='data_label'>Történet:</label>
+        <p className='data_p'>{datam.tortenet}</p> 
+
+        <Link className='nav-item nav-link' to={"/profil/"}>
+          <button className="vissza"><i class="bi bi-arrow-bar-left"></i>Vissza</button>
+        </Link>
       </div>
+      
       <div className='col'>
-      <h2>Új autó felvitele</h2>
+      <h2 className='auto_modositas'>Autó Módosítása</h2>
        <form onSubmit={function(event) {
             event.preventDefault()
             Put(datam.id);
         }}>
             <div>
-                <label for="marka" class="form-label" className='label'>Márka</label>
+                <label for="marka" class="form-label" className='mod_label'>Márka</label>
                 <br/>
-                <input type="text" class="form-control" id="mar"/>
+                <input type="text" class="form-control" id="mar" className='mod_input'/>
             </div>
 
             <div>
-                <label for="evid" class="form-label" className='label'>Év azonosító:</label>
+                <label for="evid" class="form-label" className='mod_label'>Év azonosító:</label>
                 <br/>
-                <input type="text" class="form-control" id="gyard" />
+                <input type="text" class="form-control" id="gyard" className='mod_input'/>
             </div>
 
             <div>
-                <label for="Gyarev" class="form-label" className='label'>Gyártási év:</label>
+                <label for="Gyarev" class="form-label" className='mod_label'>Gyártási év:</label>
                 <br/>
-                <input type="text" class="form-control" id="gyar" />
+                <input type="text" class="form-control" id="gyar" className='mod_input'/>
             </div>
 
             <div>
-                <label for="kep" class="form-label" className='label'>kép:</label>
+                <label for="kep" class="form-label" className='mod_label'>Kép:</label>
                 <br/>
-                <input type="text" class="form-control" id="kep" />
+                <input type="text" class="form-control" id="kep" className='mod_input'/>
             </div>
 
             <div>
-                <label for="kob" class="form-label" className='label'>Köbcenti:</label>
+                <label for="kob" class="form-label" className='mod_label'>Köbcenti:</label>
                 <br/>
-                <input type="text" class="form-control" id="kob" />
+                <input type="text" class="form-control" id="kob" className='mod_input'/>
             </div>
 
             <div>
-                <label for="tip" class="form-label" className='label'>Tipus:</label>
+                <label for="tip" class="form-label" className='mod_label'>Tipus:</label>
                 <br/>
-                <input type="text" class="form-control" id="tip" />
+                <input type="text" class="form-control" id="tip" className='mod_input'/>
             </div>
 
             <div>
-                <label for="max" class="form-label" className='label'>Max teljesítmény:</label>
+                <label for="max" class="form-label" className='mod_label'>Max teljesítmény:</label>
                 <br/>
-                <input type="text" class="form-control" id="max" />
+                <input type="text" class="form-control" id="max" className='mod_input'/>
             </div>
             
             <div>
-                <label for="ker" class="form-label" className='label'>Kerékmeghajtás:</label>
+                <label for="ker" class="form-label" className='mod_label'>Kerékmeghajtás:</label>
                 <br/>
-                <input type="text" class="form-control" id="ker" />
+                <input type="text" class="form-control" id="ker" className='mod_input'/>
             </div>
             <div>
-                <label for="tor" class="form-label" className='label'>Történet:</label>
+                <label for="tor" class="form-label" className='mod_label'>Történet:</label>
                 <br/>
-                <textarea id='tor'></textarea>
+                <textarea id='tor' className='mod_input'></textarea>
             </div> 
             <a onClick={function(){Put(datam.id)}} className='modositas'>Módosítás</a>
         </form>
       </div>
     </div>
-    
+   
   )
 }

@@ -35,6 +35,10 @@
   .data_p{
     font-size: 14px;
     font-family: monospace;
+    word-wrap: break-word;  
+    word-break: break-word; 
+    overflow-wrap: break-word;
+    white-space: normal;
   }
 
   .vissza {

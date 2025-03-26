@@ -5,7 +5,7 @@ import "./Regisztracio.css";
 import axios from 'axios';
 export default function Regisztracio() {
   let navigate=useNavigate();
-  function Post(){
+  async function Post(){
     
     let felhasznalo=
     {
@@ -19,11 +19,8 @@ export default function Regisztracio() {
       userName: document.getElementById("exampleInputEmailnev").value,
       role: "user"
     }
-    if(felhasznalo.userName==""||felhasznalo.email==""||felhasznalo.password)
-    {
-      alert("Valamilyen adat nincs megadva!")
-    }
-    axios.post("http://localhost:5198/Felhasználók/Register",felhasznalo) 
+    try{
+    await axios.post("http://localhost:5198/Felhasználók/Register",felhasznalo) 
     
     .then(function () {
       axios.post(`http://localhost:5198/Felhasználók/AssignRole?UserName=${role_adat.userName}&roleName=${role_adat.role}`)
@@ -33,6 +30,11 @@ export default function Regisztracio() {
     .then(function() {
         navigate("/bejelentkezes")
     })
+  }
+  catch(error)
+  {
+    console.log(error)
+  }
   }
  
   return (

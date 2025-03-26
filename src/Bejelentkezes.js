@@ -7,7 +7,7 @@ import axios from 'axios';
 
 export default function() {
     let navigate=useNavigate();
-  function Post(){
+  async function Post(){
     
     let felhasznalo=
     {
@@ -16,15 +16,11 @@ export default function() {
       password: document.getElementById("exampleInputPassword1").value,
   
     }
-    if(felhasznalo.userName==""||felhasznalo.password==null)
-    {
-      alert("valamilyen adat nincs megadva!")
-    }
-    else
-    {
+   
+   
 
-    
-    axios.post("http://localhost:5198/Felhasználók/Login",felhasznalo) 
+    try{
+    await axios.post("http://localhost:5198/Felhasználók/Login",felhasznalo) 
     .then(function(response) {
       console.log(response)
       localStorage.setItem("token", response.data.token)
@@ -35,7 +31,12 @@ export default function() {
       navigate("/profil")
     
   })}
+  catch(error)
+  {
+    console.log(error)
   }
+}
+  
   return (
     <div className="row row-cols-1 row-cols-md-2 g-4">
       <div className='col'>

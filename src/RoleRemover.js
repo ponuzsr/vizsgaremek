@@ -9,12 +9,15 @@ export default function RoleRemover() {
     {
         setnev(event.target.value)
     }
-    function RemoveRole(name)
+    async function RemoveRole(name)
     {
        
-      if(name!="")
+      try{
+        await axios.delete(`http://localhost:5198/Felhasználók/DeleteRole?user=${name}&role=admin`).then(function(){alert(name+" mostantól nem admin")})
+      }
+      catch(error)
       {
-        axios.delete(`http://localhost:5198/Felhasználók/DeleteRole?user=${name}&role=admin`).then(function(){alert(name+" mostantól nem admin")})
+          console.log(error)
       }
      
     }

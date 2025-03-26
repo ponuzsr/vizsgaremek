@@ -29,15 +29,21 @@ export default function Onecar2() {
     .then(function(){Get()})
   }
 
-  function Put(id)
+  async function Put(id)
   {
     let edit=
     {
       postComment: document.getElementById(id).firstElementChild.value
     }
     console.log(edit)
-    axios.put("http://localhost:5198/Comment/"+id,edit)
+    try{
+    await axios.put("http://localhost:5198/Comment/"+id,edit)
     .then(function(response){Get()})
+    }
+    catch(error)
+    {
+      console.log(error)
+    }
   }
   
   function Get()

@@ -2,7 +2,7 @@ import React from 'react'
 import "./Autofelvitel.css";
 import axios from 'axios';
 export default function AutoFelvitel(props) {
-  function Post()
+  async function Post()
   {
     let auto=
     {
@@ -16,9 +16,14 @@ export default function AutoFelvitel(props) {
       maxteljesitmeny: document.getElementById("max").value,
       kerekmeghajtas: document.getElementById("ker").value,
     }
-    //http://localhost:5198/Autok
-    axios.post("http://localhost:5198/Autok",auto)
+    try{
+    await axios.post("http://localhost:5198/Autok",auto)
     .then(alert("Az utó sikeresen felökerült az adatbázisba!")).then(function(response){props.get()})
+    }
+    catch(error)
+    {
+        console.log(error)
+    }
   }
   return (
     <div className='newcar'>

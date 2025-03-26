@@ -3,16 +3,20 @@ import "./Rolechanger.css";
 import axios from 'axios';
 
 export default function Rolechanger() {
-    function Post()
+    async function Post()
     {
       let role_adat=
       {
         userName: document.getElementById("nev").value,
         role: document.getElementById("rol").value,
       }
-      if(role_adat.userName!=""&&role_adat.role!="")
+      try
       {
-        axios.post(`http://localhost:5198/Felhasználók/AssignRole?UserName=${role_adat.userName}&roleName=${role_adat.role}`).then(function(){alert(role_adat.userName+" mostantól admin")})
+        await axios.post(`http://localhost:5198/Felhasználók/AssignRole?UserName=${role_adat.userName}&roleName=${role_adat.role}`).then(function(){alert(role_adat.userName+" mostantól admin")})
+      }
+      catch(error)
+      {
+        console.log(error)
       }
       
     }

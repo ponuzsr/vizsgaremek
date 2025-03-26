@@ -19,7 +19,7 @@ export default function Modosito(props) {
         })
     }
 
-    function Put(id)
+   async function Put(id)
     {
         let modositott_adatok=
         {
@@ -33,9 +33,14 @@ export default function Modosito(props) {
           maxteljesitmeny: document.getElementById("max").value,
           kerekmeghajtas: document.getElementById("ker").value,
         }
-        console.log(modositott_adatok)
-        axios.put("http://localhost:5198/Autok/"+id,modositott_adatok)
+        try{
+        await axios.put("http://localhost:5198/Autok/"+id,modositott_adatok)
         .then(function(response){Get()})
+        }
+        catch(error)
+        {
+          console.log(error)
+        }
     }
 
   return (

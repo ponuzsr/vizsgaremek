@@ -18,7 +18,7 @@ export default function AutoFelvitel(props) {
     }
     try{
     await axios.post("http://localhost:5198/Autok",auto)
-    .then(alert("Az utó sikeresen felökerült az adatbázisba!")).then(function(response){props.get()})
+    .then(alert("Az autó sikeresen felökerült az adatbázisba!")).then(function(response){props.get()})
     }
     catch(error)
     {

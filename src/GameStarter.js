@@ -6,7 +6,7 @@ export default function GameStarter() {
     <div>
       {/*Játék leírása */}
       <div className='description'>
-      <h1>Üdvözölünk a ClassicGarage weboldal "Ricsi kicsi kocsija" játékába!</h1>
+      <h1>Üdvözölünk a ClassicGarage weboldal "Ricsi kicsi kocsija" játékában!</h1>
       <h2>Játék leírás:</h2>
       {/*Kicsike kép */}
       <div className='minipic'>

@@ -82,7 +82,7 @@ export default function Regisztracio() {
         <h1>Regisztrációs feltételek!</h1>
         <p>Az Email cím csak akkor érvényes ha tartalmaz @ és .hu vagy .com-ot,</p>
         <p>A Felhasználónév létrehozásakor ügyeljen arra, hogy minimum 6 karakter legyen</p>
-        <p>A Jelszó készítéskor ajánjuk, hogy tartalmazzon kicsi és nagy betűket illetve számot és speciális karaktereket.</p>
+        <p>A Jelszó készítéskor ajánljuk, hogy tartalmazzon kicsi és nagy betűket illetve számot és speciális karaktereket.</p>
         <p>Regisztrálni csak 12 év felettieknek lehet!</p>
         <p>Regisztrálás után ha bejelentkezel jogosultságot kapsz kommentelni autóink alá.</p>
         <p>Kérjük kommenteléskor csúnya szavakat kerülje! Ha ez nem sikerül akkor profilja törlésre kerül!</p>

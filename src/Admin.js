@@ -120,7 +120,7 @@ export default function Admin() {
           <h2>{myToken.name}</h2>
               <p>{myToken.email}</p>
               <Link to={'/bejelentkezes'}>
-                <button onClick={function(){localStorage.removeItem("token")}} className='admin_button'><i class="bi bi-door-closed"></i> Kijelentekzes</button>
+                <button onClick={function(){localStorage.removeItem("token")}} className='admin_button'><i class="bi bi-door-closed"></i> Kijelentekzés</button>
               </Link>
               <br/>
               <button onClick={mod1} id="myBtn" className='admin_button'><i class="bi bi-trophy"></i> Előléptetés</button>

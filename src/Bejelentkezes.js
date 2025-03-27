@@ -76,7 +76,7 @@ export default function() {
       <div className='col'>
         <div className='koszones'>
           <h2>Hello! Köszönjük, hogy beregisztráltál oldalunkra. 
-            Jelentkezz be és nézd meg új értesítéseidet. Kommentelj kocsiaink alá oszd meg velünk és másokkal vélemyényedet.</h2>
+            Jelentkezz be és nézd meg új értesítéseidet. Kommentelj kocsijaink alá oszd meg velünk és másokkal véleményedet.</h2>
             <h2>Ha még nem lennél beregisztrálva akkor a "Regisztráció" gombra kattintva ezt is megteheted.</h2>
               <h2>További jó szórakozást!</h2>
             </div>

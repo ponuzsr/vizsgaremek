@@ -133,7 +133,7 @@ export default function Onecar2() {
                           <h3>{comments.userName}</h3>
                           <p class="text-break">{comments.postComment}</p>   
                             <div>      
-                                <a onClick={function() {if(window.confirm("Biztosan törölni szeretnél?")){delete_button(comments.id)}}} class="btn btn-danger">törlés</a>
+                                <a onClick={function() {if(window.confirm("Biztosan törölni szeretnél?")){delete_button(comments.id)}}} class="btn btn-danger">Törlés</a>
                             </div>
                         </div>
                         }

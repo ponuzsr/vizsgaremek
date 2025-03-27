@@ -37,7 +37,7 @@ export default function Felhasznalo() {
           <h2>{myToken.name}</h2>
               <p>{myToken.email}</p>
               <Link to={'/bejelentkezes'}>
-                <button onClick={function(){localStorage.removeItem("token")}} class="users"><i class="bi bi-door-closed"></i> Kijelentekzes</button>
+                <button onClick={function(){localStorage.removeItem("token")}} class="users"><i class="bi bi-door-closed"></i> Kijelentekzés</button>
               </Link>
 
               <button className='admin_button' onClick={function() {if(window.confirm("Biztosan törölni szeretnél?")){DeleteUser()}}}>Fiók törlése</button>

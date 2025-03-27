@@ -11,7 +11,12 @@ using System;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddDbContext<ClassicgarageAdatbazisContext>();
+builder.Services.AddDbContext<ClassicgarageAdatbazisContext>(option =>
+{
+    var connectionString = builder.Configuration.GetConnectionString("MySql");
+    option.UseMySQL(connectionString);
+});
+
 builder.Services.AddScoped<IAuth, Auth>();
 builder.Services.AddScoped<ITokenGenerator, TokenGenerator>();
 
@@ -68,11 +73,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 
-builder.Services.AddDbContext<ClassicgarageAdatbazisContext>(option =>
-{
-    var connectionstring = builder.Configuration.GetConnectionString("MySql");
-    option.UseMySQL(connectionstring);
-});
+
 
 
 var app = builder.Build();

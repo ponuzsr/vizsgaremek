@@ -137,7 +137,7 @@ export default function Modosito(props) {
                 <br/>
                 <textarea id='tor' className='mod_input'></textarea>
             </div> 
-            <a onClick={function(){Put(datam.id)}} className='modositas'>Módosítás</a>
+            <a onClick={function(){Put(datam.id)}} className='modositas'><i class="bi bi-pen"></i>Módosítás</a>
         </form>
       </div>
     </div>

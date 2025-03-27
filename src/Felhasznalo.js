@@ -40,10 +40,10 @@ export default function Felhasznalo() {
                 <button onClick={function(){localStorage.removeItem("token")}} class="users"><i class="bi bi-door-closed"></i> Kijelentekzés</button>
               </Link>
 
-              <button className='admin_button' onClick={function() {if(window.confirm("Biztosan törölni szeretnél?")){DeleteUser()}}}>Fiók törlése</button>
+              <button className='admin_button' onClick={function() {if(window.confirm("Biztosan törölni szeretnél?")){DeleteUser()}}}><i class="bi bi-person-dash"></i> Fiók törlése</button>
         </div>
         <div className='col'>
-          <h3 className='notifications'>Értesítések</h3>
+          <h3 className='notifications'>Értesítések <i class="bi bi-bell"></i></h3>
           <div class="ertesitesek-item" style={{}}>
                 {
                    commentek.map((comments)=>{return(

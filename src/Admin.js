@@ -146,11 +146,11 @@ export default function Admin() {
               </div>   
               <br/>
               
-              <button className='admin_button' onClick={function() {if(window.confirm("Biztosan törölni szeretnél?")){DeleteUser()}}}>Fiók törlése</button>
+              <button className='admin_button' onClick={function() {if(window.confirm("Biztosan törölni szeretnél?")){DeleteUser()}}}><i class="bi bi-person-dash"></i> Fiók törlése</button>
               
         </div>
         <div className='col'>
-          <h3 className='notifications'>Értesítések</h3>
+          <h3 className='notifications'>Értesítések <i class="bi bi-bell"></i></h3>
           <div class="ertesitesek-item" style={{}}>
                 {
                    commentek.map((comments)=>{return(
@@ -174,7 +174,7 @@ export default function Admin() {
       <div className="col-md-12">
         <div className='row'>
         <div className='col-6 col-md-6'>
-          <h2>Autók:</h2>
+          <h2><i class="bi bi-car-front"></i>Autók:</h2>
         <div className='row row-cols-1 row-cols-md-2 g-4'>
         {
           autobase.map((autok)=>{return(
@@ -183,9 +183,9 @@ export default function Admin() {
               <div className='cars'>
                 <div className='cars2'>
                 <p>{autok.marka}</p>
-                <button onClick={function() {if(window.confirm("Biztosan törölni szeretnél?")){delete_button(autok.id)}}} className='cars_delete'>Törlés</button>
+                <button onClick={function() {if(window.confirm("Biztosan törölni szeretnél?")){delete_button(autok.id)}}} className='cars_delete'><i class="bi bi-trash3"></i>Törlés</button>
                 <Link to={"/modsitas/"+autok.id}>
-                    <a className='cars_modification'>Módosítás</a>
+                    <a className='cars_modification'><i class="bi bi-pen"></i>Módosítás</a>
                 </Link>
                 </div>
             </div>
@@ -197,7 +197,7 @@ export default function Admin() {
        </div>
        {/* className='row row-cols-1 row-cols-md-1 g-4'*/}
        <div className='col-6 col-md-6'>
-        <h2>Felhasználók:</h2>
+        <h2><i class="bi bi-person-circle"></i>Felhasználók:</h2>
         <div className='row row-cols-1 row-cols-md-2 g-4'>
         {
             userbase.map((users)=>{return(
@@ -206,7 +206,7 @@ export default function Admin() {
                 <div className='cars'>
                   <div className='cars2'>
                   <p>{users.userName}</p>
-                  <button onClick={function() {if(window.confirm("Biztosan törölni szeretnél?")){DeleteUsers(users.id)}}} className='cars_delete'>Törlés</button>
+                  <button onClick={function() {if(window.confirm("Biztosan törölni szeretnél?")){DeleteUsers(users.id)}}} className='cars_delete'><i class="bi bi-trash3"></i>Törlés</button>
                   </div>
                 </div>
               </div>:

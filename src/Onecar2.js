@@ -103,9 +103,8 @@ export default function Onecar2() {
                     event.preventDefault()
                     Post()  
                     }}>
-                       <h2>{userToken.name}</h2>
+                       <h2><i class="bi bi-person-fill"></i>{userToken.name}</h2>
                       <div class="input-group">
-                          
                           <input type="text" id='comment' class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" className='comment_input'/>
                       </div>
                       <button type="submit" className='submit'>Küldés</button>
@@ -120,12 +119,12 @@ export default function Onecar2() {
                     <div className='comments'> 
                         {userToken.sub==comments.commenteloId?
                         <div>
-                          <h3>{comments.userName}</h3>
-                          <p id={comments.id} onDoubleClick={function(e){e.target.innerHTML=`<input value=${comments.postComment}>`}} class="text-break">{comments.postComment}</p>
+                          <h3><i class="bi bi-person-fill"></i>{comments.userName}</h3>
+                          <p  id={comments.id} onDoubleClick={function(e){e.target.innerHTML=`<input value=${comments.postComment}>`}} class="text-break">{comments.postComment}</p>
                        
                         
                             <div>                  
-                            <a onClick={function(){Put(comments.id)}} className='modositas'>Módosítás</a>
+                            <a onClick={function(){Put(comments.id)}} className='modositas'><i class="bi bi-pen"></i>Módosítás</a>
                             <a onClick={function() {if(window.confirm("Biztosan törölni szeretnél?")){delete_button(comments.id)}}} className='torles'><i class="bi bi-trash"></i> Törlés</a>
                             </div>
                         </div>:
@@ -133,7 +132,7 @@ export default function Onecar2() {
                           <h3>{comments.userName}</h3>
                           <p class="text-break">{comments.postComment}</p>   
                             <div>      
-                                <a onClick={function() {if(window.confirm("Biztosan törölni szeretnél?")){delete_button(comments.id)}}} class="btn btn-danger">Törlés</a>
+                                <a onClick={function() {if(window.confirm("Biztosan törölni szeretnél?")){delete_button(comments.id)}}} class="btn btn-danger"><i class="bi bi-trash3"></i>Törlés</a>
                             </div>
                         </div>
                         }

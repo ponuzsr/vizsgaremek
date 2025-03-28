@@ -1,8 +1,10 @@
 ﻿using backend.Models;
 using backend.Services.Dtos;
 using backend.Services.IAuthService;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using MySqlX.XDevAPI.Common;
 using System.Data;
 
 namespace backend.Services
@@ -95,5 +97,19 @@ namespace backend.Services
             return new { result = "", message = result.Errors.FirstOrDefault().Description };
             
         }
+        //jelszó modosítás
+        /*public async Task<object>PasswordChanger(Guid id,string password,string changepassword) 
+        {
+            var users=_context.ApplicationUsers.FirstOrDefaultAsync(x=>x.Id==Convert.ToString(id));
+           var name=_context.ApplicationUsers.Where(c=>c.Id==Convert.ToString(id)).Select(x=>x.UserName).FirstOrDefault();
+           
+            if(users!=null) 
+            {
+                
+                await userManager.ChangePasswordAsync(name,password,changepassword);
+                return new { resutr = users, message = "Sikeres módosítás." };
+            }
+            return new { resutr = "", message = "Sikertelen módosítás." };
+        }/*/
     }
 }

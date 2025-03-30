@@ -61,7 +61,7 @@ export default function Onecar() {
                         
           
                         </div>
-                        <button type="submit" className='submit'>Küldés</button>
+                        <button type="submit" className='submit' disabled>Küldés</button>
                     </form>
              
             </div>

@@ -11,10 +11,12 @@ export default function Onecar2() {
     const param = useParams();
   const[datam,setdata]=useState([]);
   const[commentek,setcomments]=useState([])
+  const [isDClicked, setIsDClicked] = useState(false)
+
   useEffect(() => {
     Get()
   }, [])
-  //29cc4580-b1a6-4c4c-a665-6f7daba47c75
+
   function Post()
   {
     let comment=
@@ -25,8 +27,16 @@ export default function Onecar2() {
           //comment
     }
     console.log(comment)
-    axios.post("http://localhost:5198/Comment",comment)
-    .then(function(){Get()})
+    if(comment.postComment!="")
+    {
+      axios.post("http://localhost:5198/Comment",comment)
+      .then(function(){Get()})
+    }
+    else
+    {
+      alert("Nem írtál semmit!")
+    }
+    
   }
 
   async function Put(id)
@@ -120,11 +130,11 @@ export default function Onecar2() {
                         {userToken.sub==comments.commenteloId?
                         <div>
                           <h3><i class="bi bi-person-fill"></i>{comments.userName}</h3>
-                          <p  id={comments.id} onDoubleClick={function(e){e.target.innerHTML=`<input value=${comments.postComment}>`}} class="text-break">{comments.postComment}</p>
+                          <p  id={comments.id} onDoubleClick={function(e){e.target.innerHTML=`<input value=${comments.postComment}>`;setIsDClicked(true);}} class="text-break">{comments.postComment}</p>
                        
                         
                             <div>                  
-                            <a onClick={function(){Put(comments.id)}} className='modositas'><i class="bi bi-pen"></i>Módosítás</a>
+                            <button onClick={function(){Put(comments.id)}} className='modositas' disabled={!isDClicked}><i class="bi bi-pen"></i>Módosítás</button>
                             <a onClick={function() {if(window.confirm("Biztosan törölni szeretnél?")){delete_button(comments.id)}}} className='torles'><i class="bi bi-trash"></i> Törlés</a>
                             </div>
                         </div>:

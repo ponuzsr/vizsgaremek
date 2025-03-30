@@ -6,16 +6,21 @@ import { Link, useParams } from 'react-router-dom';
 export default function Modosito(props) {
     const param = useParams();
     const[datam,setdata]=useState([]);
+    const[data,setdat]=useState([])
      useEffect(() => {
         Get()
       }, [])
-
+      const handleChange = (event) => 
+      {
+        setdat({ data, one: event.target.value });
+      };
     function Get()
     {
         axios.get("http://localhost:5198/Autok/"/*"http://10.169.84.233:5198/api/Autok/"*/+param.id)
         .then(function(response){
         console.log(response)
         setdata(response.data);
+        setdat(response.data)
         })
     }
 
@@ -88,54 +93,54 @@ export default function Modosito(props) {
             <div>
                 <label for="marka" class="form-label" className='mod_label'>Márka</label>
                 <br/>
-                <input type="text" class="form-control" id="mar" className='mod_input'/>
+                <input type="text" class="form-control" id="mar" className='mod_input' value={data.marka} onChange={handleChange}/>
             </div>
 
             <div>
                 <label for="evid" class="form-label" className='mod_label'>Év azonosító:</label>
                 <br/>
-                <input type="text" class="form-control" id="gyard" className='mod_input'/>
+                <input type="text" class="form-control" id="gyard" className='mod_input' value={data.idEv} onChange={handleChange}/>
             </div>
 
             <div>
                 <label for="Gyarev" class="form-label" className='mod_label'>Gyártási év:</label>
                 <br/>
-                <input type="text" class="form-control" id="gyar" className='mod_input'/>
+                <input type="text" class="form-control" id="gyar" className='mod_input' value={data.gyartasEv} onChange={handleChange}/>
             </div>
 
             <div>
                 <label for="kep" class="form-label" className='mod_label'>Kép:</label>
                 <br/>
-                <input type="text" class="form-control" id="kep" className='mod_input'/>
+                <input type="text" class="form-control" id="kep" className='mod_input' value={data.kep} onChange={handleChange}/>
             </div>
 
             <div>
                 <label for="kob" class="form-label" className='mod_label'>Köbcenti:</label>
                 <br/>
-                <input type="text" class="form-control" id="kob" className='mod_input'/>
+                <input type="text" class="form-control" id="kob" className='mod_input' value={data.kobcenti} onChange={handleChange}/>
             </div>
 
             <div>
                 <label for="tip" class="form-label" className='mod_label'>Tipus:</label>
                 <br/>
-                <input type="text" class="form-control" id="tip" className='mod_input'/>
+                <input type="text" class="form-control" id="tip" className='mod_input' value={data.tipus} onChange={handleChange}/>
             </div>
 
             <div>
                 <label for="max" class="form-label" className='mod_label'>Max teljesítmény:</label>
                 <br/>
-                <input type="text" class="form-control" id="max" className='mod_input'/>
+                <input type="text" class="form-control" id="max" className='mod_input' value={data.maxteljesitmeny} onChange={handleChange}/>
             </div>
             
             <div>
                 <label for="ker" class="form-label" className='mod_label'>Kerékmeghajtás:</label>
                 <br/>
-                <input type="text" class="form-control" id="ker" className='mod_input'/>
+                <input type="text" class="form-control" id="ker" className='mod_input' value={data.kerekmeghajtas} onChange={handleChange}/>
             </div>
             <div>
                 <label for="tor" class="form-label" className='mod_label'>Történet:</label>
                 <br/>
-                <textarea id='tor' className='mod_input'></textarea>
+                <textarea id='tor' className='mod_input' value={data.tortenet} onChange={handleChange}></textarea>
             </div> 
             <a onClick={function(){Put(datam.id)}} className='modositas'><i class="bi bi-pen"></i>Módosítás</a>
         </form>

@@ -12,11 +12,10 @@ export default function Onecar() {
   useEffect(() => {
     Get()
   }, [])
-  //29cc4580-b1a6-4c4c-a665-6f7daba47c75
   
   function Get()
     {
-        axios.get("http://localhost:5198/Autok/"/*"http://10.169.84.233:5198/api/Autok/"*/+param.id)
+        axios.get(`${process.env.REACT_APP_URL}/Autok/`+param.id)
         .then(function(response){
         console.log(response)
         setdata(response.data);
@@ -24,7 +23,7 @@ export default function Onecar() {
         .then(
           function()
           {
-            axios.get("http://localhost:5198/Autok/autocommentTeszt/"+param.id)
+            axios.get(`${process.env.REACT_APP_URL}/Autok/autocommentTeszt/`+param.id)
             .then(function(response){setcomments(response.data)})
             
           }

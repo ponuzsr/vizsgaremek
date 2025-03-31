@@ -24,12 +24,11 @@ export default function Onecar2() {
           commenteloId:userToken.sub,
           autoId: param.id,
           createdTime: new Date().toJSON(),
-          //comment
     }
     console.log(comment)
     if(comment.postComment!="")
     {
-      axios.post("http://localhost:5198/Comment",comment)
+      axios.post(`${process.env.REACT_APP_URL}/Comment`,comment)
       .then(function(){Get()})
     }
     else
@@ -47,7 +46,7 @@ export default function Onecar2() {
     }
     console.log(edit)
     try{
-    await axios.put("http://localhost:5198/Comment/"+id,edit)
+    await axios.put(`${process.env.REACT_APP_URL}/Comment/`+id,edit)
     .then(function(response){Get()})
     }
     catch(error)
@@ -58,7 +57,7 @@ export default function Onecar2() {
   
   function Get()
     {
-        axios.get("http://localhost:5198/Autok/"/*"http://10.169.84.233:5198/api/Autok/"*/+param.id)
+        axios.get(`${process.env.REACT_APP_URL}/Autok/`+param.id)
         .then(function(response){
         console.log(response)
         setdata(response.data);
@@ -66,7 +65,7 @@ export default function Onecar2() {
         .then(
           function()
           {
-            axios.get("http://localhost:5198/Autok/autocommentTeszt/"+param.id)
+            axios.get(`${process.env.REACT_APP_URL}/Autok/autocommentTeszt/`+param.id)
             .then(function(response){setcomments(response.data)})
             
           }
@@ -74,7 +73,7 @@ export default function Onecar2() {
     }
   function delete_button(id)
     {
-        axios.delete(`http://localhost:5198/Comment?id=${id}`)
+        axios.delete(`${process.env.REACT_APP_URL}/Comment?id=${id}`)
         .then(function(response)
             {
                 alert("Sikeres törlés!");

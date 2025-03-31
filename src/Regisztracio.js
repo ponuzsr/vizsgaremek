@@ -20,16 +20,13 @@ export default function Regisztracio() {
       role: "user"
     }
     try{
-    await axios.post("http://localhost:5198/Felhasználók/Register",felhasznalo) 
+    await axios.post(`${process.env.REACT_APP_URL}/Felhasználók/Register`,felhasznalo) 
     
-    .then(function () {
-      axios.post(`http://localhost:5198/Felhasználók/AssignRole?UserName=${role_adat.userName}&roleName=${role_adat.role}`)
-    } 
-    )
-    .then(function(){alert("Köszönjük! Az ön regisztrálása sikeres!")})
-    .then(function() {
-        navigate("/bejelentkezes")
-    })
+   
+    axios.post(`${process.env.REACT_APP_URL}/Felhasználók/AssignRole?UserName=${role_adat.userName}&roleName=${role_adat.role}`)
+    alert("Köszönjük! Az ön regisztrálása sikeres!")
+    
+    navigate("/bejelentkezes")
   }
   catch(error)
   {
@@ -52,19 +49,19 @@ export default function Regisztracio() {
            {/*Felhasználónév */}
         <div className="username">
             <label for="exampleInputEmailnev" class="form-label" className='label'>Felhasználónév</label>
-            <input type="username" class="form-control" id="exampleInputEmailnev" aria-describedby="emailHelp" className='signin_data'/>
+            <input type="username" class="form-control" id="exampleInputEmailnev" aria-describedby="emailHelp" required className='signin_data'/>
           </div>
 
            {/*Email */}
           <div className="email">
             <label for="exampleInputEmailcim" class="form-label" className='label'>Email cím</label>
-            <input type="email" class="form-control" id="exampleInputEmailcim" aria-describedby="emailHelp" className='signin_data'/>
+            <input type="email" class="form-control" id="exampleInputEmailcim" aria-describedby="emailHelp" required className='signin_data'/>
           </div>
 
            {/*Jelszó */}
           <div className="password">
             <label for="exampleInputPassword" class="form-label" className='label'>Jelszó</label>
-            <input type="password" class="form-control" id="exampleInputPassword" className='signin_data'/>
+            <input type="password" class="form-control" id="exampleInputPassword" required className='signin_data'/>
           </div>
           <br/>
 

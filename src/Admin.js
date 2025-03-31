@@ -27,7 +27,7 @@ export default function Admin() {
     }, [])
     function Get()
     {
-    axios.get("http://localhost:5198/Autok"/*"http://10.169.84.233:5198/api/Autok/"*/)
+    axios.get(`${process.env.REACT_APP_URL}/Autok`)
     .then(function(response){
       
       
@@ -37,13 +37,13 @@ export default function Admin() {
 
   function Getcom()
     {
-      axios.get("http://localhost:5198/Comment")
+      axios.get(`${process.env.REACT_APP_URL}/Comment`)
       .then(function(response){setcomments(response.data) })
     }
     
     function delete_button(id)
     {
-        axios.delete(`http://localhost:5198/Autok?Id=${id}`)
+        axios.delete(`${process.env.REACT_APP_URL}/Autok?Id=${id}`)
         .then(function(response)
             {
                 alert("Sikeres törlés!");
@@ -55,12 +55,12 @@ export default function Admin() {
     }
     function GetUsers()
     {
-      axios.get("http://localhost:5198/Felhasználók")
+      axios.get(`${process.env.REACT_APP_URL}/Felhasználók`)
       .then(function(response){setuserbase(response.data)})
     }
 
     function DeleteUsers(id){
-      axios.delete(`http://localhost:5198/Felhasználók?id=${id}`)
+      axios.delete(`${process.env.REACT_APP_URL}/Felhasználók?id=${id}`)
       .then(function(response)
       {
         alert("Sikeres törlés!")
@@ -70,7 +70,7 @@ export default function Admin() {
     }
     function DeleteUser()
     {
-      axios.delete(`http://localhost:5198/Felhasználók?id=${myToken.sub}`).then(
+      axios.delete(`${process.env.REACT_APP_URL}/Felhasználók?id=${myToken.sub}`).then(
         function(response)
         {
           alert("Sikeres törlés!")

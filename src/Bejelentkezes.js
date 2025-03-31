@@ -20,17 +20,12 @@ export default function() {
    
 
     try{
-    await axios.post("http://localhost:5198/Felhasználók/Login",felhasznalo) 
-    .then(function(response) {
+    const response = await axios.post(`${process.env.REACT_APP_URL}/Felhasználók/Login`,felhasznalo) 
+   
       console.log(response)
       localStorage.setItem("token", response.data.token)
-      let myToken =jwtDecode(localStorage.getItem("token"));
-      console.log(myToken);
-      //const token = localStorage.getItem("token")
-    }) .then(function() {
       navigate("/profil")
-    
-  })}
+   }
   catch(error)
   {
     console.log(error)
@@ -53,13 +48,13 @@ export default function() {
             {/*Felhasználónév */}
             <div className="username">
               <label for="exampleInputEmail1" class="form-label" className='label'>Felhasználónév</label>
-              <input type="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" className='login_data' />
+              <input type="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required className='login_data' />
             </div>
 
             {/*Jelszó */}
             <div className="password">
               <label for="exampleInputPassword1" class="form-label" className='label'>Jelszó</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" className='login_data' />
+              <input type="password" class="form-control" id="exampleInputPassword1" required className='login_data' />
             </div>
             <br />
             

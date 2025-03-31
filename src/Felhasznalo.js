@@ -17,13 +17,13 @@ export default function Felhasznalo() {
 
   function Getcom()
     {
-      axios.get("http://localhost:5198/Comment")
+      axios.get(`${process.env.REACT_APP_URL}/Comment`)
       .then(function(response){setcomments(response.data) })
     }
 
     function DeleteUser()
     {
-      axios.delete(`http://localhost:5198/Felhasználók?id=${myToken.sub}`)
+      axios.delete(`${process.env.REACT_APP_URL}/Felhasználók?id=${myToken.sub}`)
       .then(function(response)
         {
           alert("Sikeres törlés!")
@@ -39,7 +39,7 @@ export default function Felhasznalo() {
               <Link to={'/bejelentkezes'}>
                 <button onClick={function(){localStorage.removeItem("token")}} class="users"><i class="bi bi-door-closed"></i> Kijelentekzés</button>
               </Link>
-
+              <br/>
               <button className='admin_button' onClick={function() {if(window.confirm("Biztosan törölni szeretnél?")){DeleteUser()}}}><i class="bi bi-person-dash"></i> Fiók törlése</button>
         </div>
         <div className='col'>

@@ -5,6 +5,7 @@ import React, { useState } from 'react'
 
 export default function RoleRemover() {
     const [nev,setnev] = useState(null)
+    const [message, setMessage] = useState("")
     function Felhasznalo(event)
     {
         setnev(event.target.value)
@@ -13,7 +14,10 @@ export default function RoleRemover() {
     {
        
       try{
-        await axios.delete(`http://localhost:5198/Felhasználók/DeleteRole?user=${name}&role=admin`).then(function(){alert(name+" mostantól nem admin")})
+        await axios.delete(`${process.env.REACT_APP_URL}/Felhasználók/DeleteRole?user=${name}&role=admin`)
+        setMessage(`${name} mostantól nem admin`)
+        //alert(name+" mostantól nem admin")
+
       }
       catch(error)
       {
@@ -31,13 +35,13 @@ export default function RoleRemover() {
         <div>
             <label for="nev" class="form-label" className='label'>Felhasználónév</label>
             <br/>
-                <input type="username" class="form-control" className='szerepkor' id="nev" aria-describedby="nevHelp" onChange={Felhasznalo}/>
+                <input type="username" class="form-control" className='szerepkor' id="nev" aria-describedby="nevHelp" required onChange={Felhasznalo}/>
             </div>
 
             {/*Jelszó */}
         
             <br />
-            
+            {message?<p>{message}</p>:null}
             <button className='eloleptetes' type="submit">Lefokozás</button>
             <div/>
         </form>

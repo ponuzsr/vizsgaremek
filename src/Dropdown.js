@@ -11,7 +11,7 @@ function Dropdown ({ isOpen, setIsOpen }) {
         <div className="dropdown">
           {carYears.map((year) => (
             <Link className="dropdownBtn navBtn" key={year} to={`/autok/${year}`} onClick={() => setIsOpen(false)}>
-              {year}-es évek
+              {year}s évek
             </Link>
           ))}
         </div>

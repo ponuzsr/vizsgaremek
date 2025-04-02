@@ -1,7 +1,7 @@
 import React from 'react'
 import { useEffect,useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import "./Commentek.css";
 import "./CardInner.css"; 
 import axios from 'axios';

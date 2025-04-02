@@ -24,6 +24,10 @@ const App = () => {
           return "Ricsi kicsi kocsija";
       case "/bejelentkezes":
         return "Bejelentkezés";
+      case "/regisztracio":
+          return "Regisztráció";
+      case "/profil":
+          return "Profil";
       case "/autok/50":
         return "50-es évek autói";
       case "/autok/60":

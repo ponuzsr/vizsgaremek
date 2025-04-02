@@ -18,13 +18,17 @@ export default function() {
     }
    
    
-
+    const mehet=false
     try{
-    const response = await axios.post(`${process.env.REACT_APP_URL}/Felhasználók/Login`,felhasznalo) 
-   
+      const response=await axios.post(`${process.env.REACT_APP_URL}/Felhasználók/Login`,felhasznalo)
+      
       console.log(response)
       localStorage.setItem("token", response.data.token)
-      navigate("/profil")
+      let Tok =jwtDecode(localStorage.getItem("token"));
+      if (Tok!="") 
+      {
+        navigate("/profil")
+      }
    }
   catch(error)
   {

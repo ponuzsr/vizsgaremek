@@ -106,7 +106,7 @@ namespace backend.Controllers
         public async Task<ActionResult> GetCommentByAutoId(Guid id)
         {
             var comments = await _context.Comments
-        .Where(c => c.AutoId == id)
+        .Where(c => c.AutoId == id).OrderBy(t=>t.CreatedTime)
         .Select(c => new
         {
             c.Id,

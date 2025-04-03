@@ -32,7 +32,7 @@ export default function() {
    }
   catch(error)
   {
-    console.log(error)
+    alert("Rossz felahsználónév/jelszó!")
   }
 }
   

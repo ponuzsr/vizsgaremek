@@ -30,7 +30,7 @@ export default function Regisztracio() {
   }
   catch(error)
   {
-    console.log(error)
+    alert("Rosszul adta meg a jelszót vagy ilyen felhasználó névvel már regisztráltak!")
   }
   }
  

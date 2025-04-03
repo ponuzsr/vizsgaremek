@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 namespace backend.Controllers
 {
@@ -32,26 +33,27 @@ namespace backend.Controllers
         public async Task<ActionResult> AddNewUser(RegisterRequestDto registerRequestDto)
         {
             var user = await auth.Register(registerRequestDto);
-
-            if (user != null)
+            var y = user.GetType().GetProperty("result").GetValue(user, null);
+            if (y != "")
             {
-                return StatusCode(201, user);
+                return StatusCode(200, user);
             }
-            return BadRequest(new { result = "", message = "Sikertelen regisztráció." });
+            return StatusCode(400,user);
         }
-
         //Bejelentkezés
         [HttpPost("Login")]
         public async Task<ActionResult> LoginUser(LoginRequestDto loginRequestDto)
         {
             var res = await auth.Login(loginRequestDto);
 
-            if (res != null)
+            var x = res.GetType().GetProperty("result").GetValue(res, null);
+
+            if (x != "")
             {
                 return StatusCode(200, res);
             }
 
-            return NotFound(res);
+            return StatusCode(400, res);
         }
 
         //Szerepkör hozzá rendelés felhasználóhoz

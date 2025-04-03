@@ -61,15 +61,15 @@ namespace backend.Services
 
             bool isValid = await userManager.CheckPasswordAsync(user, loginRequestDto.Password);
 
-            if (isValid)
+            if (user == null || !isValid) 
             {
+                return new { result = "", message = "Helytelen felhasználónév vagy jelszó.", token = "" };
+            }
                 var roles = await userManager.GetRolesAsync(user);
                 var jwtToken = tokenGenerator.GenerateToken(user, roles);
 
                 return new { result = new { user.UserName, user.Email }, message = "Sikeres beléptetés.", token = jwtToken };
-            }
-
-            return new { result = "", message = "Nem regisztrált.", token = "" };
+            
         }
 
         //Regisztráció
@@ -97,19 +97,5 @@ namespace backend.Services
             return new { result = "", message = result.Errors.FirstOrDefault().Description };
             
         }
-        //jelszó modosítás
-        /*public async Task<object>PasswordChanger(Guid id,string password,string changepassword) 
-        {
-            var users=_context.ApplicationUsers.FirstOrDefaultAsync(x=>x.Id==Convert.ToString(id));
-           var name=_context.ApplicationUsers.Where(c=>c.Id==Convert.ToString(id)).Select(x=>x.UserName).FirstOrDefault();
-           
-            if(users!=null) 
-            {
-                
-                await userManager.ChangePasswordAsync(name,password,changepassword);
-                return new { resutr = users, message = "Sikeres módosítás." };
-            }
-            return new { resutr = "", message = "Sikertelen módosítás." };
-        }/*/
     }
 }

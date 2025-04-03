@@ -7,7 +7,7 @@ import Rolechanger from './Rolechanger';
 import "./Admin.css";
 import "./modal.css"
 import RoleRemover from './RoleRemover';
-
+import "./ProfilePictureUploader.css";
 import axios from 'axios';
 
 export default function Admin() {
@@ -19,6 +19,7 @@ export default function Admin() {
   const[autobase,setautobase]=useState([]);
   const[modalOpened,setModalOpened]=useState(false)
   const[userbase,setuserbase]=useState([])
+  const [image, setImage] = useState(null);
   console.log(modalOpened);
   useEffect(() => {
       Getcom()
@@ -113,10 +114,32 @@ export default function Admin() {
     }
  }
 }
+const handleImageChange = (event) => {
+  const file = event.target.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      setImage(reader.result);
+    };
+    reader.readAsDataURL(file);
+  }}
   return (
     <div> 
       <div className="row row-cols-1 row-cols-md-2 g-4">
         <div className='col'>
+        <div >
+            <div className="profile-image-container">
+              {image ? (
+                <img src={image} alt="Profilkép" className="profile-image" />
+              ) : (
+                <div className="text-gray-400">Nincs kép</div>
+              )}
+            </div>
+            <input type="file" accept="image/*" onChange={handleImageChange} id="fileInput" className="hidden-input" />
+            <label htmlFor="fileInput" className="upload-button">
+              Kép feltöltése
+            </label>
+          </div>
           <h2>{myToken.name}</h2>
               <p>{myToken.email}</p>
               <Link to={'/bejelentkezes'}>

@@ -3,3 +3,7 @@ viki,               Alma_123,           Admin
 Ricsi122,           Ricsi_122,          Admin
 Dani88,             Tarja.11,           Admin
 Jozsef,             Jozsefke001_,       Admin
+Tarja,              Tarja117_,          User
+Nyenyeske4,         Honey_44,           User
+Moni_ka6,           Monikaa.10          User
+Lajo_s1,            Lali10.10           User

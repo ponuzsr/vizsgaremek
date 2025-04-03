@@ -1,0 +1,5 @@
+Felhasználónév,     Jelszó,             Szerepkör
+viki,               Alma_123,           Admin
+Ricsi122,           Ricsi_122,          Admin
+Dani88,             Tarja.11,           Admin
+Jozsef,             Jozsefke001_,       Admin

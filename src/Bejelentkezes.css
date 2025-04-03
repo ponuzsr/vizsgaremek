@@ -64,7 +64,7 @@
     }}
 
   /*Gombok*/
-  .button {
+  .logbut {
     position: relative;
     padding: 10px 20px;
     border-radius: 7px;
@@ -80,11 +80,36 @@
     -webkit-transition: all 0.2s ease-in;
     -moz-transition: all 0.2s ease-in;
     transition: all 0.2s ease-in;
-    width: 400px;
+    width: 70%;
     height: 45px;
   }
+
+  .username, .password {
+    width: 100%;
+  }
+
+@media (max-width: 1024px) {
+  .logbut {
+    font-size: 10px;
+    width: 85%;
+    
+  }
+}
+
+@media (max-width: 768px) {
+  .logbut {
+
+    width: 60%;
+  }
+}
+
+@media (max-width: 600px) {
+  .logbut {
+    width: 60%;
+  }
+}
   
-  .button:hover {
+  .logbut:hover {
     background: rgb(2, 29, 117);
     box-shadow: 0 0 30px 5px rgba(6, 7, 7, 0.815);
     -webkit-transition: all 0.2s ease-out;
@@ -92,13 +117,13 @@
     transition: all 0.2s ease-out;
   }
   
-  .button:hover::before {
+  .logbut:hover::before {
     -webkit-animation: sh02 0.5s 0s linear;
     -moz-animation: sh02 0.5s 0s linear;
     animation: sh02 0.5s 0s linear;
   }
   
-  .button::before {
+  .logbut::before {
     content: '';
     display: block;
     width: 0px;
@@ -132,7 +157,7 @@
     }
   }
   
-  .button:active {
+  .logbut:active {
     box-shadow: 0 0 0 0 transparent;
     -webkit-transition: box-shadow 0.2s ease-in;
     -moz-transition: box-shadow 0.2s ease-in;
@@ -149,7 +174,7 @@
     border-radius: 10px;
     padding: 10px 25px;
     background: transparent;
-    width: 400px;
+    width: 70%;
     height: 50px;
     background-color: #000000;
   }
@@ -159,8 +184,8 @@
   }
 
   /*Szöveg*/
-  .label{
-    width: 400px;
+  .label_login{
+    width: 70%;
     height: 5px;
     text-align:left;
   }

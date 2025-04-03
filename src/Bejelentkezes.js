@@ -47,26 +47,26 @@ export default function() {
 
           
            {/*Bejelentkezéshez adatok */}
-          <div className='center_texts d-grid gap-2 col-5 mx-auto'>
+          <div className='center_texts gap-2 mx-auto'>
             
             {/*Felhasználónév */}
             <div className="username">
-              <label for="exampleInputEmail1" class="form-label" className='label'>Felhasználónév</label>
+              <label for="exampleInputEmail1" class="form-label" className='label_login'>Felhasználónév</label>
               <input type="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required className='login_data' />
             </div>
 
             {/*Jelszó */}
             <div className="password">
-              <label for="exampleInputPassword1" class="form-label" className='label'>Jelszó</label>
+              <label for="exampleInputPassword1" class="form-label" className='label_login'>Jelszó</label>
               <input type="password" class="form-control" id="exampleInputPassword1" required className='login_data' />
             </div>
             <br />
             
-            <button className='button' type="submit">Bejelentkezés</button>
+            <button className='logbut' type="submit">Bejelentkezés</button>
     
             {/*Át navigál a Regisztrációs oldalra */}
-            <Link to={"/regisztracio"}>
-              <button className='button'type="submit">Regisztráció</button>
+            <Link className='logbut' type="submit" to={"/regisztracio"}>
+              Regisztráció
             </Link>
           </div>
           </div>

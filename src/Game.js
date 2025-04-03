@@ -1,21 +1,41 @@
 import React, { useState, useEffect } from "react";
 import "./Game.css";
 
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 export default function Game() {
   const [kocsik, setKocsik] = useState([]);
   const [robbanasok, setRobbanasok] = useState([]);
   const [pontok, setPontok] = useState(0);
   const [sebesseg, setSebesseg] = useState(35);
   const [eletek, setEletek] = useState(3);
+  const navigate = useNavigate()
+
+  
 
   const bummkep = "pics/bumm.png";
   const auto = "pics/suzuki.png";
+
   useEffect(() => {
+    if (eletek == 0) {
+      alert("Game Over")
+      navigate("/GameStart")
+    }
+
+  }, [eletek])
+  
+  useEffect(() => {
+
+
     const mozgatInterval = setInterval(() => {
       setKocsik((prevKocsik) =>
         prevKocsik
-          .map((kocsi) => ({ ...kocsi, left: kocsi.left + sebesseg }))
+          .map((kocsi) => {
+            let ujkocsi = { ...kocsi, left: kocsi.left + sebesseg };
+            if(ujkocsi.left >= window.innerWidth) {
+              setEletek((prev) => prev - 1)
+            }
+            return ujkocsi;
+          })
           .filter((kocsi) => kocsi.left < window.innerWidth)
       );
 
@@ -31,7 +51,6 @@ export default function Game() {
         },
       ]);
     }, 1000);
-
     return () => {
       clearInterval(mozgatInterval);
       clearInterval(kocsirajInterval);

@@ -22,7 +22,7 @@ export default function Onecar() {
         .then(
           function()
           {
-            axios.get(`${process.env.REACT_APP_URL}/Autok/autocommentTeszt/`+param.id)
+            axios.get(`${process.env.REACT_APP_URL}/Autok/autocomment/`+param.id)
             .then(function(response){setcomments(response.data)})
             
           }

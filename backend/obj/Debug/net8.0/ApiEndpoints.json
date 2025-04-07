@@ -101,7 +101,7 @@
   {
     "ContainingType": "backend.Controllers.AutokController",
     "Method": "GetCommentByAutoId",
-    "RelativePath": "Autok/autocommentTeszt/{id}",
+    "RelativePath": "Autok/autocomment/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

@@ -102,7 +102,7 @@ namespace backend.Controllers
         }
 
         //Komment lekérése auto id alapján
-        [HttpGet("autocommentTeszt/{id}")]
+        [HttpGet("autocomment/{id}")]
         public async Task<ActionResult> GetCommentByAutoId(Guid id)
         {
             var comments = await _context.Comments

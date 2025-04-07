@@ -70,18 +70,19 @@ export default function Onecar2() {
         )
     }
     //Comment törlése
-  function DeleteCom(id)
-    {
-        axios.delete(`${process.env.REACT_APP_URL}/Comment?id=${id}`)
-        .then(function(response)
-            {
-                alert("Sikeres törlés!");
-                
-                Get()
-            }
-        )
-       
-    }
+    function DeleteCommment(id)
+      {
+          axios.delete(`${process.env.REACT_APP_URL}/Comment?id=${id}`)
+          .then(function(response)
+              {
+                  alert("Sikeres törlés!");
+                  
+                  Get()
+              }
+          )
+        
+      }
+      console.log(userToken)
   return (
     <div>
       <div className="row g-3">
@@ -123,7 +124,7 @@ export default function Onecar2() {
               <h3 className='kommentek'>Kommentek</h3>
                 {
                    commentek.map((comments)=>{return(         
-                    userToken.sub==comments.commenteloId||userToken.role=="admin"?        
+                    userToken.sub==comments.commenteloId||userToken.role.includes("admin")?        
                     <div className='comments'> 
                         {userToken.sub==comments.commenteloId?
                         <div>
@@ -135,21 +136,18 @@ export default function Onecar2() {
                               {/*Comment módosítása */}                
                             <button onClick={function(){Put(comments.id)}} className='modositas' disabled={!isDClicked}><i className="bi bi-pen"></i>Módosítás</button>
                             {/*Comment törlése */}
-                            <a onClick={function() {if(window.confirm("Biztosan törölni szeretnél?")){DeleteCom(comments.id)}}} className='torles'><i className="bi bi-trash"></i> Törlés</a>
+                            <a onClick={function() {if(window.confirm("Biztosan törölni szeretnél?")){DeleteCommment(comments.id)}}} className='torles'><i className="bi bi-trash"></i> Törlés</a>
                             </div>
                         </div>:
-                        <div className='comments'>
+                        <div>
                           <h3>{comments.userName}</h3>
-                          <p class="text-break">{comments.postComment}</p>   
+                          <p className="text-break">{comments.postComment}</p>   
                             <div>      
                               {/*Comment törlése */}
-                                <a onClick={function() {if(window.confirm("Biztosan törölni szeretnél?")){DeleteCom(comments.id)}}} className="btn btn-danger"><i className="bi bi-trash3"></i>Törlés</a>
+                                <a onClick={function() {if(window.confirm("Biztosan törölni szeretnél?")){DeleteCommment(comments.id)}}} className="torles"><i className="bi bi-trash3"></i>Törlés</a>
                             </div>
                         </div>
                         }
-                        
-                        
-                    
                     </div>:
                      <div className='comments'>  
                      <h3>{comments.userName}</h3>

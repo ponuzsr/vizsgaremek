@@ -1,3 +1,4 @@
+/*Komment beviteli mezője*/
 .comment_input {
   background-color: #1a1a1a;
   border: none;
@@ -66,6 +67,7 @@ color: #000000;
 transform: translateX(-100%);
 }
 
+/*Vissza gomb*/
 .back {
 font-size: 17px;
 padding: 0.5em 2em;
@@ -82,6 +84,7 @@ background: rgb(2,0,36);
 background: linear-gradient(90deg, rgba(30,144,255,1) 0%, rgba(0,212,255,1) 100%);
 }
 
+/*Komment módosítása*/
 .modositas {
 position: relative;
 display: inline-block;
@@ -124,6 +127,7 @@ color: rgb(0, 0, 0);
 box-shadow: inset 0 -100px 0 0 #da5b07;
 }
 
+/*Komment törlése*/
 .torles {
 position: relative;
 display: inline-block;
@@ -166,6 +170,7 @@ color: rgb(0, 0, 0);
 box-shadow: inset 0 -100px 0 0 #ac0000;
 }
 
+/*Kommentel megjelenítése*/
 .comments {
 width: 100%;
 max-width: 600px;

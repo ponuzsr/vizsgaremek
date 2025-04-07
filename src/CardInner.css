@@ -1,3 +1,4 @@
+/*Infok*/
 .p {
   font-size: 33px;
   margin-bottom: 10px;
@@ -11,6 +12,7 @@
   font-family: cursive;
 }}
 
+/*Történet leírás*/
 .tortenet{
 font-size: 20px;
 font-family: cursive;
@@ -22,7 +24,7 @@ font-family: cursive;
   font-family: cursive;
 }}
 
-
+/*Kép a kocsirol*/
 .car_img {
   width: 650px; 
   object-fit: cover;

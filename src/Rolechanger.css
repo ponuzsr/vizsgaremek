@@ -1,9 +1,10 @@
+/*Adminná előléptetés*/
 .rolechange{
     background-image: url(/public/pics/backgrounds.gif);
     background-size: cover;
     padding: 20px;
 }
-
+/*Szerepko bemeneti mezője*/
 .szerepkor {
     background-color: #212121;
     color: rgb(0, 255, 255) ;

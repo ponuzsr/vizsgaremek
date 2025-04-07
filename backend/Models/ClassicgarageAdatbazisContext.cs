@@ -20,8 +20,4 @@ public partial class ClassicgarageAdatbazisContext : IdentityDbContext<Applicati
     public virtual DbSet<Autok> Autoks { get; set; }
 
     public virtual DbSet<Comment> Comments { get; set; }
-
-    
-
-    //partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 }

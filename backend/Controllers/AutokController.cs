@@ -66,7 +66,7 @@ namespace backend.Controllers
             }
             return BadRequest(new { result = auto, message = "Hiba az objektum képzése során." });
         }
-
+        //Autó törlése
         [HttpDelete]
         public async Task<ActionResult> Delete(Guid Id)
         {
@@ -80,7 +80,7 @@ namespace backend.Controllers
             }
             return BadRequest(new { message = "Sikertelen törlés" });
         }
-
+        //Autó módosítása
         [HttpPut("{id}")]
         public async Task<ActionResult<Autok>> Put(UpdateAutokDto updateAutokDto, Guid id)
         {

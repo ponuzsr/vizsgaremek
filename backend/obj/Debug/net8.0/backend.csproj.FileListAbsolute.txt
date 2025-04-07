@@ -2170,3 +2170,7 @@ C:\Users\Dell\Desktop\Back\vizsgaremek\backend\obj\Debug\net8.0\refint\backend.d
 C:\Users\Dell\Desktop\Back\vizsgaremek\backend\obj\Debug\net8.0\backend.pdb
 C:\Users\Dell\Desktop\Back\vizsgaremek\backend\obj\Debug\net8.0\backend.genruntimeconfig.cache
 C:\Users\Dell\Desktop\Back\vizsgaremek\backend\obj\Debug\net8.0\ref\backend.dll
+C:\Users\Tanulo\Desktop\vizsgaremek\backend\vizsgaremek\backend\bin\Debug\net8.0\backend.staticwebassets.endpoints.json
+C:\Users\Tanulo\Desktop\vizsgaremek\backend\vizsgaremek\backend\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\Tanulo\Desktop\vizsgaremek\backend\vizsgaremek\backend\obj\Debug\net8.0\staticwebassets\msbuild.backend.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\Tanulo\Desktop\vizsgaremek\backend\vizsgaremek\backend\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

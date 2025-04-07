@@ -76,7 +76,8 @@ namespace backend.Controllers
             }
             return BadRequest(new { result = comment, message = "Hiba az objektum képzése során." });
         }
-
+        
+        //Komment lekérése id alapján
         [HttpPut("{id}")]
         public async Task<ActionResult<Comment>> Put(UpdateCommentDto updateCommentDto, Guid id)
         {

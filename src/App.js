@@ -37,7 +37,18 @@ const App = () => {
       case "/autok/80":
         return "80-as évek autói";
       default:
-        return "Főoldal";
+        if ( pathname.includes("Onecar")||pathname.includes("Onecar2")) 
+        {
+          return "Részletek"
+        }
+        else if(pathname.includes("modsitas"))
+        {
+          return "módosító"
+        }
+        else
+        {
+          return "Főoldal";
+        }
     }
   }
 

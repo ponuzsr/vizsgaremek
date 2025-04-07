@@ -12,12 +12,11 @@ export default function Onecar() {
   useEffect(() => {
     Get()
   }, [])
-  
+  //Adott autó adatainak lekérése
   function Get()
     {
         axios.get(`${process.env.REACT_APP_URL}/Autok/`+param.id)
         .then(function(response){
-        console.log(response)
         setdata(response.data);
         })
         .then(
@@ -35,7 +34,7 @@ export default function Onecar() {
           <div  className="col">
           <img src={datam.kep} className='car_img card' alt="..." /> 
           <Link className='nav-item nav-link' to={"/autok/"+datam.idEv}>
-            <button className="back"><i class="bi bi-arrow-bar-left"></i>Vissza</button>
+            <button className="back"><i className="bi bi-arrow-bar-left"></i>Vissza</button>
             </Link>
           </div>
           <div className='col'>
@@ -70,7 +69,7 @@ export default function Onecar() {
                    commentek.map((comments)=>{return(
                     <div className='comments'>  
                         <h3>{comments.userName}</h3>    
-                        <p class="text-break">{comments.postComment}</p>
+                        <p className="text-break">{comments.postComment}</p>
                         
                     </div>
                    )})

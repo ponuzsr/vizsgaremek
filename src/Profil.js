@@ -7,6 +7,7 @@ export default function Profil() {
       let userToken =jwtDecode(localStorage.getItem("token"));
   return (
     <div>
+      {/*A token role eldöntése ,hogy a felhasználó vagy admin komponenst töltse be. */}
         {userToken.role=="user"?<Felhasznalo/>:<Admin/>}
     </div>
   )

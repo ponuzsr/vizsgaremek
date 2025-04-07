@@ -16,7 +16,7 @@ export default function Onecar2() {
   useEffect(() => {
     Get()
   }, [])
-
+  //Új comment küldése
   function Post()
   {
     let comment=
@@ -37,14 +37,13 @@ export default function Onecar2() {
     }
     
   }
-
+  //Comment mdóosítása
   async function Put(id)
   {
     let edit=
     {
       postComment: document.getElementById(id).firstElementChild.value
     }
-    console.log(edit)
     try{
     await axios.put(`${process.env.REACT_APP_URL}/Comment/`+id,edit)
     .then(function(response){Get()})
@@ -54,12 +53,11 @@ export default function Onecar2() {
       console.log(error)
     }
   }
-  
+    //Adott autó adatainak lekérése
   function Get()
     {
         axios.get(`${process.env.REACT_APP_URL}/Autok/`+param.id)
         .then(function(response){
-        console.log(response)
         setdata(response.data);
         })
         .then(
@@ -71,7 +69,8 @@ export default function Onecar2() {
           }
         )
     }
-  function delete_button(id)
+    //Comment törlése
+  function DeleteCom(id)
     {
         axios.delete(`${process.env.REACT_APP_URL}/Comment?id=${id}`)
         .then(function(response)
@@ -112,8 +111,8 @@ export default function Onecar2() {
                     event.preventDefault()
                     Post()  
                     }}>
-                       <h2><i class="bi bi-person-fill"></i>{userToken.name}</h2>
-                      <div class="input-group">
+                       <h2><i className="bi bi-person-fill"></i>{userToken.name}</h2>
+                      <div className="input-group">
                           <input type="text" id='comment' class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" className='comment_input'/>
                       </div>
                       <button type="submit" className='submit'>Küldés</button>
@@ -128,20 +127,23 @@ export default function Onecar2() {
                     <div className='comments'> 
                         {userToken.sub==comments.commenteloId?
                         <div>
-                          <h3><i class="bi bi-person-fill"></i>{comments.userName}</h3>
-                          <p  id={comments.id} onDoubleClick={function(e){e.target.innerHTML=`<input value=${comments.postComment}>`;setIsDClicked(true);}} class="text-break">{comments.postComment}</p>
+                          <h3><i className="bi bi-person-fill"></i>{comments.userName}</h3>
+                          <p  id={comments.id} onDoubleClick={function(e){e.target.innerHTML=`<input value=${comments.postComment}>`;setIsDClicked(true);}} className="text-break">{comments.postComment}</p>
                        
                         
-                            <div>                  
-                            <button onClick={function(){Put(comments.id)}} className='modositas' disabled={!isDClicked}><i class="bi bi-pen"></i>Módosítás</button>
-                            <a onClick={function() {if(window.confirm("Biztosan törölni szeretnél?")){delete_button(comments.id)}}} className='torles'><i class="bi bi-trash"></i> Törlés</a>
+                            <div>  
+                              {/*Comment módosítása */}                
+                            <button onClick={function(){Put(comments.id)}} className='modositas' disabled={!isDClicked}><i className="bi bi-pen"></i>Módosítás</button>
+                            {/*Comment törlése */}
+                            <a onClick={function() {if(window.confirm("Biztosan törölni szeretnél?")){DeleteCom(comments.id)}}} className='torles'><i className="bi bi-trash"></i> Törlés</a>
                             </div>
                         </div>:
                         <div className='comments'>
                           <h3>{comments.userName}</h3>
                           <p class="text-break">{comments.postComment}</p>   
                             <div>      
-                                <a onClick={function() {if(window.confirm("Biztosan törölni szeretnél?")){delete_button(comments.id)}}} class="btn btn-danger"><i class="bi bi-trash3"></i>Törlés</a>
+                              {/*Comment törlése */}
+                                <a onClick={function() {if(window.confirm("Biztosan törölni szeretnél?")){DeleteCom(comments.id)}}} className="btn btn-danger"><i className="bi bi-trash3"></i>Törlés</a>
                             </div>
                         </div>
                         }
@@ -151,7 +153,7 @@ export default function Onecar2() {
                     </div>:
                      <div className='comments'>  
                      <h3>{comments.userName}</h3>
-                     <p class="text-break">{comments.postComment}</p>
+                     <p className="text-break">{comments.postComment}</p>
                       
                     </div>
                   )})

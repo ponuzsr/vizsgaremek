@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 function Dropdown ({ isOpen, setIsOpen }) {
+  //évre való szűréshez szükséges változó.
   const carYears = ["50", "60", "70", "80"];
   return (
     <div className="dropdown-container">

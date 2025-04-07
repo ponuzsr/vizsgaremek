@@ -15,7 +15,6 @@ function Autok () {
     axios.get(`${process.env.REACT_APP_URL}/Autok`)
     .then(function(response){
       let filtered = response.data.filter(auto=> auto.idEv==params.ev )
-      console.log(filtered);
       setdatabase(filtered)
     })
       
@@ -25,7 +24,7 @@ function Autok () {
       <div className="row row-cols-1 row-cols-md-5 g-4">
           {
             
-            database.map((auto)=>{return(<AutoKartya datak={auto}/>)})
+            database.map((auto)=>{return(<AutoKartya key={auto.id} datak={auto}/>)})
           }
       </div>
   );

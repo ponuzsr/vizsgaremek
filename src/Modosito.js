@@ -14,6 +14,7 @@ export default function Modosito(props) {
       {
         setdat({ data, one: event.target.value });
       };
+      //Módosítandó autó adatainak lekérése
     function Get()
     {
         axios.get(`${process.env.REACT_APP_URL}/Autok/`+param.id)
@@ -23,7 +24,7 @@ export default function Modosito(props) {
         setdat(response.data)
         })
     }
-
+    //Autó adatainak módosítása
    async function Put(id)
     {
         let modositott_adatok=

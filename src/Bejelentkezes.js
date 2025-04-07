@@ -7,22 +7,21 @@ import axios from 'axios';
 
 export default function() {
     let navigate=useNavigate();
+
+    //Bejelentkezési adatok elküldése
   async function Post(){
     
     let felhasznalo=
     {
-      userName: document.getElementById("exampleInputEmail1").value,
+      userName: document.getElementById("Email").value,
     
-      password: document.getElementById("exampleInputPassword1").value,
+      password: document.getElementById("Password").value,
   
     }
-   
-   
-    const mehet=false
+  
     try{
       const response=await axios.post(`${process.env.REACT_APP_URL}/Felhasználók/Login`,felhasznalo)
       
-      console.log(response)
       localStorage.setItem("token", response.data.token)
       let Tok =jwtDecode(localStorage.getItem("token"));
       if (Tok!="") 
@@ -32,6 +31,7 @@ export default function() {
    }
   catch(error)
   {
+    console.log(error)
     alert("Rossz felahsználónév/jelszó!")
   }
 }
@@ -52,13 +52,13 @@ export default function() {
             {/*Felhasználónév */}
             <div className="username">
               <label for="exampleInputEmail1" class="form-label" className='label_login'>Felhasználónév</label>
-              <input type="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required className='login_data' />
+              <input type="username" class="form-control" id="Email" aria-describedby="emailHelp" required className='login_data' />
             </div>
 
             {/*Jelszó */}
             <div className="password">
               <label for="exampleInputPassword1" class="form-label" className='label_login'>Jelszó</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" required className='login_data' />
+              <input type="password" class="form-control" id="Password" required className='login_data' />
             </div>
             <br />
             

@@ -14,7 +14,6 @@ export default function Admin() {
   let myToken =jwtDecode(localStorage.getItem("token"));
   let navigate=useNavigate();
   let usercheck="@"+myToken.name;
-  console.log(usercheck);
   const[commentek,setcomments]=useState([])
   const[autobase,setautobase]=useState([]);
   const[modalOpened,setModalOpened]=useState(false)
@@ -26,6 +25,7 @@ export default function Admin() {
       Get()
       GetUsers()
     }, [])
+    //Az autók lekérdezése
     function Get()
     {
     axios.get(`${process.env.REACT_APP_URL}/Autok`)
@@ -35,14 +35,14 @@ export default function Admin() {
       setautobase(response.data)
     })
     }
-
+    //Felhasználónak küldött commentek lekérdezése
   function Getcom()
     {
       axios.get(`${process.env.REACT_APP_URL}/Comment`)
       .then(function(response){setcomments(response.data) })
     }
-    
-    function delete_button(id)
+    //Autók törlése
+    function DeleteCars(id)
     {
         axios.delete(`${process.env.REACT_APP_URL}/Autok?Id=${id}`)
         .then(function(response)
@@ -54,12 +54,13 @@ export default function Admin() {
         )
        
     }
+    //Felhasználók lekérdezése
     function GetUsers()
     {
       axios.get(`${process.env.REACT_APP_URL}/Felhasználók`)
       .then(function(response){setuserbase(response.data)})
     }
-
+    //Felhasználók törlése
     function DeleteUsers(id){
       axios.delete(`${process.env.REACT_APP_URL}/Felhasználók?id=${id}`)
       .then(function(response)
@@ -69,6 +70,7 @@ export default function Admin() {
       }
     )
     }
+    //Fiók törlése
     function DeleteUser()
     {
       axios.delete(`${process.env.REACT_APP_URL}/Felhasználók?id=${myToken.sub}`).then(
@@ -78,6 +80,8 @@ export default function Admin() {
         }
       ).then(function(){localStorage.removeItem("token")}).then(function() {navigate("/bejelentkezes")})
     }
+    //A három különböző mod1,2,3 függvényt arra használjuk ,hogy az adminá tévő és lefokozó felület valamint
+    //az új autó felvitele egy külön kis oldalon jelenjen meg
    function mod1()
    {
     
@@ -114,6 +118,7 @@ export default function Admin() {
     }
  }
 }
+//Profil kép feltöltésre készített függvény
 const handleImageChange = (event) => {
   const file = event.target.files[0];
   if (file) {
@@ -146,14 +151,14 @@ const handleImageChange = (event) => {
                 <button onClick={function(){localStorage.removeItem("token")}} className='admin_button'><i class="bi bi-door-closed"></i> Kijelentekzés</button>
               </Link>
               <br/>
-              <button onClick={mod1} id="myBtn" className='admin_button'><i class="bi bi-trophy"></i> Előléptetés</button>
+              <button onClick={mod1} id="myBtn" className='admin_button'><i className="bi bi-trophy"></i> Előléptetés</button>
               <div id="elo" className="modal">
                 <div  className="modal-content">   
                   <Rolechanger/>
                 </div>
               </div>
               <br/>
-              <button onClick={mod2} id="myBtn" className='admin_button'><i class="bi bi-emoji-frown"></i> Lefokozás</button>
+              <button onClick={mod2} id="myBtn" className='admin_button'><i className="bi bi-emoji-frown"></i> Lefokozás</button>
               <div id="le" className="modal">
                 <div  className="modal-content">   
                   <RoleRemover/>
@@ -161,7 +166,7 @@ const handleImageChange = (event) => {
               </div>
               <br/>
               {/*<AutoFelvitel/>*/}
-              <button onClick={mod3} id="myBtn" className='admin_button'><i class="bi bi-plus-circle"></i> Új Autó</button>
+              <button onClick={mod3} id="myBtn" className='admin_button'><i className="bi bi-plus-circle"></i> Új Autó</button>
               <div id="fel" className="modal">
                 <div  className="modal-content">
                   <AutoFelvitel get={Get}/>
@@ -169,12 +174,12 @@ const handleImageChange = (event) => {
               </div>   
               <br/>
               
-              <button className='admin_button' onClick={function() {if(window.confirm("Biztosan törölni szeretnél?")){DeleteUser()}}}><i class="bi bi-person-dash"></i> Fiók törlése</button>
+              <button className='admin_button' onClick={function() {if(window.confirm("Biztosan törölni szeretnél?")){DeleteUser()}}}><i className="bi bi-person-dash"></i> Fiók törlése</button>
               
         </div>
         <div className='col'>
-          <h3 className='notifications'>Értesítések <i class="bi bi-bell"></i></h3>
-          <div class="ertesitesek-item" style={{}}>
+          <h3 className='notifications'>Értesítések <i className="bi bi-bell"></i></h3>
+          <div className="ertesitesek-item" style={{}}>
                 {
                    commentek.map((comments)=>{return(
                     comments.postComment.includes(usercheck)?
@@ -182,7 +187,7 @@ const handleImageChange = (event) => {
                         <h3>{comments.userName}</h3>
                         <p class="text-break">{comments.postComment}</p>    
                          <Link to={"/Onecar2/"+comments.autoId}>
-                            <button className="notification_button">Az autóhoz<i class="bi bi-caret-right-fill"></i></button>
+                            <button className="notification_button">Az autóhoz<i className="bi bi-caret-right-fill"></i></button>
                           </Link>    
                     </div>:
                     null
@@ -206,7 +211,7 @@ const handleImageChange = (event) => {
               <div className='cars'>
                 <div className='cars2'>
                 <p>{autok.marka}</p>
-                <button onClick={function() {if(window.confirm("Biztosan törölni szeretnél?")){delete_button(autok.id)}}} className='cars_delete'><i class="bi bi-trash3"></i>Törlés</button>
+                <button onClick={function() {if(window.confirm("Biztosan törölni szeretnél?")){DeleteCars(autok.id)}}} className='cars_delete'><i class="bi bi-trash3"></i>Törlés</button>
                 <Link to={"/modsitas/"+autok.id}>
                     <a className='cars_modification'><i class="bi bi-pen"></i>Módosítás</a>
                 </Link>

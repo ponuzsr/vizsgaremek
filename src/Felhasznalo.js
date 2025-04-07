@@ -10,18 +10,17 @@ export default function Felhasznalo() {
   const [image, setImage] = useState(null);
   let navigate=useNavigate();
   let usercheck="@"+myToken.name;
-  console.log(usercheck);
   const[commentek,setcomments]=useState([])
   useEffect(() => {
       Getcom()
     }, [])
-    
+    //Felhasználónak küldött commentek lekérdezése
   function Getcom()
     {
       axios.get(`${process.env.REACT_APP_URL}/Comment`)
       .then(function(response){setcomments(response.data) })
     }
-
+    //Fiók törlése
     function DeleteUser()
     {
       axios.delete(`${process.env.REACT_APP_URL}/Felhasználók?id=${myToken.sub}`)
@@ -31,6 +30,7 @@ export default function Felhasznalo() {
         }
       ).then(function(){localStorage.removeItem("token")}).then(function() {navigate("/bejelentkezes")})
     }
+    //Profil kép feltöltésre készített függvény
     const handleImageChange = (event) => {
       const file = event.target.files[0];
       if (file) {
@@ -60,25 +60,25 @@ export default function Felhasznalo() {
           <h2>{myToken.name}</h2>
               <p>{myToken.email}</p>
               <Link to={'/bejelentkezes'}>
-                <button onClick={function(){localStorage.removeItem("token")}} class="users"><i class="bi bi-door-closed"></i> Kijelentekzés</button>
+                <button onClick={function(){localStorage.removeItem("token")}} className="users"><i className="bi bi-door-closed"></i> Kijelentekzés</button>
               </Link>
               <br/>
-              <button className='admin_button' onClick={function() {if(window.confirm("Biztosan törölni szeretnél?")){DeleteUser()}}}><i class="bi bi-person-dash"></i> Fiók törlése</button>
+              <button className='admin_button' onClick={function() {if(window.confirm("Biztosan törölni szeretnél?")){DeleteUser()}}}><i className="bi bi-person-dash"></i> Fiók törlése</button>
         </div>
         <div className='col'>
-          <h3 className='notifications'>Értesítések <i class="bi bi-bell"></i></h3>
-          <div class="ertesitesek-item" style={{}}>
+          <h3 className='notifications'>Értesítések <i className="bi bi-bell"></i></h3>
+          <div className="ertesitesek-item" style={{}}>
                 {
                    commentek.map((comments)=>{return(
                     comments.postComment.includes(usercheck)?
                    <div className='users_notifications'>      
                          <h3>{comments.userName}</h3>
-                        <p class="text-break">{comments.postComment}</p>    
+                        <p className="text-break">{comments.postComment}</p>    
                         <Link to={"/Onecar2/"+comments.autoId}>
-                            <button className='usersNotifications_button'>Az autóhoz<i class="bi bi-caret-right-fill"></i></button>
+                            <button className='usersNotifications_button'>Az autóhoz<i className="bi bi-caret-right-fill"></i></button>
                         </Link>    
                     </div>:
-                    <div/>
+                    null
                     
                    )})
                 }

@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useState } from "react";
 export default function Rolechanger() {
   const [message, setMessage] = useState("")
+    //Szerepkőr adatok elküldése
     async function Post()
     {
       let role_adat=
@@ -31,18 +32,19 @@ export default function Rolechanger() {
             Post()
         }}>
         <div>
-            <label for="nev" class="form-label" className='label'>Felhasználónév</label>
+            {/*Felhasználó neve */}
+            <label for="nev" className='form-label' class='label'>Felhasználónév</label>
             <br/>
-                <input type="username" class="form-control" className='szerepkor' id="nev" aria-describedby="nevHelp"/>
+                <input type="username" className='form-control' class='szerepkor' id="nev" aria-describedby="nevHelp"/>
             </div>
 
             <br/>
 
-            {/*Jelszó */}
+            {/*Szerepkőr */}
             <div>
-                <label for="rol" class="form-label" className='label'>Új szerepkör</label>
+                <label for="rol" className='form-label' class='label'>Új szerepkör</label>
                 <br/>
-                <input type="text" class="form-control" className='szerepkor' required id="rol" />
+                <input type="text" className='form-control' class='szerepkor' required id="rol" />
             </div>
             <br />
             {message?<p>{message}</p>:null}

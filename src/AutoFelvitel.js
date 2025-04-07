@@ -2,6 +2,7 @@ import React from 'react'
 import "./Autofelvitel.css";
 import axios from 'axios';
 export default function AutoFelvitel(props) {
+    //Új autó adatainak elküldése
   async function Post()
   {
     let auto=

@@ -1,0 +1,160 @@
+{
+  "id": "6bae7082-0749-4d0c-8be4-4747245da2b7",
+  "version": "2.0",
+  "name": "comment_delete_test",
+  "url": "http://localhost:3000",
+  "tests": [{
+    "id": "028de86a-b7f2-4383-b2f9-a100cf109806",
+    "name": "comment_delete",
+    "commands": [{
+      "id": "0a97bb35-4d56-4df3-b6de-d5938af7ec68",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3d408b1d-1f06-425b-a77b-eb501b4cd875",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1129x692",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bf353e1b-6fc8-4060-bdcc-24ec184566f5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.dropdown-btn",
+      "targets": [
+        ["css=.dropdown-btn", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/nav/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'✇ Autók ▼')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ff1f9aff-5845-46c4-bfe9-efeebb11f332",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=50s évek",
+      "targets": [
+        ["linkText=50s évek", "linkText"],
+        ["css=.dropdownBtn:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/nav/div/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/autok/50')]", "xpath:href"],
+        ["xpath=//div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'50s évek')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "21cbcdb6-b4d3-4d13-b85e-afe8071c0f07",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col:nth-child(1) .info",
+      "targets": [
+        ["css=.col:nth-child(1) .info", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/div/div/div/div/div/div[2]/a/button", "xpath:idRelative"],
+        ["xpath=//a/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Részletesebben')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "42491a5e-64d1-4237-a97e-f5d31f08996e",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "css=.content",
+      "targets": [
+        ["css=.content", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div", "xpath:position"]
+      ],
+      "value": "846,521.8000030517578"
+    }, {
+      "id": "b046b642-439d-42fd-a7b0-40dccaf212bc",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "css=.content",
+      "targets": [
+        ["css=.content", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div", "xpath:position"]
+      ],
+      "value": "846,521.8000030517578"
+    }, {
+      "id": "e69574b7-05f1-44ae-8013-e50b7d7e8245",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "css=.content",
+      "targets": [
+        ["css=.content", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div", "xpath:position"]
+      ],
+      "value": "846,521.8000030517578"
+    }, {
+      "id": "25b13e31-c3eb-4bf6-9477-99fe68a8bec8",
+      "comment": "",
+      "command": "click",
+      "target": "id=selenium-ide-indicator",
+      "targets": [
+        ["id=selenium-ide-indicator", "id"],
+        ["css=#selenium-ide-indicator", "css:finder"],
+        ["xpath=//iframe[@id='selenium-ide-indicator']", "xpath:attributes"],
+        ["xpath=//iframe", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8b999774-0f6f-455e-9973-bbf0a45c1ef5",
+      "comment": "",
+      "command": "chooseOkOnNextConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c06705ba-ba08-4fc7-bf5c-32a5b7f7c150",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Törlés",
+      "targets": [
+        ["linkText=Törlés", "linkText"],
+        ["css=.torles", "css:finder"],
+        ["xpath=//a[contains(text(),'Törlés')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/div[2]/div/div/div/div[3]/div[2]/div/div/div/a", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,' Törlés')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2d27e128-5241-4080-a969-ada24ca51077",
+      "comment": "",
+      "command": "assertConfirmation",
+      "target": "Biztosan törölni szeretnél?",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6732f09b-ca09-45ee-8c86-e1ee8b8660db",
+      "comment": "",
+      "command": "webdriverChooseOkOnVisibleConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f098f746-4795-41a2-bca5-0f29140063d9",
+      "comment": "",
+      "command": "assertAlert",
+      "target": "Sikeres törlés!",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "2a7e3ee2-84ab-4d98-b038-06bf5fe1003c",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["028de86a-b7f2-4383-b2f9-a100cf109806"]
+  }],
+  "urls": ["http://localhost:3000/"],
+  "plugins": []
+}

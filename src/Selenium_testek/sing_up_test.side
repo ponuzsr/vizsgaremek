@@ -1,0 +1,174 @@
+{
+  "id": "1b40ef78-248d-4782-a2fd-7e6416b6ba3b",
+  "version": "2.0",
+  "name": "sing_up_test",
+  "url": "http://localhost:3000",
+  "tests": [{
+    "id": "df3e59b9-4650-44f7-91a2-c2893b2b5132",
+    "name": "sing_up_test",
+    "commands": [{
+      "id": "91befad4-0245-4b58-aa69-f117f8a68a21",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f40ed25d-b811-4f33-a405-020fc6769ff4",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1041x692",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ce2ee9d5-f9aa-487e-a3af-7f1559e36608",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Bejelentkezés",
+      "targets": [
+        ["linkText=Bejelentkezés", "linkText"],
+        ["css=.navBtn:nth-child(3)", "css:finder"],
+        ["xpath=//a[contains(text(),'Bejelentkezés')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/div[2]/nav/a[3]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/bejelentkezes')]", "xpath:href"],
+        ["xpath=//a[3]", "xpath:position"],
+        ["xpath=//a[contains(.,'Bejelentkezés')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "09088012-0d7c-4b0f-bbbe-e26cca66910a",
+      "comment": "",
+      "command": "click",
+      "target": "id=Email",
+      "targets": [
+        ["id=Email", "id"],
+        ["css=#Email", "css:finder"],
+        ["xpath=//input[@id='Email']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div/div/div/form/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b5ae3900-07f0-4ba6-bf7d-ab7e76cae63e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.logbut:nth-child(5)",
+      "targets": [
+        ["css=.logbut:nth-child(5)", "css:finder"],
+        ["xpath=//a[contains(text(),'Regisztráció')]", "xpath:link"],
+        ["xpath=//a[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div/div/div/form/div/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/regisztracio')]", "xpath:href"],
+        ["xpath=//div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e3315411-0e21-4526-a39d-3b566caf6bbe",
+      "comment": "",
+      "command": "click",
+      "target": "id=nev",
+      "targets": [
+        ["id=nev", "id"],
+        ["css=#nev", "css:finder"],
+        ["xpath=//input[@id='nev']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div/div/div/form/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f3e109c2-2396-416b-9f74-73e8bcc7159f",
+      "comment": "",
+      "command": "type",
+      "target": "id=nev",
+      "targets": [
+        ["id=nev", "id"],
+        ["css=#nev", "css:finder"],
+        ["xpath=//input[@id='nev']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div/div/div/form/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Karoly1"
+    }, {
+      "id": "da02f1e6-6393-4ac8-a610-33c0f38bbfbb",
+      "comment": "",
+      "command": "click",
+      "target": "id=Email",
+      "targets": [
+        ["id=Email", "id"],
+        ["css=#Email", "css:finder"],
+        ["xpath=//input[@id='Email']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div/div/div/form/div/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "532122b8-dd50-4739-bed2-34298b38b6cc",
+      "comment": "",
+      "command": "type",
+      "target": "id=Email",
+      "targets": [
+        ["id=Email", "id"],
+        ["css=#Email", "css:finder"],
+        ["xpath=//input[@id='Email']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div/div/div/form/div/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "Karoly@gmail.com"
+    }, {
+      "id": "d9618b5c-6163-4a4c-8d48-ca34e7f39ca6",
+      "comment": "",
+      "command": "click",
+      "target": "id=Password",
+      "targets": [
+        ["id=Password", "id"],
+        ["css=#Password", "css:finder"],
+        ["xpath=//input[@id='Password']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div/div/div/form/div/div/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6163df35-de95-47ff-97e2-1fc668c88a38",
+      "comment": "",
+      "command": "type",
+      "target": "id=Password",
+      "targets": [
+        ["id=Password", "id"],
+        ["css=#Password", "css:finder"],
+        ["xpath=//input[@id='Password']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div/div/div/form/div/div/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "Karoly_1"
+    }, {
+      "id": "7dffb498-9352-4154-856d-87afc0d31be7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.button",
+      "targets": [
+        ["css=.button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div/div/div/form/div/div/button", "xpath:idRelative"],
+        ["xpath=//div/div/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0e89d523-5215-46c9-9657-5a11abce6541",
+      "comment": "",
+      "command": "assertAlert",
+      "target": "Köszönjük! Az ön regisztrálása sikeres!",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "034d8d46-1968-461e-a46a-fcef1d0819a3",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["df3e59b9-4650-44f7-91a2-c2893b2b5132"]
+  }],
+  "urls": ["http://localhost:3000/"],
+  "plugins": []
+}

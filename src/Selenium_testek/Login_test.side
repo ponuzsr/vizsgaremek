@@ -1,27 +1,38 @@
 {
-  "id": "5575665f-2d48-4dfe-b309-5ce876c1aa9b",
+  "id": "1095d04c-2089-42b9-8bbc-b2ef8d020564",
   "version": "2.0",
-  "name": "Log_in_test",
+  "name": "Login_test",
   "url": "http://localhost:3000",
   "tests": [{
-    "id": "2fbcfbb9-a228-4547-afe3-fcfcfe6e0d95",
-    "name": "Log_in_test",
+    "id": "b3a545ea-9799-4e49-bba9-04fd92a195e0",
+    "name": "login_test",
     "commands": [{
-      "id": "6fd8258e-c2bc-4d29-9805-4bc7ee5ddf2c",
+      "id": "e30e5ed7-04f5-43f0-89ca-571c55e36169",
       "comment": "",
       "command": "open",
       "target": "/",
       "targets": [],
       "value": ""
     }, {
-      "id": "fc5f9de0-957d-48fe-b906-c6072d55b5fe",
+      "id": "56ef71a5-00ec-4f3e-a286-822554b2f017",
       "comment": "",
       "command": "setWindowSize",
-      "target": "945x1020",
+      "target": "550x692",
       "targets": [],
       "value": ""
     }, {
-      "id": "29a1c7a2-c5b3-4b3c-8768-64807e11d4dc",
+      "id": "9285070e-1481-40c3-963a-76696f64726e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.dropdown-container",
+      "targets": [
+        ["css=.dropdown-container", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/nav/div", "xpath:idRelative"],
+        ["xpath=//nav/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5c6f3e29-2f03-44af-9dd2-7251cdbb4b8b",
       "comment": "",
       "command": "click",
       "target": "linkText=Bejelentkezés",
@@ -36,7 +47,7 @@
       ],
       "value": ""
     }, {
-      "id": "587153f0-21c9-4851-954a-fdea4beb3f2d",
+      "id": "20b8dc84-5cbc-4750-83ef-71d8988773cf",
       "comment": "",
       "command": "click",
       "target": "id=Email",
@@ -49,7 +60,7 @@
       ],
       "value": ""
     }, {
-      "id": "19cf96f0-3fde-4255-9892-8df9702c81f1",
+      "id": "feb974c6-78f7-4cd8-aa5e-018c3f4ca867",
       "comment": "",
       "command": "type",
       "target": "id=Email",
@@ -62,7 +73,7 @@
       ],
       "value": "Nyenyeske4"
     }, {
-      "id": "5afdf14c-167d-41d8-bc7e-96d9d1c16056",
+      "id": "dc8f9ea8-fe0c-47f8-bd26-8ac889c70f75",
       "comment": "",
       "command": "click",
       "target": "id=Password",
@@ -75,7 +86,7 @@
       ],
       "value": ""
     }, {
-      "id": "9e01afa2-9e1b-4480-840d-de09470cd2c5",
+      "id": "b892b13a-d39c-4c45-b98a-845d2413fcb5",
       "comment": "",
       "command": "type",
       "target": "id=Password",
@@ -88,7 +99,7 @@
       ],
       "value": "Honey_44"
     }, {
-      "id": "05b265df-e315-4b86-a905-4a75be9e8928",
+      "id": "453ac005-ba4f-47d5-b2b6-a38068ce245a",
       "comment": "",
       "command": "click",
       "target": "css=.logbut:nth-child(4)",
@@ -102,12 +113,12 @@
     }]
   }],
   "suites": [{
-    "id": "545b90cd-b290-4e06-b5b9-04845f0276af",
+    "id": "9292fdaa-b0c7-410b-9578-9b8d8f29de4a",
     "name": "Default Suite",
     "persistSession": false,
     "parallel": false,
     "timeout": 300,
-    "tests": ["2fbcfbb9-a228-4547-afe3-fcfcfe6e0d95"]
+    "tests": ["b3a545ea-9799-4e49-bba9-04fd92a195e0"]
   }],
   "urls": ["http://localhost:3000/"],
   "plugins": []

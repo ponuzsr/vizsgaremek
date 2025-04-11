@@ -1,0 +1,112 @@
+{
+  "id": "6493e11c-97d3-4d99-aae7-a10566e2146a",
+  "version": "2.0",
+  "name": "comment_post_test",
+  "url": "http://localhost:3000",
+  "tests": [{
+    "id": "4264c2f8-0e8c-4d56-8626-d84ba70fe50b",
+    "name": "comment_post",
+    "commands": [{
+      "id": "1ce0a1ec-b034-4363-b17c-b93e9fb1f063",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "16603a6a-913c-45d7-8104-1caf4cf276d6",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1129x692",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9ea8fff6-9b6f-4cde-9ab5-d95c61dbf702",
+      "comment": "",
+      "command": "click",
+      "target": "css=.dropdown-btn",
+      "targets": [
+        ["css=.dropdown-btn", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/nav/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'✇ Autók ▼')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c83c9b4e-7357-4d6d-8445-13723b468988",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=50s évek",
+      "targets": [
+        ["linkText=50s évek", "linkText"],
+        ["css=.dropdownBtn:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/nav/div/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/autok/50')]", "xpath:href"],
+        ["xpath=//div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'50s évek')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e4d7b82e-db07-4245-b36c-416cb7dcc919",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col:nth-child(1) .info",
+      "targets": [
+        ["css=.col:nth-child(1) .info", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/div/div/div/div/div/div[2]/a/button", "xpath:idRelative"],
+        ["xpath=//a/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Részletesebben')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0f966b08-5067-400c-ac3e-810def1981a5",
+      "comment": "",
+      "command": "click",
+      "target": "id=comment",
+      "targets": [
+        ["id=comment", "id"],
+        ["css=#comment", "css:finder"],
+        ["xpath=//input[@id='comment']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div/div/div/div[3]/div/form/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9149e32f-9e7f-402c-8329-b5f3a0b87177",
+      "comment": "",
+      "command": "type",
+      "target": "id=comment",
+      "targets": [
+        ["id=comment", "id"],
+        ["css=#comment", "css:finder"],
+        ["xpath=//input[@id='comment']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div/div/div/div[3]/div/form/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Kedvenc autóm!"
+    }, {
+      "id": "576bd6d8-3c53-43c7-99d0-384059ae27dd",
+      "comment": "",
+      "command": "click",
+      "target": "css=.submit",
+      "targets": [
+        ["css=.submit", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div/div/div/div[3]/div/form/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Küldés')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "1b9371f6-94f0-4924-bcb6-a08acf927f49",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["4264c2f8-0e8c-4d56-8626-d84ba70fe50b"]
+  }],
+  "urls": ["http://localhost:3000/"],
+  "plugins": []
+}
